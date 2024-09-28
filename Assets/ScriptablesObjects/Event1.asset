@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60c8d53b7c5f6bf44be911818b78132e, type: 3}
+  m_Name: Event1
+  m_EditorClassIdentifier: 
+  _cityName: 1
+  _eventName: Event 1
+  _eventText: "Bienvenu \xE0 Orleans !\nNe et cheveux en faisait ai blanche. Sur
+    barbares defiance cavernes propager par. Vin approchait infanterie vie une vieillards.
+    Et preparer sa fusiller collines prennent il va. Masses tenter qui les enleve
+    pas police. Chantaient le estaminets ne eu pressaient electrique souhaitait patiemment.
+    Peu habilement assurances maintenant approchait cimetieres sol. Bon des les nouent
+    confie troupe closes. Roulent cuivres ah comprit beffroi je. Rustres aisance
+    petites ici adultes pourrai tot seconde dut. \nNe et cheveux en faisait ai blanche.
+    Sur barbares defiance cavernes propager par. Vin approchait infanterie vie une
+    vieillards. Et preparer sa fusiller collines prennent il va. Masses tenter qui
+    les enleve pas police. Chantaient le estaminets ne eu pressaient electrique souhaitait
+    patiemment. Peu habilement assurances maintenant approchait cimetieres sol. Bon
+    des les nouent confie troupe closes. Roulent cuivres ah comprit beffroi je. Rustres
+    aisance petites ici adultes pourrai tot seconde dut.\nNe et cheveux en faisait
+    ai blanche. Sur barbares defiance cavernes propager par. Vin approchait infanterie
+    vie une vieillards. Et preparer sa fusiller collines prennent il va. Masses tenter
+    qui les enleve pas police. Chantaient le estaminets ne eu pressaient electrique
+    souhaitait patiemment. Peu habilement assurances maintenant approchait cimetieres
+    sol. Bon des les nouent confie troupe closes. Roulent cuivres ah comprit beffroi
+    je. Rustres aisance petites ici adultes pourrai tot seconde dut."
+  _eventImage: {fileID: 0}
+  _eventMarchandisesGained: 
+  _eventMarchandisesRemoved: 
