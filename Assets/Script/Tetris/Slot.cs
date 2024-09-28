@@ -8,7 +8,7 @@ public class Slot : MonoBehaviour
     public int row;
     public int column;
     public bool isOccupied { get; private set;}
-    public void Initialize(int row, int column, int scale) {
+    public void Initialize(int row, int column, float scale) {
         this.row = row;
         this.column = column;
         isOccupied = false;

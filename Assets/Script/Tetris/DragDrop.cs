@@ -11,7 +11,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     private Canvas canvas;
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
-    private GridManager gridManager;
+    public GridManager gridManager;
     DragDrop[] neighbours;
     private Transform originalParent;
     private void Awake() {
@@ -90,9 +90,14 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         }
         if (placeable) {
             Vector2 oldPos = transform.localPosition;
+            
             overedSlots[0].Place(this);
+            
             Vector2 newPos = transform.parent.GetComponent<RectTransform>().anchoredPosition;
+            newPos.x += (gridManager.width/2) + gridManager.xmin;
+            newPos.y += - (gridManager.height/2) + gridManager.ymax;
             Vector2 delta = newPos - oldPos;
+
             originalParent.GetComponent<RectTransform>().anchoredPosition += delta;
             GetComponent<Image>().color = Color.green;
             index = 1;
