@@ -8,6 +8,7 @@ public class EventDatas : ScriptableObject
 {
     #region Fields
 
+    [SerializeField] private string _portName = "";
     [SerializeField] private string _eventName = "";
     [SerializeField,TextArea] private string _eventText = "";
     [SerializeField] private Sprite _eventImage = null;
@@ -19,6 +20,7 @@ public class EventDatas : ScriptableObject
 
     #region Properties
 
+    public string PortName => _portName;
     public string EventName => _eventName;
     public string EventText => _eventText;
     public Sprite EventImage => _eventImage;
@@ -26,5 +28,4 @@ public class EventDatas : ScriptableObject
     public EMarchandiseTypes[] EventMarchandisesRemoved => _eventMarchandisesRemoved;
 
     #endregion Properties
-
 }

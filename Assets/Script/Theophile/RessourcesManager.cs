@@ -40,6 +40,11 @@ public class RessourcesManager : MonoBehaviour
     #region Methods
 
     #region Money
+
+    public void ReinitializeMoney()
+    {
+        _money = 200;
+    }
     //Add Money if added money's value is over 0
     public float AddMoney(float moneyAdded)
     {

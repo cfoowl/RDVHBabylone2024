@@ -1,5 +1,5 @@
-
-
+//
+//
 public enum EMarchandiseTypes
 {
     NONE,
