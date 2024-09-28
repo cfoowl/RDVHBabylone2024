@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Animations;
 using UnityEngine.EventSystems;
@@ -66,17 +67,35 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
 
     public void OnEndDrag(PointerEventData eventData) {
         Debug.Log("OnEndDrag");
+        bool placeable = true;
+        Slot[] overedSlots = new Slot[neighbours.Length + 1];
+
+        canvasGroup.alpha = 1f;
+        canvasGroup.blocksRaycasts = true;
+        
+        overedSlots[0] = gridManager.GetCell(rectTransform.anchoredPosition.x, rectTransform.anchoredPosition.y);
+        if (overedSlots[0] == null || overedSlots[0].isOccupied == true) {
+            placeable = false;
+        }
+        int index = 1;
         foreach(DragDrop dragDrop in neighbours) {
             dragDrop.canvasGroup.alpha = 1f;
             dragDrop.canvasGroup.blocksRaycasts = true;
+            
+            overedSlots[index] = gridManager.GetCell(dragDrop.rectTransform.anchoredPosition.x, dragDrop.rectTransform.anchoredPosition.y);
+            if (overedSlots[index] == null || overedSlots[index].isOccupied == true) {
+                placeable = false;
+            }
+            index++;
         }
-        canvasGroup.alpha = 1f;
-        canvasGroup.blocksRaycasts = true;
-        Slot overedSlot = gridManager.GetCell(rectTransform.anchoredPosition.x, rectTransform.anchoredPosition.y);
-        if (overedSlot != null && overedSlot.isOccupied == false) {
-            Debug.Log("Place");
-            overedSlot.Place(this);
+        if (placeable) {
+            overedSlots[0].Place(this);
+            index = 1;
+            foreach(DragDrop dragDrop in neighbours) {
+                overedSlots[index++].Place(dragDrop);
+            }
         }
+
 
    }
 }
