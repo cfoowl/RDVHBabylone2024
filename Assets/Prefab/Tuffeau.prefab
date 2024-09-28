@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5389368094090172301}
   - component: {fileID: 4474266137226905066}
   m_Layer: 0
-  m_Name: Ardoise
+  m_Name: Tuffeau
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -71,7 +71,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c6f12c59b3def3141906c98e335ea3dd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 96ab44c9b0ead4f4da0704eda382a195, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -171,7 +171,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6971974581057460267, guid: a43b4047ac8e60649aafdf21ba37ef6b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -34
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6971974581057460267, guid: a43b4047ac8e60649aafdf21ba37ef6b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -273,7 +273,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6971974581057460267, guid: a43b4047ac8e60649aafdf21ba37ef6b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 34
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6971974581057460267, guid: a43b4047ac8e60649aafdf21ba37ef6b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
