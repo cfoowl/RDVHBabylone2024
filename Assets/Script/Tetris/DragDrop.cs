@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Animations;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
@@ -52,6 +53,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         if(transform.parent != canvas.transform) {
             transform.parent.GetComponent<Slot>().Free();
             transform.SetParent(canvas.transform);
+            GetComponent<Image>().color = Color.red;
         }
     }
     public void OnDrag(PointerEventData eventData) {
@@ -90,9 +92,11 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         }
         if (placeable) {
             overedSlots[0].Place(this);
+            GetComponent<Image>().color = Color.green;
             index = 1;
             foreach(DragDrop dragDrop in neighbours) {
                 overedSlots[index++].Place(dragDrop);
+                dragDrop.GetComponent<Image>().color = Color.green;
             }
         }
 
