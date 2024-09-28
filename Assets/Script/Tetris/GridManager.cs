@@ -51,16 +51,14 @@ public class GridManager : MonoBehaviour
         }
     }
 
-    public Vector2 GetCell(float posX, float posY) {
+    public Slot GetCell(float posX, float posY) {
         posX += slotSize/2;
         posY -= slotSize/2;
-        Debug.Log(posX);
-        Debug.Log(posY);
         if (posX < xmin || posX > xmax || posY > ymin || posY < ymax) {
-            return new Vector2(-1,-1);
+            return null;
         }
         float relPosX = posX - xmin;
         float relPosY = -(posY - ymin);
-        return new Vector2(Mathf.FloorToInt(relPosX/(slotSize+slotSpacing/2)), Mathf.FloorToInt(relPosY/(slotSize+slotSpacing/2)));
+        return slots[Mathf.FloorToInt(relPosY/(slotSize+slotSpacing/2)), Mathf.FloorToInt(relPosX/(slotSize+slotSpacing/2))];
     }
 }

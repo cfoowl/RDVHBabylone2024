@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations;
 using UnityEngine.EventSystems;
 
-public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler, IDropHandler
+public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
     private Canvas canvas;
     private RectTransform rectTransform;
@@ -30,6 +31,9 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         }
 
     }
+    private void Start() {
+        transform.SetParent(canvas.transform);
+    }
     public void OnPointerDown(PointerEventData eventData) {
         Debug.Log("OnPointerDown");
     }
@@ -37,19 +41,26 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     public void OnBeginDrag(PointerEventData eventData) {
         Debug.Log("OnBeginDrag");
         foreach(DragDrop dragDrop in neighbours) {
-            dragDrop.canvasGroup.alpha = .6f;
-            dragDrop.transform.SetParent(canvas.transform);
-            dragDrop.canvasGroup.blocksRaycasts = false;
+            dragDrop.beginDrag(eventData);
         }
+        beginDrag(eventData);
+    }
+    public void beginDrag(PointerEventData eventData) {
         canvasGroup.alpha = .6f;
-        transform.SetParent(canvas.transform);
         canvasGroup.blocksRaycasts = false;
+        if(transform.parent != canvas.transform) {
+            transform.parent.GetComponent<Slot>().Free();
+            transform.SetParent(canvas.transform);
+        }
     }
     public void OnDrag(PointerEventData eventData) {
         Debug.Log("OnDrag");
         foreach(DragDrop dragDrop in neighbours) {
-            dragDrop.rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
+            dragDrop.drag(eventData);
         }
+        drag(eventData);
+    }
+    public void drag(PointerEventData eventData) {
         rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
     }
 
@@ -61,11 +72,11 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         }
         canvasGroup.alpha = 1f;
         canvasGroup.blocksRaycasts = true;
-        Debug.Log(gridManager.GetCell(rectTransform.anchoredPosition.x, rectTransform.anchoredPosition.y).ToString());
+        Slot overedSlot = gridManager.GetCell(rectTransform.anchoredPosition.x, rectTransform.anchoredPosition.y);
+        if (overedSlot != null && overedSlot.isOccupied == false) {
+            Debug.Log("Place");
+            overedSlot.Place(this);
+        }
 
    }
-
-    public void OnDrop(PointerEventData eventData) {
-        Debug.Log("OnDrop");
-    }
 }
