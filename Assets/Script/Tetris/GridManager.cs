@@ -9,8 +9,8 @@ public class GridManager : MonoBehaviour
     public int rows;
     private Slot[,] slots;
     public GameObject slotPrefab;
-    public int slotSize = 100;
-    public int slotSpacing = 10;
+    public int slotSize;
+    public int slotSpacing;
 
 
     // utils
@@ -20,14 +20,16 @@ public class GridManager : MonoBehaviour
     public float ymax;
 
     void Start () {
-        CreateGrid();
         rectTransform = GetComponent<RectTransform>();
+        int width = (slotSize+slotSpacing) * columns;
+        int height = (slotSize+slotSpacing) * rows;
+        xmin = rectTransform.anchoredPosition.x - (width/2) + (slotSize/2);
+        ymin = rectTransform.anchoredPosition.y + (height/2) - (slotSize/2);
+        xmax = rectTransform.anchoredPosition.x + (width/2) + (slotSize/2);
+        ymax = rectTransform.anchoredPosition.y - (height/2) - (slotSize/2);
+        CreateGrid();
     }
     void Update() {
-        xmin = rectTransform.anchoredPosition.x;
-        ymin = rectTransform.anchoredPosition.y;
-        xmax = rectTransform.anchoredPosition.x + columns*(slotSize+slotSpacing);
-        ymax = rectTransform.anchoredPosition.y - rows*(slotSize+slotSpacing);
     }
     void CreateGrid() {
         slots = new Slot[rows, columns];
@@ -39,14 +41,14 @@ public class GridManager : MonoBehaviour
                 GameObject newSlot = Instantiate(slotPrefab, transform);
                 RectTransform slotRect = newSlot.GetComponent<RectTransform>();
 
-                float posX = j * (slotSize + slotSpacing);
-                float posY = -i * (slotSize + slotSpacing);
+                float posX = xmin + j * (slotSize + slotSpacing);
+                float posY = ymin - i * (slotSize + slotSpacing);
 
                 slotRect.anchoredPosition = new Vector2(posX, posY);
 
                 // Stocker le slot dans la grille
                 slots[i, j] = newSlot.GetComponent<Slot>();
-                slots[i, j].Initialize(i, j);
+                slots[i, j].Initialize(i, j, slotSize);
             }
         }
     }
@@ -60,5 +62,10 @@ public class GridManager : MonoBehaviour
         float relPosX = posX - xmin;
         float relPosY = -(posY - ymin);
         return slots[Mathf.FloorToInt(relPosY/(slotSize+slotSpacing/2)), Mathf.FloorToInt(relPosX/(slotSize+slotSpacing/2))];
+    }
+
+    void OnDrawGizmos() {
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawWireCube(Vector3.zero, new Vector3(257,257,0));
     }
 }

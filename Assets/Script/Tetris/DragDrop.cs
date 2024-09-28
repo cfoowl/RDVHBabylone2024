@@ -13,6 +13,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     private CanvasGroup canvasGroup;
     private GridManager gridManager;
     DragDrop[] neighbours;
+    private Transform originalParent;
     private void Awake() {
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
@@ -34,21 +35,20 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
 
     }
     private void Start() {
+        originalParent = transform.parent;
         transform.SetParent(canvas.transform);
     }
     public void OnPointerDown(PointerEventData eventData) {
-        Debug.Log("OnPointerDown");
     }
 
     public void OnBeginDrag(PointerEventData eventData) {
-        Debug.Log("OnBeginDrag");
+        originalParent.GetComponent<CanvasGroup>().alpha = .6f;
         foreach(DragDrop dragDrop in neighbours) {
             dragDrop.beginDrag(eventData);
         }
         beginDrag(eventData);
     }
     public void beginDrag(PointerEventData eventData) {
-        canvasGroup.alpha = .6f;
         canvasGroup.blocksRaycasts = false;
         if(transform.parent != canvas.transform) {
             transform.parent.GetComponent<Slot>().Free();
@@ -57,22 +57,21 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         }
     }
     public void OnDrag(PointerEventData eventData) {
-        Debug.Log("OnDrag");
         foreach(DragDrop dragDrop in neighbours) {
             dragDrop.drag(eventData);
         }
         drag(eventData);
+        originalParent.GetComponent<RectTransform>().anchoredPosition += eventData.delta / canvas.scaleFactor;
     }
     public void drag(PointerEventData eventData) {
         rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
     }
 
     public void OnEndDrag(PointerEventData eventData) {
-        Debug.Log("OnEndDrag");
         bool placeable = true;
         Slot[] overedSlots = new Slot[neighbours.Length + 1];
 
-        canvasGroup.alpha = 1f;
+        originalParent.GetComponent<CanvasGroup>().alpha = 1f;
         canvasGroup.blocksRaycasts = true;
         
         overedSlots[0] = gridManager.GetCell(rectTransform.anchoredPosition.x, rectTransform.anchoredPosition.y);
@@ -81,7 +80,6 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         }
         int index = 1;
         foreach(DragDrop dragDrop in neighbours) {
-            dragDrop.canvasGroup.alpha = 1f;
             dragDrop.canvasGroup.blocksRaycasts = true;
             
             overedSlots[index] = gridManager.GetCell(dragDrop.rectTransform.anchoredPosition.x, dragDrop.rectTransform.anchoredPosition.y);
@@ -91,7 +89,11 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
             index++;
         }
         if (placeable) {
+            Vector2 oldPos = transform.localPosition;
             overedSlots[0].Place(this);
+            Vector2 newPos = transform.parent.GetComponent<RectTransform>().anchoredPosition;
+            Vector2 delta = newPos - oldPos;
+            originalParent.GetComponent<RectTransform>().anchoredPosition += delta;
             GetComponent<Image>().color = Color.green;
             index = 1;
             foreach(DragDrop dragDrop in neighbours) {

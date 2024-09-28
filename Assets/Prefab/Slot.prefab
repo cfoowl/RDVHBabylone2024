@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: -7528223594039508425}
   - component: {fileID: 607093634754663013}
   - component: {fileID: 128575540685762924}
+  - component: {fileID: 2042470830337001808}
   m_Layer: 0
   m_Name: Slot
   m_TagString: Untagged
@@ -88,3 +89,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1b72c19b5943764f996bbba75e12f42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  row: 0
+  column: 0
+--- !u!225 &2042470830337001808
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8251582275123665441}
+  m_Enabled: 1
+  m_Alpha: 0.1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
