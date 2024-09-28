@@ -51,6 +51,7 @@ public class PortManager : MonoBehaviour
         }
     }
 
+    //Make Text appear letter by letter
     public IEnumerator DisplayText(string text)
     {
         _eventTextText.text = string.Empty;
@@ -66,26 +67,26 @@ public class PortManager : MonoBehaviour
     #region SpecialEvent
 
     //Check if there is a special event based on the port name
-    public void TriggerSpecialEvent(string portName)
+    public void TriggerSpecialEvent(ECityNames portName)
     {
         switch (portName)
         {
-            case "Blois":
+            case ECityNames.BLOIS:
                 EventBlois();
                 Debug.Log("Special Event Blois Triggered");
                 break;
 
-            case "Tours":
+            case ECityNames.TOURS:
                 EventTours();
                 Debug.Log("Special Event Tours Triggered");
                 break;
 
-            case "Angers":
+            case ECityNames.ANGERS:
                 EventAngers();
                 Debug.Log("Special Event Angers Triggered");
                 break;
 
-            case "Nantes":
+            case ECityNames.NANTES:
                 EventNantes();
                 Debug.Log("Special Event Nantes Triggered");
                 break;
