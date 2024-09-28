@@ -9,6 +9,9 @@ public class Slot : MonoBehaviour, IDropHandler
         Debug.Log("OnDropSlot");
         if (eventData.pointerDrag != null) {
             eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
+            GameObject draggedObject = eventData.pointerDrag;
+            draggedObject.transform.SetParent(transform);
+            draggedObject.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
         }
     }
 }
