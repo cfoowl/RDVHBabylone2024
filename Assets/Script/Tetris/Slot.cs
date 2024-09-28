@@ -7,6 +7,11 @@ public class Slot : MonoBehaviour, IDropHandler
 {
     public void OnDrop(PointerEventData eventData) {
         Debug.Log("OnDropSlot");
+        if (transform.childCount > 0)
+        {
+            Debug.Log("Slot déjà occupé !");
+            return;
+        }
         if (eventData.pointerDrag != null) {
             eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
             GameObject draggedObject = eventData.pointerDrag;
