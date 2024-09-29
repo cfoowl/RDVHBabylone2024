@@ -47,6 +47,7 @@ public class GameFlowManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             _port.StopAllCoroutines();
+            MerchandiseManager.instance.wipeMerchandise();
             MoveToNextPort();
         }
     }

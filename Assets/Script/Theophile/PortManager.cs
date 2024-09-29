@@ -77,6 +77,10 @@ public class PortManager : MonoBehaviour
             {
                 _continueButton.SetActive(true);
             }
+
+            SpawnMarchandises();
+
+
             Debug.Log("Data Loaded from " + _portEvent.name);
         }
     }
@@ -95,7 +99,14 @@ public class PortManager : MonoBehaviour
 
     private void SpawnMarchandises()
     {
-
+        switch(_portEvent.CityName){
+            case ECityNames.ORLEANS:
+                MerchandiseManager.instance.spawnMerchandise(EMarchandiseTypes.CEREALE);
+                MerchandiseManager.instance.spawnMerchandise(EMarchandiseTypes.CEREALE);
+                MerchandiseManager.instance.spawnMerchandise(EMarchandiseTypes.CEREALE);
+                MerchandiseManager.instance.spawnMerchandise(EMarchandiseTypes.RATION);
+                break;
+        }
     }
 
     public void ContinueButton()

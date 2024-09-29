@@ -9,7 +9,8 @@ public enum EMarchandiseTypes
     ARDOISE,
     BOIS,
     DENREE,
-    TUFFEAU
+    TUFFEAU,
+    RATION
 }
 
 public enum ECityNames
