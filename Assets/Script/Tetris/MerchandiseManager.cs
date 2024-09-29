@@ -7,10 +7,10 @@ public class MerchandiseManager : MonoBehaviour
     public static MerchandiseManager instance;
     // int a = 0;
     public GameObject[] merchandisePrefabs;
-    Vector2[] spawningPos = {new Vector2(43,-25), new Vector2(110, -25), new Vector2(43, -130), new Vector2(110, -130)};
+    Vector2[] spawningPos = {new Vector2(160,0), new Vector2(240, 0), new Vector2(160,-100), new Vector2(240, -100), new Vector2(160,-200), new Vector2(240, -200)};
     int merchandiseSpawned = 0;
     public void spawnMerchandise(EMarchandiseTypes type) {
-        if (merchandiseSpawned <= 4) {
+        if (merchandiseSpawned < 6) {
             GameObject newMerchandise = Instantiate(merchandisePrefabs[(int)type], transform.parent);
             newMerchandise.GetComponent<RectTransform>().anchoredPosition = spawningPos[merchandiseSpawned++];
         }
@@ -18,6 +18,7 @@ public class MerchandiseManager : MonoBehaviour
     }
 
     public void wipeMerchandise() {
+        merchandiseSpawned = 0;
         List<GameObject> remainingMerchandises = new List<GameObject>();
         foreach (Transform child in transform.parent) {
             if (child.name == "ItemUnit") {

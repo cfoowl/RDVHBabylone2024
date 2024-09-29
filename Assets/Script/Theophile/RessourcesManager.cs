@@ -97,7 +97,8 @@ public class RessourcesManager : MonoBehaviour
     //Event called when ther is not enough Money to pay Something
     public void OnNotEnoughMoneyEv()
     {
-        _onNotEnoughMoney();
+        // _onNotEnoughMoney();
+        return;
     }
     #endregion Money
 

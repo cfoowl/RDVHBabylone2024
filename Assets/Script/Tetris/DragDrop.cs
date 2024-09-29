@@ -49,8 +49,12 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         Slot slotParent = transform.parent.GetComponent<Slot>();
             if (slotParent != null) {
                 GridManager.instance.storedMerchandise.Remove(originalParent.GetComponent<Item>());
+                RessourcesManager.instance.AddMoney(20);
             }
         beginDrag(eventData);
+        int rand = Random.Range(0, SoundManager.instance.clic.Length);
+        SoundManager.instance.audioSource.clip = SoundManager.instance.clic[rand];
+        SoundManager.instance.audioSource.Play();
     }
     public void beginDrag(PointerEventData eventData) {
         canvasGroup.blocksRaycasts = false;
@@ -113,6 +117,10 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
                 overedSlots[index++].Place(dragDrop);
                 dragDrop.GetComponent<Image>().color = Color.green;
             }
+            RessourcesManager.instance.UseMoney(20);
+            int rand = Random.Range(0, SoundManager.instance.DragDrop.Length);
+            SoundManager.instance.audioSource.clip = SoundManager.instance.DragDrop[rand];
+            SoundManager.instance.audioSource.Play();
         }
 
    }
@@ -121,6 +129,6 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
             Destroy(dragDrop.gameObject);
         }
         Destroy(originalParent.gameObject);
-        Destroy(this.gameObject);
+        Destroy(gameObject);
     }
 }
