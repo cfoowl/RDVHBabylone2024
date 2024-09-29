@@ -21,6 +21,7 @@ public class PortManager : MonoBehaviour
     [SerializeField, TextArea(10, 9999)] private string _specialTextBlois = "";
     [SerializeField, TextArea(10, 9999)] private string _specialTextTours = "";
     [SerializeField, TextArea(10, 9999)] private string _specialTextAngers = "";
+    [SerializeField] private GameObject _victoryScreen = null;
     private GameFlowManager _gameFlowManager = null;
     
 
@@ -140,12 +141,17 @@ public class PortManager : MonoBehaviour
                 StartCoroutine(DisplayText(_specialTextTours));
                 _gameFlowManager.BloisSkip = false;
             }
+
             else
             {
                 StartCoroutine(DisplayText(_portEvent.EventTextPart2));
                 _continueButton.SetActive(false);
                 _nextPortButton.SetActive(true);
             }
+        }
+        else if (_portEvent.CityName == ECityNames.NANTES)
+        {
+            _victoryScreen.SetActive(true);
         }
     }
 
@@ -255,7 +261,7 @@ public class PortManager : MonoBehaviour
 
     private void EventNantes()
     {
-        //GameOverSequence
+        _continueButton.SetActive(true);
     }
 
     public void SpecialButton1()
@@ -267,10 +273,9 @@ public class PortManager : MonoBehaviour
         }
         else
         {
-            _ressourcesManager.AddMoney(80);
-            TriggerSpecialEvent(ECityNames.ANGERS);
+            _ressourcesManager.UseMoney(40);
             StopAllCoroutines();
-            StartCoroutine(DisplayText(_specialTextAngers));
+            StartCoroutine(DisplayText(_portEvent.EventTextPart2));
         }
         _specialChoiceButtons.SetActive(false);
         _nextPortButton.SetActive(true);
@@ -286,9 +291,10 @@ public class PortManager : MonoBehaviour
         }
         else
         {
-            _ressourcesManager.UseMoney(40);
+            _ressourcesManager.AddMoney(80);
+            TriggerSpecialEvent(ECityNames.ANGERS);
             StopAllCoroutines();
-            StartCoroutine(DisplayText(_portEvent.EventTextPart2));
+            StartCoroutine(DisplayText(_specialTextAngers));
         }
         _specialChoiceButtons.SetActive(false);
         _nextPortButton.SetActive(true);
