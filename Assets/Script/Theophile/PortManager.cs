@@ -98,10 +98,11 @@ public class PortManager : MonoBehaviour
 
     }
 
-    private void ContinueButton()
+    public void ContinueButton()
     {
         if (_portEvent.EventTextPart2 != "")
         {
+            StopAllCoroutines();
             StartCoroutine(DisplayText(_portEvent.EventTextPart2));
         }
     }
