@@ -721,7 +721,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 471608390}
   m_HandleRect: {fileID: 471608389}
   m_Direction: 0
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -1426,7 +1426,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 882532447}
   m_HandleRect: {fileID: 882532446}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -2630,6 +2630,7 @@ MonoBehaviour:
     vous co\xFBte 40 livres.\r\n\r\nVous devez discr\xE8tement r\xE9cup\xE9rer 4
     chargements de sel pour Ancenis. Pour ce faire, vous devez vendre tout votre
     chargement \xE0 perte. Cela vous rapportera 120 livres."
+  _victoryScreen: {fileID: 511155162}
 --- !u!1001 &1171868250
 PrefabInstance:
   m_ObjectHideFlags: 0

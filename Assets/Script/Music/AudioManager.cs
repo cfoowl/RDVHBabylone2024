@@ -42,10 +42,13 @@ public class AudioManager : MonoBehaviour
     }
 
     public void ChangBGM(int index) {
+        stopMusic();
+        musicSources[index].volume = masterVolume;
+    }
+    public void stopMusic() {
         for(int i = 0; i < musicSources.Count; i++) {
             musicSources[i].volume = 0;
         }
-        musicSources[index].volume = masterVolume;
     }
 
     // Update is called once per frame

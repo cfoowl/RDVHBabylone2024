@@ -152,6 +152,9 @@ public class PortManager : MonoBehaviour
         else if (_portEvent.CityName == ECityNames.NANTES)
         {
             _victoryScreen.SetActive(true);
+            AudioManager.instance.stopMusic();
+            SoundManager.instance.audioSource.clip = SoundManager.instance.victory;
+            SoundManager.instance.audioSource.Play();
         }
     }
 
