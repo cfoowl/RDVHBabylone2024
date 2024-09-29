@@ -51,7 +51,10 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     public void beginDrag(PointerEventData eventData) {
         canvasGroup.blocksRaycasts = false;
         if(transform.parent != canvas.transform) {
-            transform.parent.GetComponent<Slot>().Free();
+            Slot slotParent = transform.parent.GetComponent<Slot>();
+            if (slotParent != null) {
+                slotParent.Free();
+            }
             transform.SetParent(canvas.transform);
             GetComponent<Image>().color = Color.red;
         }
