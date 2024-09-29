@@ -38,17 +38,17 @@ public class MerchandiseManager : MonoBehaviour
     }
 
 
-    // void Start() {
-    //     spawnMerchandise(EMarchandiseTypes.CEREALE);
-    //     spawnMerchandise(EMarchandiseTypes.BOIS);
-    //     spawnMerchandise(EMarchandiseTypes.ARDOISE);
-    //     spawnMerchandise(EMarchandiseTypes.CEREALE);
-    // }
-    // void Update() {
-    //     if (a++ == 500) {
-    //         sellMerchandise(EMarchandiseTypes.CEREALE);
-    //     } else if (a < 500) {
-    //         Debug.Log(a);
-    //     }
-    // }
+    void Start() {
+        spawnMerchandise(EMarchandiseTypes.CEREALE);
+        spawnMerchandise(EMarchandiseTypes.BOIS);
+        spawnMerchandise(EMarchandiseTypes.ARDOISE);
+        spawnMerchandise(EMarchandiseTypes.CEREALE);
+    }
+    void Update() {
+        if (a++ == 500) {
+            sellMerchandise(EMarchandiseTypes.CEREALE);
+        } else if (a < 500) {
+            Debug.Log(a);
+        }
+    }
 }
