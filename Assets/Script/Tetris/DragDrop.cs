@@ -110,6 +110,12 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
             }
         }
 
-
    }
+   public void Delete() {
+        foreach(DragDrop dragDrop in neighbours) {
+            Destroy(dragDrop.gameObject);
+        }
+        Destroy(originalParent.gameObject);
+        Destroy(this.gameObject);
+    }
 }

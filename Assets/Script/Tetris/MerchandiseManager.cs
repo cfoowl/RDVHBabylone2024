@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MerchandiseManager : MonoBehaviour
 {
+    int a = 0;
     public GameObject[] merchandisePrefabs;
     Vector2[] spawningPos = {new Vector2(43,-25), new Vector2(110, -25), new Vector2(43, -130), new Vector2(110, -130)};
     int merchandiseSpawned = 0;
@@ -15,11 +16,28 @@ public class MerchandiseManager : MonoBehaviour
         return;
     }
 
-
-    void Start() {
-        // spawnMerchandise(EMarchandiseTypes.CEREALE);
-        // spawnMerchandise(EMarchandiseTypes.BOIS);
-        // spawnMerchandise(EMarchandiseTypes.ARDOISE);
-        // spawnMerchandise(EMarchandiseTypes.CEREALE);
+    void wipeMerchandise() {
+        List<GameObject> remainingMerchandises = new List<GameObject>();
+        foreach (Transform child in transform.parent) {
+            if (child.name == "ItemUnit") {
+                remainingMerchandises.Add(child.gameObject);
+            }
+        }
+        foreach (GameObject child in remainingMerchandises) {
+            child.GetComponent<DragDrop>().Delete();
+        }
     }
+
+
+    // void Start() {
+    //     spawnMerchandise(EMarchandiseTypes.CEREALE);
+    //     spawnMerchandise(EMarchandiseTypes.BOIS);
+    //     spawnMerchandise(EMarchandiseTypes.ARDOISE);
+    //     spawnMerchandise(EMarchandiseTypes.CEREALE);
+    // }
+    // void Update() {
+    //     if (a++ == 500) {
+    //         wipeMerchandise();
+    //     }
+    // }
 }
