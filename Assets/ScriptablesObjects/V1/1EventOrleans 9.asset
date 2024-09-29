@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60c8d53b7c5f6bf44be911818b78132e, type: 3}
+  m_Name: 1EventOrleans 9
+  m_EditorClassIdentifier: 
+  _cityName: 1
+  _eventName: "D\xE9part d'Orl\xE9ans"
+  _eventText: "A l\u2019aube, nous partons, mon \xE9quipage et moi, de la belle Orl\xE9ans.\r\nSur
+    notre chaland, notre bateau fluvial, nous descendrons la Loire jusqu\u2019\xE0
+    Nantes pour transporter diverses marchandises aux riches n\xE9gociants des bourgs
+    travers\xE9s. Il va falloir \xEAtre ing\xE9nieux en commerce pour satisfaire
+    nos clients et amasser des b\xE9n\xE9fices ! \r\n\r\nVotre solde de d\xE9part
+    est de 200 livres."
+  _eventTextPart2: "Les quais d\u2019Orl\xE9ans regorgent de monde, de chargement
+    d\u2019\xE9pices, de tabac, d\u2019ancres, de bois et bien d\u2019autres denr\xE9es.
+    Au bord des quais, les bateaux vont et viennent, emplis de richesses. Il est
+    difficile de sortir du port, comme d\u2019y rentrer ! Notre voyage commence sur
+    les flots scintillants du fleuve. Nous devons chercher les marchandises \xE0
+    mener \xE0 bon port pour les marchands de Blois, Amboise et Angers.  \r\nPour
+    r\xE9cup\xE9rer les marchandises sur le quai et les placer dans ton chaland,
+    tu dois les \u201Cglisser-d\xE9poser\u201D dans l\u2019inventaire en maintenant
+    le clic gauche de la souris enfonc\xE9e. Tu peux tourner les objets gr\xE2ce
+    \xE0 la molette de la souris ou via les touches directionnelles. A toi de jouer
+    !\r\n\r\nVous devez r\xE9cup\xE9rer un chargement de xxx pour Blois, un chargement
+    de xxx pour Amboise et un chargement de xxx pour Angers. Cela vous co\xFBtera
+    60 livres.\r\nVous devez r\xE9cup\xE9rer 2 rations de nourriture pour votre \xE9quipage
+    (sans ration, celui-ci ne peut plus travailler, votre chaland ne peut plus voyager).
+    Cela vous co\xFBtera 20 livres.\r\n\r\nVous poss\xE9dez d\xE9sormais 120 livres.\r"
+  _button1Text: 
+  _button2Text: 
+  _eventImage: {fileID: 0}
+  _eventMarchandisesGained: 
+  _eventMarchandisesRemoved: 
+  _eventAudioSource: {fileID: 0}

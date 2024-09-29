@@ -614,7 +614,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 471608390}
   m_HandleRect: {fileID: 471608389}
   m_Direction: 0
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -764,6 +764,7 @@ RectTransform:
   - {fileID: 1453225018}
   - {fileID: 1092587082}
   - {fileID: 174926098}
+  - {fileID: 830090961}
   - {fileID: 1941413421}
   m_Father: {fileID: 2041277463}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1094,7 +1095,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 882532447}
   m_HandleRect: {fileID: 882532446}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -1189,6 +1190,41 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7016215476834193302, guid: 4324a04aaaee0ff458d713a615cb3c33, type: 3}
   m_PrefabInstance: {fileID: 1493740609}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &830090960
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 830090961}
+  m_Layer: 5
+  m_Name: ContinueButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &830090961
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 830090960}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 434327513}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 259.99997, y: -172.36}
+  m_SizeDelta: {x: 200, y: 71.273}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &882532445
 GameObject:
   m_ObjectHideFlags: 0
@@ -1863,6 +1899,11 @@ MonoBehaviour:
   _eventNameText: {fileID: 1092587083}
   _eventTextText: {fileID: 1765116820}
   _eventImageImage: {fileID: 1653658782}
+  _ressourcesManager: {fileID: 0}
+  _continueButton: {fileID: 0}
+  _specialChoiceButtons: {fileID: 0}
+  _specialButton1Text: {fileID: 0}
+  _specialButton2Text: {fileID: 0}
 --- !u!224 &1212573903 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7016215476834193302, guid: 3fee0d99cbb33ad4193d221f3e7f6506, type: 3}
@@ -2578,11 +2619,31 @@ MonoBehaviour:
   _port: {fileID: 1144519749}
   _ressources: {fileID: 1744348994}
   _events:
-  - {fileID: 11400000, guid: 2125083f37081af42a1a8daf7b65834a, type: 2}
-  - {fileID: 11400000, guid: 9adb50cbd2bf05247bb927f1bb6db26e, type: 2}
-  - {fileID: 11400000, guid: 7d8eb98512edf1d469d23e0b82871d31, type: 2}
+  - {fileID: 11400000, guid: 532d7c3c898d33041b7c4240940c0ff6, type: 2}
+  - {fileID: 11400000, guid: 6598b3a728ce60f4a9b97191df47fdc3, type: 2}
+  - {fileID: 11400000, guid: 557e30d35b3e6da4385190696707aea1, type: 2}
+  - {fileID: 11400000, guid: 66669e0b331bd9a4683c2a2c11cad553, type: 2}
+  - {fileID: 11400000, guid: c59c1792513c7104e88ee09b35f0a5f6, type: 2}
+  - {fileID: 11400000, guid: cbca20aaf07042241aea25b4c42c4b80, type: 2}
+  - {fileID: 11400000, guid: 05382b657cd3ed641a5e30c5dea9f1c8, type: 2}
+  - {fileID: 11400000, guid: fb18b1306e8c7b649a5b868110de20e3, type: 2}
+  - {fileID: 11400000, guid: fca0a5130ae495a43b24b5db9da82b7f, type: 2}
+  - {fileID: 11400000, guid: 3de72cfad87f4094b957862abe771a2d, type: 2}
+  _contrebandEvents:
+  - {fileID: 11400000, guid: 532d7c3c898d33041b7c4240940c0ff6, type: 2}
+  - {fileID: 11400000, guid: 6598b3a728ce60f4a9b97191df47fdc3, type: 2}
+  - {fileID: 11400000, guid: 557e30d35b3e6da4385190696707aea1, type: 2}
+  - {fileID: 11400000, guid: 66669e0b331bd9a4683c2a2c11cad553, type: 2}
+  - {fileID: 11400000, guid: c59c1792513c7104e88ee09b35f0a5f6, type: 2}
+  - {fileID: 11400000, guid: cbca20aaf07042241aea25b4c42c4b80, type: 2}
+  - {fileID: 11400000, guid: 05382b657cd3ed641a5e30c5dea9f1c8, type: 2}
+  - {fileID: 11400000, guid: 90df1356c061e7d4ab80287cc724131c, type: 2}
+  - {fileID: 11400000, guid: 56a84e3487cefeb438ce0ce43842bc77, type: 2}
+  - {fileID: 11400000, guid: 516520fbb6949e143baf74d100bab144, type: 2}
   _transitionScreen: {fileID: 41694821}
   _transitionAnim: {fileID: 41694823}
+  _rationPopUp: {fileID: 0}
+  _lostMarchandisePopUp: {fileID: 0}
 --- !u!4 &1545195079
 Transform:
   m_ObjectHideFlags: 0

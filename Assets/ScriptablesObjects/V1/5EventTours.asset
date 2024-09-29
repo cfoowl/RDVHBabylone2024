@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60c8d53b7c5f6bf44be911818b78132e, type: 3}
+  m_Name: 5EventTours
+  m_EditorClassIdentifier: 
+  _cityName: 5
+  _eventName: 
+  _eventText: "Tours a gard\xE9 sa prestance d\u2019autrefois, lorsque les rois en
+    avaient fait leur capitale. La ville est riche et le port est tr\xE8s encombr\xE9.
+    Les chalands se croisent p\xEAle-m\xEAle, ci et l\xE0, sur le fleuve. En voulant
+    \xE9viter un b\xE2teau qui manoeuvrait \xE0 b\xE2bord, paf ! Sacrebleu, une \xE9norme
+    barque nous a emboutis ! Voil\xE0 ce qui arrive lorsque des p\xEAcheurs s\u2019improvisent
+    mariniers ! Que la peste soit avec ces faquins ! Par chance, notre chargement
+    de marchandises est intact, mais notre chaland est bien ab\xEEm\xE9... Il va
+    falloir le r\xE9parer pour continuer notre voyage, mais \xE7a, \xE7a couste du
+    temps et de l\u2019argent ! \r\n\r\n\nVous devez payer 200 livres pour restaurer
+    votre chaland.\r\n"
+  _eventTextPart2: "Le chaland a bien \xE9t\xE9 rafistol\xE9 ! Il est tant de commercer
+    ! Nous devons vendre les marchandises originaires de Blois et r\xE9cup\xE9rer
+    celles pour des marchands de Saumur et de Chalonnes.\r\n\r\nLe p\xE9age du port
+    de Tours vous co\xFBte 20 livres.\r\n\r\nVous devez r\xE9cup\xE9rer un chargement
+    de xxx pour Saumur et un chargement de xxx pour Chalonnes. Cela vous co\xFBtera
+    40 livres.\r\nVous pouvez vendre un chargement de xxx et un chargement de xxx
+    en provenance de Blois. Cela vous rapportera 160 livres.\r\n"
+  _button1Text: 
+  _button2Text: 
+  _eventImage: {fileID: 0}
+  _eventMarchandisesGained: 
+  _eventMarchandisesRemoved: 
+  _eventAudioSource: {fileID: 0}
