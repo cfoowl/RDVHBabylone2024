@@ -17,14 +17,13 @@ MonoBehaviour:
   _eventText: "Saumur est bien vide depuis que notre bon roi a r\xE9voqu\xE9 l\u2019\xE9dit
     de Nantes, mais les chalands de passage sont nombreux et le commerce fluvial
     suit son cours. Nous devons vendre nos marchandises et r\xE9cup\xE9rer le chargement
-    pour Nantes !\r\n\r\nVous devez r\xE9cup\xE9rer un chargement de xxx pour Nantes.
-    Cela vous co\xFBtera 20 livres.\r\nVous pouvez vendre un chargement de xxx en
-    provenance de Beaugency et un chargement de xxx en provenance de Tours. Cela
-    vous rapportera 160 livres.\r\n"
+    pour Nantes !\r\n\r\nVous devez r\xE9cup\xE9rer 1 chargement d\u2019ardoises
+    pour Nantes. Vous pouvez vendre 1 chargement de caf\xE9 en provenance de Beaugency
+    et 1 chargement de planches en provenance de Tours. \r"
   _eventTextPart2: 
   _button1Text: 
   _button2Text: 
-  _eventImage: {fileID: 0}
-  _eventMarchandisesGained: 
-  _eventMarchandisesRemoved: 
+  _eventImage: {fileID: 21300000, guid: 77f3f0cdd2ad2b147be73d6c23d51042, type: 3}
+  _eventMarchandisesGained: 04000000
+  _eventMarchandisesRemoved: 0500000006000000
   _eventAudioSource: {fileID: 0}

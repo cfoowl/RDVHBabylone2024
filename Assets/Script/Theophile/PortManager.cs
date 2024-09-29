@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,9 +15,13 @@ public class PortManager : MonoBehaviour
     [SerializeField] private Image _eventImageImage = null;
     [SerializeField] private RessourcesManager _ressourcesManager = null;
     [SerializeField] private GameObject _continueButton = null;
+    [SerializeField] private GameObject _nextPortButton = null;
     [SerializeField] private GameObject _specialChoiceButtons = null;
     [SerializeField] private TextMeshProUGUI _specialButton1Text = null;
     [SerializeField] private TextMeshProUGUI _specialButton2Text = null;
+    [SerializeField, TextArea(10, 9999)] private string _specialTextBlois = "";
+    [SerializeField, TextArea(10, 9999)] private string _specialTextTours = "";
+    [SerializeField, TextArea(10, 9999)] private string _specialTextAngers = "";
     private GameFlowManager _gameFlowManager = null;
     
 
@@ -73,9 +78,25 @@ public class PortManager : MonoBehaviour
                 _specialButton1Text.text = _portEvent.Button1Text;
                 _specialButton2Text.text = _portEvent.Button2Text;
             }
+            else if(_portEvent.CityName == ECityNames.TOURS)
+            {
+                TriggerSpecialEvent(ECityNames.TOURS);
+                _continueButton.SetActive(true);
+            }
+            else if (_portEvent.CityName == ECityNames.NANTES)
+            {
+                TriggerSpecialEvent(ECityNames.NANTES);
+            }
             else
             {
-                _continueButton.SetActive(true);
+                if (_portEvent.EventTextPart2 != "")
+                {
+                    _continueButton.SetActive(true);
+                }
+                else
+                {
+                    _nextPortButton.SetActive(true);
+                }
             }
 
             SpawnMarchandises();
@@ -115,9 +136,28 @@ public class PortManager : MonoBehaviour
         if (_portEvent.EventTextPart2 != "")
         {
             StopAllCoroutines();
-            StartCoroutine(DisplayText(_portEvent.EventTextPart2));
+            if (_portEvent.CityName == ECityNames.TOURS && _gameFlowManager.BloisSkip == true)
+            {
+                StartCoroutine(DisplayText(_specialTextTours));
+                _gameFlowManager.BloisSkip = false;
+            }
+            else
+            {
+                StartCoroutine(DisplayText(_portEvent.EventTextPart2));
+                _continueButton.SetActive(false);
+                _nextPortButton.SetActive(true);
+            }
         }
     }
+
+    public void GoToNextPortButton()
+    {
+        StopAllCoroutines();
+        MerchandiseManager.instance.wipeMerchandise();
+        _gameFlowManager.MoveToNextPort();
+        _nextPortButton.SetActive(false);
+    }
+
 
     #region SpecialEvent
 
@@ -191,25 +231,68 @@ public class PortManager : MonoBehaviour
     //Event that triggers when arriving at Blois' Port
     private void EventBlois()
     {
-
+        _gameFlowManager.CurrentEvent++;
+        _gameFlowManager.BloisSkip = true;
+        MerchandiseManager.instance.wipeMerchandise();
     }
 
     //Event that triggers when arriving at Tours' Port
     private void EventTours()
     {
-        _ressourcesManager.UseMoney(200);
-        SpawnMarchandises();
+        _ressourcesManager.UseMoney(220);
+        if(_gameFlowManager.BloisSkip == true)
+        {
+            _ressourcesManager.AddMoney(50);
+        }
     }
 
     //Event that triggers when arriving at Angers' Port
     private void EventAngers()
     {
-
+        _gameFlowManager.Contreband = true;
+        MerchandiseManager.instance.wipeMerchandise();
+        MerchandiseManager.instance.spawnMerchandise(EMarchandiseTypes.SEL);
     }
 
     private void EventNantes()
     {
+        //GameOverSequence
+    }
 
+    public void SpecialButton1()
+    {
+        if (_portEvent.CityName == ECityNames.BLOIS)
+        {
+            StopAllCoroutines();
+            StartCoroutine(DisplayText(_portEvent.EventTextPart2));
+        }
+        else
+        {
+            _ressourcesManager.AddMoney(80);
+            TriggerSpecialEvent(ECityNames.ANGERS);
+            StopAllCoroutines();
+            StartCoroutine(DisplayText(_specialTextAngers));
+        }
+        _specialChoiceButtons.SetActive(false);
+        _nextPortButton.SetActive(true);
+    }
+
+    public void SpecialButton2()
+    {
+        if (_portEvent.CityName == ECityNames.BLOIS)
+        {
+            TriggerSpecialEvent(ECityNames.BLOIS);
+            StopAllCoroutines();
+            StartCoroutine(DisplayText(_specialTextBlois));
+        }
+        else
+        {
+            _ressourcesManager.UseMoney(40);
+            StopAllCoroutines();
+            StartCoroutine(DisplayText(_portEvent.EventTextPart2));
+        }
+        _specialChoiceButtons.SetActive(false);
+        _nextPortButton.SetActive(true);
     }
 
     #endregion SpecialEvent
