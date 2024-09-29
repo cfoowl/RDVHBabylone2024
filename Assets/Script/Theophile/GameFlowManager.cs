@@ -13,10 +13,11 @@ public class GameFlowManager : MonoBehaviour
     [SerializeField] private EventDatas[] _contrebandEvents = new EventDatas[0];
     [SerializeField] private GameObject _transitionScreen = null;
     [SerializeField] private Animator _transitionAnim = null;
-    [SerializeField] private GameObject _rationPopUp = null;
-    [SerializeField] private GameObject _lostMarchandisePopUp = null;
+    //[SerializeField] private GameObject _rationPopUp = null;
+    //[SerializeField] private GameObject _lostMarchandisePopUp = null;
     private bool _contreband = false;
     private int _currentEvent = 0;
+    private bool _bloisSkip = false;
 
     #endregion Fields
 
@@ -33,6 +34,31 @@ public class GameFlowManager : MonoBehaviour
         }
     }
 
+    public bool BloisSkip
+    {
+        get
+        {
+            return _bloisSkip;
+        }
+
+        set
+        {
+            _bloisSkip = value;
+        }
+    }
+
+    public int CurrentEvent
+    {
+        get
+        {
+            return _currentEvent;
+        }
+        set
+        {
+            _currentEvent = value;
+        }
+    }
+
     #region Methods
 
 
@@ -44,12 +70,7 @@ public class GameFlowManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            _port.StopAllCoroutines();
-            MerchandiseManager.instance.wipeMerchandise();
-            MoveToNextPort();
-        }
+
     }
     private void ReinitializeGame()
     {
@@ -87,22 +108,13 @@ public class GameFlowManager : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         _transitionScreen.SetActive(false);
     }
+
+    public void QuitGameButton()
+    {
+        Application.Quit();
+    }
     #endregion Methods
 
-    public void GoToNextPortButton()
-    {
-        /*
-        if (rationcale > 0)
-        {
-            rationcale--;
-            MoveToNextPort();
-        }
-        else
-        {
-            spawn _rationpopup
-        }
-        */
-    }
 
 
 }

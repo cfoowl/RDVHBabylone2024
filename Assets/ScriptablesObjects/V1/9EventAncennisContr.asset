@@ -14,16 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cityName: 9
   _eventName: 
-  _eventText: "Nous arrivons \xE0 Ancenis, un petit port assez sommaire\u2026 Vous
-    avez r\xE9ussi \xE0 transporter le sel de contrebande sans \xEAtre emb\xEAt\xE9
-    par les autorit\xE9s !\r\n\r\nVous devez livrer xxx chargement de sel de contrebande.
-    Cela vous rapportera 300 livres.\r\nVous devez r\xE9cup\xE9rer un chargement
-    de xxx, un chargement de xxx et un chargement de xxx pour Nantes. Cela vous co\xFBtera
-    60 livres."
+  _eventText: "Nous arrivons \xE0 Ancenis, un petit port assez sommaire\u2026 Et
+    nous avons r\xE9ussi \xE0 transporter le sel de contrebande sans \xEAtre emb\xEAt\xE9s
+    par les autorit\xE9s ! Nous avons eu beaucoup de chance !\r\n\r\nVous devez livrer
+    les 4 chargements de sel de contrebande. Cela vous rapportera 320 livres.\r\nVous
+    devez r\xE9cup\xE9rer 2 chargements de chaux, 2 chargements de vins et 1 chargement
+    de caf\xE9 pour Nantes. "
   _eventTextPart2: 
   _button1Text: 
   _button2Text: 
-  _eventImage: {fileID: 0}
-  _eventMarchandisesGained: 
-  _eventMarchandisesRemoved: 
+  _eventImage: {fileID: 21300000, guid: 77f3f0cdd2ad2b147be73d6c23d51042, type: 3}
+  _eventMarchandisesGained: 0200000002000000030000000300000006000000
+  _eventMarchandisesRemoved: 09000000090000000900000009000000
   _eventAudioSource: {fileID: 0}

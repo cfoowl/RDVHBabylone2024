@@ -18,13 +18,12 @@ MonoBehaviour:
     nomm\xE9 L\xE9onard de Vinci. Sinon, depuis la rive, on peut voir le majestueux
     ch\xE2teau des rois de jadis. Ici, je peux vendre le chargement provenant d\u2019Orl\xE9ans
     et r\xE9cup\xE9rer ceux destin\xE9s \xE0 Angers et Ancenis.\r\n\r\nVous devez
-    r\xE9cup\xE9rer un chargement de xxx pour Angers et un chargement de xxx pour
-    Ancenis. Cela vous co\xFBtera 40 livres.\r\nVous pouvez vendre un chargement
-    de xxx provenant d\u2019Orl\xE9ans.Cela vous rapportera 80 livres.\r\n"
+    r\xE9cup\xE9rer 1 chargement de vin pour Angers et 1 chargement de c\xE9r\xE9ales
+    pour Ancenis. Vous pouvez vendre 1 chargement de chaux provenant d\u2019Orl\xE9ans.\r"
   _eventTextPart2: 
   _button1Text: 
   _button2Text: 
-  _eventImage: {fileID: 0}
-  _eventMarchandisesGained: 
-  _eventMarchandisesRemoved: 
+  _eventImage: {fileID: 21300000, guid: 77f3f0cdd2ad2b147be73d6c23d51042, type: 3}
+  _eventMarchandisesGained: 0300000001000000
+  _eventMarchandisesRemoved: 02000000
   _eventAudioSource: {fileID: 0}

@@ -22,8 +22,8 @@ MonoBehaviour:
     mariniers ! Que la peste soit avec ces faquins ! Par chance, notre chargement
     de marchandises est intact, mais notre chaland est bien ab\xEEm\xE9... Il va
     falloir le r\xE9parer pour continuer notre voyage, mais \xE7a, \xE7a couste du
-    temps et de l\u2019argent ! \r\n\r\n\nVous devez payer 200 livres pour restaurer
-    votre chaland.\r\n"
+    temps et de l\u2019argent ! \r\n\r\n\r\nVous devez payer 200 livres pour restaurer
+    votre chaland."
   _eventTextPart2: "Le chaland a bien \xE9t\xE9 rafistol\xE9 ! Il est tant de commercer
     ! Nous devons vendre les marchandises originaires de Blois et r\xE9cup\xE9rer
     celles pour des marchands de Saumur et de Chalonnes.\r\n\r\nLe p\xE9age du port
@@ -33,7 +33,7 @@ MonoBehaviour:
     en provenance de Blois. Cela vous rapportera 160 livres.\r\n"
   _button1Text: 
   _button2Text: 
-  _eventImage: {fileID: 0}
-  _eventMarchandisesGained: 
-  _eventMarchandisesRemoved: 
+  _eventImage: {fileID: 21300000, guid: 662cf7915c01847439eeb04a5e167ba3, type: 3}
+  _eventMarchandisesGained: 0500000002000000
+  _eventMarchandisesRemoved: 050000000500000003000000030000000400000004000000
   _eventAudioSource: {fileID: 0}
