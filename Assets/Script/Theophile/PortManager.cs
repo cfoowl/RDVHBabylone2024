@@ -12,6 +12,13 @@ public class PortManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _eventNameText = null;
     [SerializeField] private TextMeshProUGUI _eventTextText = null;
     [SerializeField] private Image _eventImageImage = null;
+    [SerializeField] private RessourcesManager _ressourcesManager = null;
+    [SerializeField] private GameObject _continueButton = null;
+    [SerializeField] private GameObject _specialChoiceButtons = null;
+    [SerializeField] private TextMeshProUGUI _specialButton1Text = null;
+    [SerializeField] private TextMeshProUGUI _specialButton2Text = null;
+    private GameFlowManager _gameFlowManager = null;
+    
 
     #endregion Fields
 
@@ -27,6 +34,19 @@ public class PortManager : MonoBehaviour
         set
         {
             _portEvent = value;
+        }
+    }
+
+    public GameFlowManager GameFlowManager
+    {
+        get
+        {
+            return _gameFlowManager;
+        }
+
+        set
+        {
+            _gameFlowManager = value;
         }
     }
 
@@ -47,6 +67,20 @@ public class PortManager : MonoBehaviour
             _eventImageImage.sprite = _portEvent.EventImage;
             _eventNameText.text = _portEvent.EventName;
             StartCoroutine(DisplayText(_portEvent.EventText));
+            if(_portEvent.CityName == ECityNames.BLOIS || _portEvent.CityName == ECityNames.ANGERS)
+            {
+                _specialChoiceButtons.SetActive(true);
+                _specialButton1Text.text = _portEvent.Button1Text;
+                _specialButton2Text.text = _portEvent.Button2Text;
+            }
+            else
+            {
+                _continueButton.SetActive(true);
+            }
+
+            SpawnMarchandises();
+
+
             Debug.Log("Data Loaded from " + _portEvent.name);
         }
     }
@@ -63,6 +97,26 @@ public class PortManager : MonoBehaviour
         yield return null;
     }
 
+    private void SpawnMarchandises()
+    {
+        switch(_portEvent.CityName){
+            case ECityNames.ORLEANS:
+                MerchandiseManager.instance.spawnMerchandise(EMarchandiseTypes.CEREALE);
+                MerchandiseManager.instance.spawnMerchandise(EMarchandiseTypes.CEREALE);
+                MerchandiseManager.instance.spawnMerchandise(EMarchandiseTypes.CEREALE);
+                MerchandiseManager.instance.spawnMerchandise(EMarchandiseTypes.RATION);
+                break;
+        }
+    }
+
+    public void ContinueButton()
+    {
+        if (_portEvent.EventTextPart2 != "")
+        {
+            StopAllCoroutines();
+            StartCoroutine(DisplayText(_portEvent.EventTextPart2));
+        }
+    }
 
     #region SpecialEvent
 
@@ -91,8 +145,10 @@ public class PortManager : MonoBehaviour
                 Debug.Log("Special Event Nantes Triggered");
                 break;
 
+
             default:
                 Debug.Log("No Special Event in this Port");
+                SpawnMarchandises();
                 break;
         }
     }
@@ -106,7 +162,8 @@ public class PortManager : MonoBehaviour
     //Event that triggers when arriving at Tours' Port
     private void EventTours()
     {
-
+        _ressourcesManager.UseMoney(200);
+        SpawnMarchandises();
     }
 
     //Event that triggers when arriving at Angers' Port

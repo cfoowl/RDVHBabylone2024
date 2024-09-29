@@ -15,7 +15,7 @@ public class Item : MonoBehaviour
     public void Delete() {
         GridManager.instance.storedMerchandise.Remove(this);;
         foreach(GameObject child in itemUnits) {
-            Slot slotParent = child.GetComponent<Slot>();
+            Slot slotParent = child.transform.parent.GetComponent<Slot>();
             if (slotParent != null) {
                 slotParent.Free();
             }
