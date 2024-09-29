@@ -46,6 +46,10 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         foreach(DragDrop dragDrop in neighbours) {
             dragDrop.beginDrag(eventData);
         }
+        Slot slotParent = transform.parent.GetComponent<Slot>();
+            if (slotParent != null) {
+                GridManager.instance.storedMerchandise.Remove(originalParent.GetComponent<Item>());
+            }
         beginDrag(eventData);
     }
     public void beginDrag(PointerEventData eventData) {
@@ -92,6 +96,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
             index++;
         }
         if (placeable) {
+            GridManager.instance.storedMerchandise.Add(originalParent.GetComponent<Item>());
             Vector2 oldPos = transform.localPosition;
             
             overedSlots[0].Place(this);

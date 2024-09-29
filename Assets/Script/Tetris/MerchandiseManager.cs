@@ -28,6 +28,15 @@ public class MerchandiseManager : MonoBehaviour
         }
     }
 
+    void sellMerchandise(EMarchandiseTypes type) {
+        foreach(Item item in GridManager.instance.storedMerchandise) {
+            if (item.type == type) {
+                item.Delete();
+                return;
+            }
+        }
+    }
+
 
     // void Start() {
     //     spawnMerchandise(EMarchandiseTypes.CEREALE);
@@ -37,7 +46,9 @@ public class MerchandiseManager : MonoBehaviour
     // }
     // void Update() {
     //     if (a++ == 500) {
-    //         wipeMerchandise();
+    //         sellMerchandise(EMarchandiseTypes.CEREALE);
+    //     } else if (a < 500) {
+    //         Debug.Log(a);
     //     }
     // }
 }
