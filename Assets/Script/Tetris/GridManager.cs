@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GridManager : MonoBehaviour
 {
+    public static GridManager instance { get; private set;}
+    public List<Item> storedMerchandise = new List<Item>();
     private RectTransform rectTransform;
     public int columns;
     public int rows;
@@ -21,6 +23,9 @@ public class GridManager : MonoBehaviour
     public float width;
     public float height;
 
+    void Awake() {
+        instance = this;
+    }
     void Start () {
         rectTransform = GetComponent<RectTransform>();
 

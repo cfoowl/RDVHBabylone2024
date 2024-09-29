@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 643992059284421371}
   - component: {fileID: 5389368094090172301}
   - component: {fileID: 4474266137226905066}
+  - component: {fileID: 4354784746055143770}
   m_Layer: 0
   m_Name: Vin
   m_TagString: Untagged
@@ -92,6 +93,19 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &4354784746055143770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2361447852062420132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1025129d0d980664cbd260656aa90d35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 3
 --- !u!1001 &2242660199947922130
 PrefabInstance:
   m_ObjectHideFlags: 0

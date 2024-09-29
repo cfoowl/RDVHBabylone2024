@@ -1,0 +1,26 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Item : MonoBehaviour
+{
+    public EMarchandiseTypes type;
+    List<GameObject> itemUnits = new List<GameObject>();
+    void Start()  {
+        foreach (Transform child in transform) {
+            itemUnits.Add(child.gameObject);
+        }
+    }
+
+    public void Delete() {
+        GridManager.instance.storedMerchandise.Remove(this);;
+        foreach(GameObject child in itemUnits) {
+            Slot slotParent = child.GetComponent<Slot>();
+            if (slotParent != null) {
+                slotParent.Free();
+            }
+            Destroy(child.gameObject);
+        }
+        Destroy(this.gameObject);
+    }
+}
