@@ -79,7 +79,7 @@ public class PortManager : MonoBehaviour
             }
 
             SpawnMarchandises();
-
+            VenteMarchandises();
 
             Debug.Log("Data Loaded from " + _portEvent.name);
         }
@@ -99,13 +99,13 @@ public class PortManager : MonoBehaviour
 
     private void SpawnMarchandises()
     {
-        switch(_portEvent.CityName){
-            case ECityNames.ORLEANS:
-                MerchandiseManager.instance.spawnMerchandise(EMarchandiseTypes.CEREALE);
-                MerchandiseManager.instance.spawnMerchandise(EMarchandiseTypes.CEREALE);
-                MerchandiseManager.instance.spawnMerchandise(EMarchandiseTypes.CEREALE);
-                MerchandiseManager.instance.spawnMerchandise(EMarchandiseTypes.RATION);
-                break;
+        foreach(EMarchandiseTypes type in _portEvent.EventMarchandisesGained) {
+            MerchandiseManager.instance.spawnMerchandise(type);
+        } 
+    }
+    private void VenteMarchandises() {
+        foreach(EMarchandiseTypes type in _portEvent.EventMarchandisesRemoved) {
+            MerchandiseManager.instance.sellMerchandise(type);
         }
     }
 
