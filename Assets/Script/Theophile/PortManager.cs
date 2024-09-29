@@ -80,6 +80,7 @@ public class PortManager : MonoBehaviour
 
             SpawnMarchandises();
             VenteMarchandises();
+            changeBGMusic(_portEvent.CityName);
 
             Debug.Log("Data Loaded from " + _portEvent.name);
         }
@@ -149,6 +150,40 @@ public class PortManager : MonoBehaviour
             default:
                 Debug.Log("No Special Event in this Port");
                 SpawnMarchandises();
+                break;
+        }
+    }
+    public void changeBGMusic(ECityNames portName) {
+        switch (portName) {
+            case ECityNames.ORLEANS:
+                AudioManager.instance.ChangBGM(5);
+                break;
+            case ECityNames.BEAUGENCY:
+                AudioManager.instance.ChangBGM(3);
+                break;
+            case ECityNames.BLOIS:
+                AudioManager.instance.ChangBGM(5);
+                break;
+            case ECityNames.AMBOISE:
+                AudioManager.instance.ChangBGM(1);
+                break;
+            case ECityNames.TOURS:
+                AudioManager.instance.ChangBGM(8);
+                break;
+            case ECityNames.SAUMUR:
+                AudioManager.instance.ChangBGM(7);
+                break;
+            case ECityNames.ANGERS:
+                AudioManager.instance.ChangBGM(6);
+                break;
+            case ECityNames.CHALONNES:
+                AudioManager.instance.ChangBGM(5);
+                break;
+            case ECityNames.ANCENIS:
+                AudioManager.instance.ChangBGM(2);
+                break;
+            case ECityNames.NANTES:
+                AudioManager.instance.ChangBGM(4);
                 break;
         }
     }
