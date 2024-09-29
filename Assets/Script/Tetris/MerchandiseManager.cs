@@ -33,6 +33,7 @@ public class MerchandiseManager : MonoBehaviour
         foreach(Item item in GridManager.instance.storedMerchandise) {
             if (item.type == type) {
                 item.Delete();
+                RessourcesManager.instance.AddMoney(80);
                 return;
             }
         }

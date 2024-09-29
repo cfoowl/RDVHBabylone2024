@@ -8,6 +8,7 @@ public class RessourcesManager : MonoBehaviour
     #region Fields
 
     [SerializeField] private float _money = 200;
+    public static RessourcesManager instance;
 
     #endregion Fields
 
@@ -93,4 +94,7 @@ public class RessourcesManager : MonoBehaviour
     #endregion Money
 
     #endregion Methods
+    void Start() {
+        instance = this;
+    }
 }
