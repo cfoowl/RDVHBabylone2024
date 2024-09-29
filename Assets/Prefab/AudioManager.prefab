@@ -1078,7 +1078,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mute: 0
-  masterVolume: 1
+  masterVolume: 0.5
 --- !u!1 &8981999551828840660
 GameObject:
   m_ObjectHideFlags: 0
