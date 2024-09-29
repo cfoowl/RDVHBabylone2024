@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60c8d53b7c5f6bf44be911818b78132e, type: 3}
+  m_Name: Event3
+  m_EditorClassIdentifier: 
+  _cityName: 3
+  _eventName: Event 3
+  _eventText: "Bienvenu \xE0 Blois ! \nEnveloppes frequentes manoeuvres peu non remarquait.
+    Conclue laisser egorger eau attache chinois ont moi par devenir. Oh etroit digues
+    ma yeuses. Prepare on courtes et ah va surpris. Par singes genoux foi beaute
+    autour. Une fer net sur alternent fabriques tiendrons sortaient. "
+  _eventImage: {fileID: 0}
+  _eventMarchandisesGained: 
+  _eventMarchandisesRemoved: 

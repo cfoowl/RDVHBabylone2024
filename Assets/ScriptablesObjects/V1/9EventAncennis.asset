@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60c8d53b7c5f6bf44be911818b78132e, type: 3}
+  m_Name: 9EventAncennis
+  m_EditorClassIdentifier: 
+  _cityName: 9
+  _eventName: 
+  _eventText: "Nous arrivons \xE0 Ancenis, un petit port assez sommaire\u2026 Cependant,
+    Nantes est proche !\r\n\r\nVous devez r\xE9cup\xE9rer 2 chargements de chaux,
+    2 chargements de vins et 1 chargement de caf\xE9 pour Nantes. Vous pouvez vendre
+    1 chargement de c\xE9r\xE9ales en provenance d\u2019Amboise.\r"
+  _eventTextPart2: 
+  _button1Text: 
+  _button2Text: 
+  _eventImage: {fileID: 21300000, guid: 77f3f0cdd2ad2b147be73d6c23d51042, type: 3}
+  _eventMarchandisesGained: 0200000002000000030000000300000006000000
+  _eventMarchandisesRemoved: 01000000
+  _eventAudioSource: {fileID: 0}
