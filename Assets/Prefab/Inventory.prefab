@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1896972947339795458}
   - component: {fileID: 7330059973466291081}
   - component: {fileID: 6476414342011359829}
+  - component: {fileID: 6550374526886124459}
   m_Layer: 0
   m_Name: Inventory
   m_TagString: Untagged
@@ -88,6 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d715f8655395a624c8176362415510ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  storedMerchandise: []
   columns: 7
   rows: 7
   slotPrefab: {fileID: 8251582275123665441, guid: d9718e163270cd44bbdd318ec62c1f02, type: 3}
@@ -96,3 +98,17 @@ MonoBehaviour:
   ymin: 0
   xmax: 0
   ymax: 0
+  width: 0
+  height: 0
+--- !u!225 &6550374526886124459
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2516142590002475387}
+  m_Enabled: 1
+  m_Alpha: 0.9
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
