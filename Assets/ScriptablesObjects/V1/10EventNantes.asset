@@ -23,11 +23,11 @@ MonoBehaviour:
     ! Nantes est une ville prosp\xE8re de longue date, mais encore davantage depuis
     que son commerce est tourn\xE9 vers la colonies, au-del\xE0 de l\u2019oc\xE9an
     : esclaves et denr\xE9es venues de pays lointains\u2026\n\nVous pouvez vendre
-    vos derni\xE8res marchandises. Cela vous rapportera 400 livres."
+    vos derni\xE8res marchandises !\r\n"
   _eventTextPart2: 
   _button1Text: 
   _button2Text: 
-  _eventImage: {fileID: 0}
+  _eventImage: {fileID: 21300000, guid: 662cf7915c01847439eeb04a5e167ba3, type: 3}
   _eventMarchandisesGained: 
-  _eventMarchandisesRemoved: 
+  _eventMarchandisesRemoved: 040000000400000005000000050000000200000002000000030000000300000006000000
   _eventAudioSource: {fileID: 0}

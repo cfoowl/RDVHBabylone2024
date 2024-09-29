@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class RessourcesManager : MonoBehaviour
@@ -8,6 +9,7 @@ public class RessourcesManager : MonoBehaviour
     #region Fields
 
     [SerializeField] private float _money = 200;
+    [SerializeField] private TextMeshProUGUI _moneyText = null;
     public static RessourcesManager instance;
 
     #endregion Fields
@@ -39,6 +41,12 @@ public class RessourcesManager : MonoBehaviour
     #endregion Events
 
     #region Methods
+
+    private void Update()
+    {
+        _moneyText.text = _money.ToString() + " Livres";
+    }
+
 
     #region Money
 

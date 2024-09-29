@@ -10,7 +10,8 @@ public enum EMarchandiseTypes
     BOIS,
     DENREE,
     TUFFEAU,
-    RATION
+    RATION,
+    SEL
 }
 
 public enum ECityNames
