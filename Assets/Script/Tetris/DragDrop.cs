@@ -52,6 +52,9 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
                 RessourcesManager.instance.AddMoney(20);
             }
         beginDrag(eventData);
+        int rand = Random.Range(0, SoundManager.instance.clic.Length);
+        SoundManager.instance.audioSource.clip = SoundManager.instance.clic[rand];
+        SoundManager.instance.audioSource.Play();
     }
     public void beginDrag(PointerEventData eventData) {
         canvasGroup.blocksRaycasts = false;
@@ -115,6 +118,9 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
                 dragDrop.GetComponent<Image>().color = Color.green;
             }
             RessourcesManager.instance.UseMoney(20);
+            int rand = Random.Range(0, SoundManager.instance.DragDrop.Length);
+            SoundManager.instance.audioSource.clip = SoundManager.instance.DragDrop[rand];
+            SoundManager.instance.audioSource.Play();
         }
 
    }
