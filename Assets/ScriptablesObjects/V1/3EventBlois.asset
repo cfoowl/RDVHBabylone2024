@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 3EventBlois
   m_EditorClassIdentifier: 
   _cityName: 3
-  _eventName: 
+  _eventName: Port de Blois
   _eventText: "Blois \xE9tait connue pour ses ma\xEEtres artisans et ses orf\xE8vres
     confirm\xE9s. Aujourd\u2019hui, ils ne sont plus tr\xE8s nombreux, mais le port
     est engorg\xE9 par les nombreux chalands de passage, tout comme le nostre. Diantre
@@ -23,12 +23,12 @@ MonoBehaviour:
     d\u2019Orl\xE9ans et de Beaugency\u2026\n\r\nSoit partir directement \xE0 Tours,
     sans escale, o\xF9 un n\xE9gociant nous promet une belle somme si nous arrivons
     prestement !\r\n"
-  _eventTextPart2: "Nous n\u2019avons finalement pas tant esp\xE9r\xE9 ! Nous acc\xE9dons
-    aux quais sans encombre. Ici, nous pouvons vendre nos marchandises et r\xE9cup\xE9rer
-    les chargements destin\xE9s au port de Tours. \r\n\r\nVous devez r\xE9cup\xE9rer
-    2 chargements d\u2019ardoises pour Tours.\r\nVous pouvez vendre vos 2 chargements
-    de planches provenant d\u2019Orl\xE9ans et 2 de vins provenant de Beaugency.
-    \r\n"
+  _eventTextPart2: "Nous avons choisi d'attendre \xE0 Blois, mais finalement nous
+    n'avons point tant esp\xE9r\xE9 ! Nous acc\xE9dons aux quais sans encombre. Ici,
+    nous pouvons vendre nos marchandises et r\xE9cup\xE9rer les chargements destin\xE9s
+    au port de Tours. \r\n\r\nVous devez r\xE9cup\xE9rer 2 chargements d\u2019ardoises
+    pour Tours.\r\nVous pouvez vendre vos 2 chargements de planches provenant d\u2019Orl\xE9ans
+    et 2 de vins provenant de Beaugency. \r\n"
   _button1Text: "Patienter \xE0 Blois"
   _button2Text: Partir pour Tours
   _eventImage: {fileID: 21300000, guid: 662cf7915c01847439eeb04a5e167ba3, type: 3}

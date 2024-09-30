@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: 6EventSaumur
   m_EditorClassIdentifier: 
   _cityName: 6
-  _eventName: 
+  _eventName: Port de Saumur
   _eventText: "Saumur est bien vide depuis que notre bon roi a r\xE9voqu\xE9 l\u2019\xE9dit
     de Nantes, mais les chalands de passage sont nombreux et le commerce fluvial
     suit son cours. Nous devons vendre nos marchandises et r\xE9cup\xE9rer le chargement
-    pour Nantes !\r\n\r\nVous devez r\xE9cup\xE9rer 1 chargement d\u2019ardoises
-    pour Nantes. Vous pouvez vendre 1 chargement de caf\xE9 en provenance de Beaugency
-    et 1 chargement de planches en provenance de Tours. \r"
-  _eventTextPart2: 
+    pour Nantes !\r\n\r\n\r"
+  _eventTextPart2: "Vous devez r\xE9cup\xE9rer 1 chargement d\u2019ardoises pour
+    Nantes. Vous pouvez vendre 1 chargement de caf\xE9 en provenance de Beaugency
+    et 1 chargement de planches en provenance de Tours. "
   _button1Text: 
   _button2Text: 
   _eventImage: {fileID: 21300000, guid: 77f3f0cdd2ad2b147be73d6c23d51042, type: 3}
