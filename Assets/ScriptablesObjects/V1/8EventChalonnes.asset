@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: 8EventChalonnes
   m_EditorClassIdentifier: 
   _cityName: 8
-  _eventName: 
+  _eventName: Port de Chalonnes
   _eventText: "Depuis l\u2019ouverture du canal de Layon, les quais de Chalonnes
     sont plus abordables, malgr\xE9 les centaines de bateaux qui vont et viennent
-    charg\xE9s de vin, de chaux et de charbon. \r\n\r\nVous devez r\xE9cup\xE9rer
-    2 chargements de planches pour Nantes. Vous pouvez vendre 1 chargement de c\xE9r\xE9ales
-    en provenance de Beaugency et 1 chargement de chaux en provenance de Tours."
-  _eventTextPart2: 
+    charg\xE9s de vin, de chaux et de charbon. \r\n\r"
+  _eventTextPart2: "Vous devez r\xE9cup\xE9rer 2 chargements de planches pour Nantes.
+    Vous pouvez vendre 1 chargement de c\xE9r\xE9ales en provenance de Beaugency
+    et 1 chargement de chaux en provenance de Tours."
   _button1Text: 
   _button2Text: 
   _eventImage: {fileID: 21300000, guid: 77f3f0cdd2ad2b147be73d6c23d51042, type: 3}

@@ -13,25 +13,26 @@ MonoBehaviour:
   m_Name: 7EventAngers
   m_EditorClassIdentifier: 
   _cityName: 7
-  _eventName: 
+  _eventName: "Pont-de-C\xE9 (Angers)"
   _eventText: "Pour acheminer les marchandises \xE0 Angers, nous passons par les
     Ponts-de-C\xE9. Il est dit que ce sont des gaulois qui auraient emp\xEAch\xE9
-    C\xE9sar lui-m\xEAme d\u2019y inscrire l\u2019int\xE9gralit\xE9 de son nom. Mais
-    que m\u2019importe ces l\xE9gendes : la cloison d\u2019Angers aux Ponts, le p\xE9age,
-    a encore augment\xE9 ! Baste ! Ce n\u2019est pas bon pour les affaires ! \r\nEt
-    si vous passiez au transport du sel ? Le sel est un monopole royal tr\xE8s contr\xF4l\xE9
-    qui donne lieu \xE0 un imp\xF4t, la gabelle. Toutefois, sa contrebande rapporte
-    bien, car personne ne peut s\u2019en passer pour donner de la saveur et conserver
-    la nourriture ! C\u2019est un peu risqu\xE9, car certaines cargaisons sont contr\xF4l\xE9es,
-    mais \xE7a peut valoir le coup\u2026"
+    C\xE9sar lui-m\xEAme d\u2019y inscrire l\u2019int\xE9gralit\xE9 de son nom !
+    \"C\xE9\" \xE0 la place de \"C\xE9sar\". Mais que m\u2019importe ces l\xE9gendes
+    : la cloison d\u2019Angers, le p\xE9age, a encore augment\xE9 ! Baste ! Ce n\u2019est
+    pas bon pour les affaires !\n \r\nEt si vous passiez au transport du sel ? Le
+    sel est un monopole royal tr\xE8s contr\xF4l\xE9 qui donne lieu \xE0 un imp\xF4t,
+    la gabelle. Toutefois, sa contrebande rapporte bien, car personne ne peut s\u2019en
+    passer pour donner de la saveur et conserver la nourriture ! \n\nC\u2019est un
+    peu risqu\xE9, car certaines cargaisons sont contr\xF4l\xE9es, mais \xE7a peut
+    valoir le coup\u2026"
   _eventTextPart2: "Vous avez d\xE9cid\xE9 de poursuivre votre n\xE9goce habituel.
-    Apr\xE8s tout, c\u2019est ce que vous avez toujours fait !\r\n\r\nLe p\xE9age
-    des Ponts-de-C\xE9 vous co\xFBte 40 livres.\r\n\r\nVous devez r\xE9cup\xE9rer
-    1 chargement d\u2019ardoises pour Nantes. Vous pouvez vendre 2 chargements de
-    tuffeaux en provenance d\u2019Orl\xE9ans et 1 chargement de vin en provenance
-    d\u2019Amboise."
+    Apr\xE8s tout, c\u2019est ce que vous avez toujours fait ! Et puis, c'est plus
+    honneste.\r\n\r\nLe p\xE9age des Ponts-de-C\xE9 vous co\xFBte 40 livres.\r\n\r\nVous
+    devez r\xE9cup\xE9rer 1 chargement d\u2019ardoises pour Nantes. Vous pouvez vendre
+    2 chargements de tuffeaux en provenance d\u2019Orl\xE9ans et 1 chargement de
+    vin en provenance d\u2019Amboise."
   _button1Text: "Poursuivre les transactions pr\xE9vues"
-  _button2Text: Partir sur le commerce du sel
+  _button2Text: Devenir contrebandier
   _eventImage: {fileID: 21300000, guid: 662cf7915c01847439eeb04a5e167ba3, type: 3}
   _eventMarchandisesGained: 04000000
   _eventMarchandisesRemoved: 070000000700000003000000
