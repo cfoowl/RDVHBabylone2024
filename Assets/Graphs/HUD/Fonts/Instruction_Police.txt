@@ -1,0 +1,8 @@
+Instruction pour les polices utilisées :
+
+"Port de" et le nom du port -> ExtraExpanded-SemiBold
+Boite de texte du milieu    -> Expanded-Medium et Expanded-MediumItalic
+Le reste  		    -> Condensed-Medium
+
+Pour quand on passe la souris sur la reponse changer si possible la couleur du texte avec cette couleur "c6a775"
+ 

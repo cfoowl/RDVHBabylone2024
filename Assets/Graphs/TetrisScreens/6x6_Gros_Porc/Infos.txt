@@ -1,0 +1,6 @@
+Il y a 3 layers, les items sont censés passer sur le layer "Tetris_Gros_Porc_Grid" et sur le layer "Tetris_Gros_Porc_Boat" TANT QU'ils ne se sont pas snappés sur la grille.
+Les items passent sous "Tetris_Gros_Porc_Cordage" quoiqu'il arrive
+
+Tu fais cette histoire de layer seulement si t'as le temps/l'envie ya pas de soucis si c'est pas intégré
+
+La seul police qu'il y a dans ce dossier est pour le prix des rations ("Updock-regular")
