@@ -6,7 +6,8 @@ public class ScreenManager : MonoBehaviour
 {
     public GameObject screenLoading;
     public GameObject screenPort;
-    public GameObject screenQuai;
+    public GameObject screenQuaiBig;
+    public GameObject screenQuaiSmol;
 
     private int currentScreen;
     public static ScreenManager instance;
@@ -14,7 +15,7 @@ public class ScreenManager : MonoBehaviour
     void Start()
     {
         instance = this;
-        screens = new GameObject[] { screenLoading, screenPort, screenQuai };
+        screens = new GameObject[] { screenLoading, screenPort, screenQuaiBig, screenQuaiSmol };
     }
 
     void Initialize() {

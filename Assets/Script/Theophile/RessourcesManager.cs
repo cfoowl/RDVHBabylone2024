@@ -44,7 +44,7 @@ public class RessourcesManager : MonoBehaviour
 
     private void Update()
     {
-        _moneyText.text = _money.ToString() + " Livres";
+        _moneyText.text = _money.ToString();
     }
 
 

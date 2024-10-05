@@ -69,7 +69,7 @@ public class PortManager : MonoBehaviour
     {
         if (_portEvent != null)
         {
-            _eventImageImage.sprite = _portEvent.EventImage;
+            // _eventImageImage.sprite = _portEvent.EventImage;
             _eventNameText.text = _portEvent.EventName;
             StartCoroutine(DisplayText(_portEvent.EventText));
             if(_portEvent.CityName == ECityNames.BLOIS || _portEvent.CityName == ECityNames.ANGERS)
