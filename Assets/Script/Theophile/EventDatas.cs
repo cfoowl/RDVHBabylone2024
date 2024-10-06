@@ -14,7 +14,8 @@ public class EventDatas : ScriptableObject
     [SerializeField, TextArea(10, 9999)] private string _eventTextPart2 = "";
     [SerializeField] private string _button1Text = "";
     [SerializeField] private string _button2Text = "";
-    [SerializeField] private Sprite _eventImage = null;
+    // [SerializeField] private Sprite _eventImage = null;
+    [SerializeField] private bool _bigPort = false;
     [SerializeField] private EMarchandiseTypes[] _eventMarchandisesGained = null;
     [SerializeField] private EMarchandiseTypes[] _eventMarchandisesRemoved = null;
     [SerializeField] private AudioSource _eventAudioSource = null;
@@ -29,7 +30,8 @@ public class EventDatas : ScriptableObject
     public string EventTextPart2 => _eventTextPart2;
     public string Button1Text => _button1Text;
     public string Button2Text => _button2Text;
-    public Sprite EventImage => _eventImage;
+    // public Sprite EventImage => _eventImage;
+    public bool bigPort => _bigPort;
     public EMarchandiseTypes[] EventMarchandisesGained => _eventMarchandisesGained;
     public EMarchandiseTypes[] EventMarchandisesRemoved => _eventMarchandisesRemoved;
     public AudioSource EventAudioSource => _eventAudioSource;

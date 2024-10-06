@@ -11,7 +11,7 @@ public class PortManager : MonoBehaviour
     [SerializeField] private EventDatas _portEvent = null;
     [SerializeField] private TextMeshProUGUI _eventNameText = null;
     [SerializeField] private TextMeshProUGUI _eventTextText = null;
-    [SerializeField] private Image _eventImageImage = null;
+    // [SerializeField] private Image _eventImageImage = null;
     [SerializeField] private RessourcesManager _ressourcesManager = null;
     [SerializeField] private GameObject _continueButton = null;
     [SerializeField] private GameObject _nextPortButton = null;
@@ -61,7 +61,6 @@ public class PortManager : MonoBehaviour
 
     private void Start()
     {
-        
     }
 
     //Load Datas from the EventDatas to the UI
@@ -99,8 +98,6 @@ public class PortManager : MonoBehaviour
                 }
             }
 
-            SpawnMarchandises();
-            VenteMarchandises();
             changeBGMusic(_portEvent.CityName);
 
             Debug.Log("Data Loaded from " + _portEvent.name);
@@ -135,6 +132,9 @@ public class PortManager : MonoBehaviour
     {
         if (_portEvent.EventTextPart2 != "")
         {
+            ScreenManager.instance.SetQuaiScreen(_portEvent.bigPort);
+            SpawnMarchandises();
+            VenteMarchandises();
             StopAllCoroutines();
             if (_portEvent.CityName == ECityNames.TOURS && _gameFlowManager.BloisSkip == true)
             {

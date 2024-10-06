@@ -6,6 +6,7 @@ public class ScreenManager : MonoBehaviour
 {
     public GameObject screenLoading;
     public GameObject screenPort;
+    public GameObject screenQuai;
     public GameObject screenQuaiBig;
     public GameObject screenQuaiSmol;
 
@@ -15,7 +16,7 @@ public class ScreenManager : MonoBehaviour
     void Start()
     {
         instance = this;
-        screens = new GameObject[] { screenLoading, screenPort, screenQuaiBig, screenQuaiSmol };
+        screens = new GameObject[] { screenLoading, screenPort, screenQuai};
     }
 
     void Initialize() {
@@ -23,22 +24,25 @@ public class ScreenManager : MonoBehaviour
         SetActiveScreen(currentScreen);
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            NextScreen();
+    public void SetQuaiScreen(bool isBig) {
+        SetActiveScreen(2);
+        if (isBig) {
+            screenQuaiBig.SetActive(true);
+        } else {
+            screenQuaiSmol.SetActive(true);
         }
     }
-
-    public void NextScreen()
-    {
-        SetActiveScreen((currentScreen + 1) % screens.Length);
+    public void SetPortScreen() {
+        SetActiveScreen(1);
     }
-    
+
     private void SetActiveScreen(int index)
     {
         screens[currentScreen].SetActive(false);
+        if (currentScreen == 2) {
+            screenQuaiSmol.SetActive(false);
+            screenQuaiBig.SetActive(false);
+        }
         screens[index].SetActive(true);
         currentScreen = index;
     }
