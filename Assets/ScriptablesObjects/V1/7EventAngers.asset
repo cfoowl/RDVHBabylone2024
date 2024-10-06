@@ -33,7 +33,7 @@ MonoBehaviour:
     vin en provenance d\u2019Amboise."
   _button1Text: "Poursuivre les transactions pr\xE9vues"
   _button2Text: Devenir contrebandier
-  _eventImage: {fileID: 21300000, guid: 662cf7915c01847439eeb04a5e167ba3, type: 3}
+  _bigPort: 0
   _eventMarchandisesGained: 04000000
   _eventMarchandisesRemoved: 070000000700000003000000
   _eventAudioSource: {fileID: 0}

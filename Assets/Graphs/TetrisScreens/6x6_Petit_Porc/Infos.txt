@@ -1,0 +1,5 @@
+Les items passent par dessus "Tetris_Petit_Porc_Grid" et par dessus "Tetris_Petit_Porc_Boat" TANT QU'ils ne sont pas snappés
+
+Tu fais cette histoire de layer seulement si t'as le temps/l'envie ya pas de soucis si c'est pas intégré
+
+La seul police qu'il y a dans ce dossier est pour le prix des rations ("Updock-regular")

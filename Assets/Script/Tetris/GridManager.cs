@@ -16,12 +16,12 @@ public class GridManager : MonoBehaviour
 
 
     // utils
-    public float xmin;
-    public float ymin;
-    public float xmax;
-    public float ymax;
-    public float width;
-    public float height;
+    [HideInInspector]public float xmin;
+    [HideInInspector]public float ymin;
+    [HideInInspector]public float xmax;
+    [HideInInspector]public float ymax;
+    [HideInInspector]public float width;
+    [HideInInspector]public float height;
 
     void Awake() {
         instance = this;

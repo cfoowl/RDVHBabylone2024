@@ -107,6 +107,7 @@ public class GameFlowManager : MonoBehaviour
         _transitionAnim.Play("TransitionOff");
         yield return new WaitForSeconds(0.5f);
         _transitionScreen.SetActive(false);
+        ScreenManager.instance.SetPortScreen();
     }
 
     public void QuitGameButton()
