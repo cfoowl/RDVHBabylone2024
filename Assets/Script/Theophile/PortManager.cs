@@ -134,7 +134,9 @@ public class PortManager : MonoBehaviour
         {
             ScreenManager.instance.SetQuaiScreen(_portEvent.bigPort);
             SpawnMarchandises();
+            MerchandiseManager.instance.spawnRation();
             VenteMarchandises();
+            MerchandiseManager.instance.ConsumeFood();
             StopAllCoroutines();
             if (_portEvent.CityName == ECityNames.TOURS && _gameFlowManager.BloisSkip == true)
             {
@@ -160,10 +162,12 @@ public class PortManager : MonoBehaviour
 
     public void GoToNextPortButton()
     {
-        StopAllCoroutines();
-        MerchandiseManager.instance.wipeMerchandise();
-        _gameFlowManager.MoveToNextPort();
-        _nextPortButton.SetActive(false);
+        if (MerchandiseManager.instance.isInInventory(EMarchandiseTypes.RATION)) {
+            StopAllCoroutines();
+            MerchandiseManager.instance.wipeMerchandise();
+            _gameFlowManager.MoveToNextPort();
+            _nextPortButton.SetActive(false);
+        }
     }
 
 
