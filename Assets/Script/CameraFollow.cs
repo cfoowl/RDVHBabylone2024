@@ -11,6 +11,7 @@ public class CameraFollow : MonoBehaviour
     float z_offset;
     int currentWaypointIndex = -1;
     bool isWaiting = true;
+    public GameObject accosterButton;
     Vector2[] waypoints = {
         new Vector2(1176, 893),
         new Vector2(1176, 893),
@@ -59,6 +60,7 @@ public class CameraFollow : MonoBehaviour
         }
         else {
             transform.position += moveDirection * speed * Time.deltaTime;
+            accosterButton.GetComponent<RectTransform>().position += moveDirection * speed * Time.deltaTime;
         }
     }
 

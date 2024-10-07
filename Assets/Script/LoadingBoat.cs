@@ -9,6 +9,7 @@ public class LoadingBoat : MonoBehaviour
     bool isWaiting = true;
     int currentWaypointIndex = -1;
     int currentTrajectoryNodeIndex = 0;
+    public GameObject accosterButton;
     List<Vector3> trajectory = new List<Vector3>();
     // Start is called before the first frame update
     void Start()
@@ -49,8 +50,8 @@ public class LoadingBoat : MonoBehaviour
        private void StartWaitingAtWaypoint()
     {
         isWaiting = true;
+        accosterButton.SetActive(true);
 
-        Debug.Log("Bateau arrêté au waypoint " + currentWaypointIndex);
     }
     public void ContinueMoving() {
         if (isWaiting) {
@@ -58,9 +59,9 @@ public class LoadingBoat : MonoBehaviour
             currentWaypointIndex++;
             currentTrajectoryNodeIndex = 0;
             speed = 0;
+            accosterButton.SetActive(false);
             updateTrajectory(currentWaypointIndex);
 
-            Debug.Log("Reprise du mouvement du bateau vers le waypoint " + currentWaypointIndex);
         }
     }
     void updateTrajectory(int index) {

@@ -8,6 +8,8 @@ public class PortManager : MonoBehaviour
 {
     #region Fields
 
+
+    public static PortManager instance;
     [SerializeField] private EventDatas _portEvent = null;
     [SerializeField] private TextMeshProUGUI _eventNameText = null;
     [SerializeField] private TextMeshProUGUI _eventTextText = null;
@@ -61,6 +63,7 @@ public class PortManager : MonoBehaviour
 
     private void Start()
     {
+        instance = this;
     }
 
     //Load Datas from the EventDatas to the UI

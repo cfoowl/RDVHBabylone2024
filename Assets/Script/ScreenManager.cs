@@ -38,6 +38,7 @@ public class ScreenManager : MonoBehaviour
         }
     }
     public void SetPortScreen() {
+        PortManager.instance.LoadData();
         SetActiveScreen(1);
     }
     public void EnterLoadingScreen() {
