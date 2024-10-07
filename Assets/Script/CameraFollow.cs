@@ -7,7 +7,6 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
     // Start is called before the first frame update
-    public static CameraFollow instance;
     float speed;
     float z_offset;
     int currentWaypointIndex = -1;
@@ -26,7 +25,6 @@ public class CameraFollow : MonoBehaviour
     };
     void Start()
     {
-        instance = this;
         z_offset = -150;
         speed = 0;
 
@@ -68,7 +66,6 @@ public class CameraFollow : MonoBehaviour
     {
         isWaiting = true;
 
-        Debug.Log("Arrêté au waypoint " + currentWaypointIndex);
     }
 
     public void ContinueMoving()
@@ -79,7 +76,6 @@ public class CameraFollow : MonoBehaviour
             currentWaypointIndex++;
             speed = 0;
 
-            Debug.Log("Reprise du mouvement vers le waypoint " + currentWaypointIndex);
         }
     }
 

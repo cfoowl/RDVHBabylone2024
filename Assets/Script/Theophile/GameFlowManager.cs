@@ -101,11 +101,11 @@ public class GameFlowManager : MonoBehaviour
     private IEnumerator Transition()
     {
         ScreenManager.instance.EnterLoadingScreen();
-        _transitionAnim.Play("TransitionOn");
-        yield return new WaitForSeconds(2.8f);
+        // _transitionAnim.Play("TransitionOn");
+        yield return new WaitForSeconds(5f);
         _port.LoadData();
         yield return new WaitForSeconds(0.2f);
-        _transitionAnim.Play("TransitionOff");
+        // _transitionAnim.Play("TransitionOff");
         yield return new WaitForSeconds(0.5f);
         ScreenManager.instance.ExitLoadingScreen();
     }

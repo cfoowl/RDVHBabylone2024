@@ -13,6 +13,7 @@ public class ScreenManager : MonoBehaviour
     public Canvas mainCanvas;
     public Camera loadingCamera;
     public Canvas loadingCanvas;
+    public GameObject loadingBoat;
 
     private int currentScreen;
     public static ScreenManager instance;
@@ -46,6 +47,7 @@ public class ScreenManager : MonoBehaviour
         mainCanvas.gameObject.SetActive(false);
         SetActiveScreen(0);
         loadingCamera.GetComponent<CameraFollow>().ContinueMoving();
+        loadingBoat.GetComponent<LoadingBoat>().ContinueMoving();
     }
     public void ExitLoadingScreen() {
         loadingCamera.gameObject.SetActive(false);

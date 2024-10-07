@@ -180,27 +180,27 @@ public class PortManager : MonoBehaviour
         {
             case ECityNames.BLOIS:
                 EventBlois();
-                Debug.Log("Special Event Blois Triggered");
+                // Debug.Log("Special Event Blois Triggered");
                 break;
 
             case ECityNames.TOURS:
                 EventTours();
-                Debug.Log("Special Event Tours Triggered");
+                // Debug.Log("Special Event Tours Triggered");
                 break;
 
             case ECityNames.ANGERS:
                 EventAngers();
-                Debug.Log("Special Event Angers Triggered");
+                // Debug.Log("Special Event Angers Triggered");
                 break;
 
             case ECityNames.NANTES:
                 EventNantes();
-                Debug.Log("Special Event Nantes Triggered");
+                // Debug.Log("Special Event Nantes Triggered");
                 break;
 
 
             default:
-                Debug.Log("No Special Event in this Port");
+                // Debug.Log("No Special Event in this Port");
                 SpawnMarchandises();
                 break;
         }
