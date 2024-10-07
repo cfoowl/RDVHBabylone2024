@@ -45,6 +45,7 @@ public class ScreenManager : MonoBehaviour
         mainCamera.gameObject.SetActive(false);
         mainCanvas.gameObject.SetActive(false);
         SetActiveScreen(0);
+        loadingCamera.GetComponent<CameraFollow>().ContinueMoving();
     }
     public void ExitLoadingScreen() {
         loadingCamera.gameObject.SetActive(false);
