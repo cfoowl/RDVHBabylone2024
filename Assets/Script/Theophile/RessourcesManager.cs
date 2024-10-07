@@ -60,12 +60,12 @@ public class RessourcesManager : MonoBehaviour
         if (moneyAdded > 0)
         {
             _money = _money + moneyAdded;
-            Debug.Log("Added " + moneyAdded + " to Money.");
-            Debug.Log("Current Money =  " + _money);
+            // Debug.Log("Added " + moneyAdded + " to Money.");
+            // Debug.Log("Current Money =  " + _money);
         }
         else
         {
-            Debug.Log("Can't add " + moneyAdded + " to Money because its value is negative or null.");
+            // Debug.Log("Can't add " + moneyAdded + " to Money because its value is negative or null.");
         }
         return _money;
     }
@@ -78,18 +78,18 @@ public class RessourcesManager : MonoBehaviour
             if(_money - moneyUsed >= 0)
             {
                 _money = _money - moneyUsed;
-                Debug.Log("Removed " + moneyUsed + " from Money.");
-                Debug.Log("Current Money =  " + _money);
+                // Debug.Log("Removed " + moneyUsed + " from Money.");
+                // Debug.Log("Current Money =  " + _money);
             }
             else
             {
                 OnNotEnoughMoneyEv();
-                Debug.Log("Can't use " + moneyUsed + " because there is not enough Money.");
+                // Debug.Log("Can't use " + moneyUsed + " because there is not enough Money.");
             }
         }
         else
         {
-            Debug.Log("Can't remove " + moneyUsed + " to Money because its value is positive or null.");
+            // Debug.Log("Can't remove " + moneyUsed + " to Money because its value is positive or null.");
         }
         return _money;
     }

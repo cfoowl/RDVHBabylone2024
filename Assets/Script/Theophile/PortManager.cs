@@ -8,6 +8,8 @@ public class PortManager : MonoBehaviour
 {
     #region Fields
 
+
+    public static PortManager instance;
     [SerializeField] private EventDatas _portEvent = null;
     [SerializeField] private TextMeshProUGUI _eventNameText = null;
     [SerializeField] private TextMeshProUGUI _eventTextText = null;
@@ -61,6 +63,7 @@ public class PortManager : MonoBehaviour
 
     private void Start()
     {
+        instance = this;
     }
 
     //Load Datas from the EventDatas to the UI
@@ -134,7 +137,9 @@ public class PortManager : MonoBehaviour
         {
             ScreenManager.instance.SetQuaiScreen(_portEvent.bigPort);
             SpawnMarchandises();
+            MerchandiseManager.instance.spawnRation();
             VenteMarchandises();
+            MerchandiseManager.instance.ConsumeFood();
             StopAllCoroutines();
             if (_portEvent.CityName == ECityNames.TOURS && _gameFlowManager.BloisSkip == true)
             {
@@ -160,10 +165,12 @@ public class PortManager : MonoBehaviour
 
     public void GoToNextPortButton()
     {
-        StopAllCoroutines();
-        MerchandiseManager.instance.wipeMerchandise();
-        _gameFlowManager.MoveToNextPort();
-        _nextPortButton.SetActive(false);
+        if (MerchandiseManager.instance.isInInventory(EMarchandiseTypes.RATION)) {
+            StopAllCoroutines();
+            MerchandiseManager.instance.wipeMerchandise();
+            _gameFlowManager.MoveToNextPort();
+            _nextPortButton.SetActive(false);
+        }
     }
 
 
@@ -176,27 +183,27 @@ public class PortManager : MonoBehaviour
         {
             case ECityNames.BLOIS:
                 EventBlois();
-                Debug.Log("Special Event Blois Triggered");
+                // Debug.Log("Special Event Blois Triggered");
                 break;
 
             case ECityNames.TOURS:
                 EventTours();
-                Debug.Log("Special Event Tours Triggered");
+                // Debug.Log("Special Event Tours Triggered");
                 break;
 
             case ECityNames.ANGERS:
                 EventAngers();
-                Debug.Log("Special Event Angers Triggered");
+                // Debug.Log("Special Event Angers Triggered");
                 break;
 
             case ECityNames.NANTES:
                 EventNantes();
-                Debug.Log("Special Event Nantes Triggered");
+                // Debug.Log("Special Event Nantes Triggered");
                 break;
 
 
             default:
-                Debug.Log("No Special Event in this Port");
+                // Debug.Log("No Special Event in this Port");
                 SpawnMarchandises();
                 break;
         }
