@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -226,7 +228,20 @@ public class PortManager : MonoBehaviour
         RessourcesManager.instance.UseMoney(40);
     }
     private void EventChalonnes() {
+        int currentHealth = RessourcesManager.instance._health;
+        if(currentHealth >=2) {
+            double tmp1 = Math.Pow(10,currentHealth-2)/ Factorial(currentHealth-2);
+            double tmp2 = Math.Exp(2-currentHealth);
+            double damage = Math.Ceiling(tmp1 * tmp2 * 0.3);
+            RessourcesManager.instance.applyDamage((float)damage);
 
+        }
+    }
+    private double Factorial(double n) {
+        if (n == 0 || n == 1)
+            return 1;
+        else
+            return n * Factorial(n - 1);
     }
     public void ancenisButtonAction() {
         ancenisButton.SetActive(false);
