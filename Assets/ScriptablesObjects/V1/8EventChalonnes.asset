@@ -13,16 +13,19 @@ MonoBehaviour:
   m_Name: 8EventChalonnes
   m_EditorClassIdentifier: 
   _cityName: 8
-  _eventName: Port de Chalonnes
+  _eventName: CHALONNES
   _eventText: "Depuis l\u2019ouverture du canal de Layon, les quais de Chalonnes
-    sont plus abordables, malgr\xE9 les centaines de bateaux qui vont et viennent
-    charg\xE9s de vin, de chaux et de charbon. \r\n\r"
-  _eventTextPart2: "Vous devez r\xE9cup\xE9rer 2 chargements de planches pour Nantes.
-    Vous pouvez vendre 1 chargement de c\xE9r\xE9ales en provenance de Beaugency
-    et 1 chargement de chaux en provenance de Tours."
+    sont plus abordables, malgr\xE9 les centaines de bateaux qui vont et viennent,
+    charg\xE9s de vin, de chaux et de charbon. \r\nEn voulant \xE9viter un bateau
+    qui man\u0153uvrait \xE0 b\xE2bord, paf ! Sacrebleu, une \xE9norme barque nous
+    a emboutis ! Voil\xE0 ce qui arrive lorsque des p\xEAcheurs s\u2019improvisent
+    mariniers ! Que la peste soit avec ces faquins ! \r\n"
+  _eventTextPart2:
+  - "Nous devons r\xE9cup\xE9rer 2 chargements de planches pour Nantes.\r\nLe chargement
+    de rations de nourriture pour l'\xE9quipage co\xFBte 20 livres.\r\n"
   _button1Text: 
   _button2Text: 
-  _eventImage: {fileID: 21300000, guid: 77f3f0cdd2ad2b147be73d6c23d51042, type: 3}
+  _bigPort: 0
   _eventMarchandisesGained: 0500000005000000
   _eventMarchandisesRemoved: 0100000002000000
   _eventAudioSource: {fileID: 0}

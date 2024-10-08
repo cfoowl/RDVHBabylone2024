@@ -6,6 +6,7 @@ public class GameFlowManager : MonoBehaviour
 {
 
     #region Fields
+    public static GameFlowManager instance;
 
     [SerializeField] private PortManager _port = null;
     [SerializeField] private RessourcesManager _ressources = null;
@@ -21,6 +22,10 @@ public class GameFlowManager : MonoBehaviour
 
     #endregion Fields
 
+    void Awake()
+    {
+        instance = this;
+    }
     public bool Contreband
     {
         get
@@ -82,12 +87,11 @@ public class GameFlowManager : MonoBehaviour
 
     public void MoveToNextPort()
     {
-        Debug.Log("check");
-
-        if (_currentEvent+1 < _events.Length)
+        GridManager.instance.applyInventoryDamage();
+        if (_currentEvent + 1 < _events.Length)
         {
             _currentEvent++;
-            if (Contreband)
+            if (MerchandiseManager.instance.isInInventory(EMarchandiseTypes.SEL))
             {
                 _port.PortEvent = _contrebandEvents[_currentEvent];
             }

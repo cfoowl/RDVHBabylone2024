@@ -13,26 +13,26 @@ MonoBehaviour:
   m_Name: 5EventTours
   m_EditorClassIdentifier: 
   _cityName: 5
-  _eventName: Port de Tours
+  _eventName: TOURS
   _eventText: "Tours a gard\xE9 sa prestance d\u2019autrefois, lorsque les rois en
     avaient fait leur capitale. La ville est riche et le port est tr\xE8s encombr\xE9.
-    Les chalands se croisent p\xEAle-m\xEAle, ci et l\xE0, sur le fleuve. En voulant
-    \xE9viter un b\xE2teau qui manoeuvrait \xE0 b\xE2bord, paf ! Sacrebleu, une \xE9norme
-    barque nous a emboutis ! Voil\xE0 ce qui arrive lorsque des p\xEAcheurs s\u2019improvisent
-    mariniers ! Que la peste soit avec ces faquins ! Par chance, notre chargement
-    de marchandises est intact, mais notre chaland est bien ab\xEEm\xE9... Il va
-    falloir le r\xE9parer pour continuer notre voyage, mais \xE7a, \xE7a couste du
-    temps et de l\u2019argent ! \r\n\r\n\r\nVous devez payer 200 livres pour restaurer
-    votre chaland. C'est une sacr\xE9e somme !"
-  _eventTextPart2: "Ce fut cher, mais le chaland a bien \xE9t\xE9 rafistol\xE9 !
-    Il est temps de commercer ! Nous devons vendre les marchandises originaires de
-    Blois et r\xE9cup\xE9rer celles pour des marchands de Saumur et de Chalonnes.\r\n\r\nLe
-    p\xE9age du port de Tours vous co\xFBte 20 livres.\n\nVous devez r\xE9cup\xE9rer
-    un chargement de planches pour Saumur et un chargement de chaux pour Chalonnes.
-    Vous pouvez vendre 2 chargements d\u2019ardoises en provenance de Blois. \r\n\r\n"
+    Les chalands se croisent p\xEAle-m\xEAle, ci et l\xE0, sur le fleuve... Quel
+    tumulte ! Nous devons naviguer avec pr\xE9caution pour \xE9viter les autres embarcations.\r\n\r\nUn
+    ami marinier a un plan : il nous propose de remettre une ancre de navire aux
+    alentours de Chalonnes. Le chaland qui la transportait depuis les forges du Nivernais
+    a \xE9t\xE9 fortement endommag\xE9, mais celle-ci est attendue sans d\xE9lai
+    par son commanditaire ! C'est que les chantiers navals sont la fiert\xE9 de la
+    r\xE9gion nantaise ! Bien s\xFBr, cette transaction devrait nous rapporter bien
+    200 livres, mais une ancre, c'est un chargement fichtrement encombrant !\r\n"
+  _eventTextPart2:
+  - "Nous devons r\xE9cup\xE9rer 1 chargement de planches pour Saumur et 1 chargement
+    de chaux pour Chalonnes...\r\nEt cette ancre pour Ancenis ! \r\n\r\nAvons-nous
+    assez de place ? Peut-\xEAtre devrons-nous faire des choix et sacrifier quelques
+    commandes ? Quel dilemme !\r\n\r\nLe chargement de rations de nourriture pour
+    l'\xE9quipage co\xFBte 50 livres."
   _button1Text: 
   _button2Text: 
-  _bigPort: 0
+  _bigPort: 1
   _eventMarchandisesGained: 0500000002000000
   _eventMarchandisesRemoved: 050000000500000003000000030000000400000004000000
   _eventAudioSource: {fileID: 0}

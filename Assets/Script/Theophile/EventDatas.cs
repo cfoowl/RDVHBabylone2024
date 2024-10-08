@@ -11,7 +11,7 @@ public class EventDatas : ScriptableObject
     [SerializeField] private ECityNames _cityName = ECityNames.NONE;
     [SerializeField] private string _eventName = "";
     [SerializeField,TextArea(10, 9999)] private string _eventText = "";
-    [SerializeField, TextArea(10, 9999)] private string _eventTextPart2 = "";
+    [SerializeField, TextArea(10, 9999)] private string[] _eventTextPart2;
     [SerializeField] private string _button1Text = "";
     [SerializeField] private string _button2Text = "";
     // [SerializeField] private Sprite _eventImage = null;
@@ -27,7 +27,7 @@ public class EventDatas : ScriptableObject
     public ECityNames CityName => _cityName;
     public string EventName => _eventName;
     public string EventText => _eventText;
-    public string EventTextPart2 => _eventTextPart2;
+    public string[] EventTextPart2 => _eventTextPart2;
     public string Button1Text => _button1Text;
     public string Button2Text => _button2Text;
     // public Sprite EventImage => _eventImage;

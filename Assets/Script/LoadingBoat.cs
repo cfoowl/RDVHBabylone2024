@@ -17,44 +17,62 @@ public class LoadingBoat : MonoBehaviour
         speed = 0;
         updateTrajectory(0);
         Vector3 startingPos = trajectory[0];
-        gameObject.GetComponent<RectTransform> ().position = startingPos;
+        gameObject.GetComponent<RectTransform>().position = startingPos;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(!isWaiting) {
+        if (!isWaiting)
+        {
             MoveTowardsWaypoint();
         }
     }
 
-    void MoveTowardsWaypoint(){
+    void MoveTowardsWaypoint()
+    {
         if (currentWaypointIndex >= waypoints.Length) return;
-        if (speed < 50) {
+        if (speed < 50)
+        {
             speed += 0.5f;
         }
 
         Vector3 direction = trajectory[currentTrajectoryNodeIndex] - transform.position;
         float distance = direction.magnitude;
         Vector3 moveDirection = direction.normalized;
-        if(distance < 2f) {
-            if (currentTrajectoryNodeIndex < trajectory.Count -1) {
+        if (distance < 2f)
+        {
+            if (currentTrajectoryNodeIndex < trajectory.Count - 1)
+            {
                 currentTrajectoryNodeIndex++;
-            } else {
+            }
+            else
+            {
                 StartWaitingAtWaypoint();
             }
-        } else {
-            gameObject.GetComponent<RectTransform> ().position += moveDirection * speed * Time.deltaTime;
         }
-    } 
-       private void StartWaitingAtWaypoint()
+        else
+        {
+            gameObject.GetComponent<RectTransform>().position += moveDirection * speed * Time.deltaTime;
+        }
+    }
+    private void StartWaitingAtWaypoint()
     {
         isWaiting = true;
-        accosterButton.SetActive(true);
+        if (currentWaypointIndex < GameFlowManager.instance.CurrentEvent)
+        {
+            ContinueMoving();
+        }
+        else
+        {
+            accosterButton.SetActive(true);
+        }
 
     }
-    public void ContinueMoving() {
-        if (isWaiting) {
+    public void ContinueMoving()
+    {
+        if (isWaiting)
+        {
             isWaiting = false;
             currentWaypointIndex++;
             currentTrajectoryNodeIndex = 0;
@@ -64,9 +82,11 @@ public class LoadingBoat : MonoBehaviour
 
         }
     }
-    void updateTrajectory(int index) {
+    void updateTrajectory(int index)
+    {
         trajectory.Clear();
-        foreach (Transform child in waypoints[index].transform) {
+        foreach (Transform child in waypoints[index].transform)
+        {
             trajectory.Add(child.GetComponent<RectTransform>().position);
         }
     }

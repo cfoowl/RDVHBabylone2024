@@ -9,6 +9,7 @@ public class RessourcesManager : MonoBehaviour
     #region Fields
 
     [SerializeField] private float _money = 200;
+    [SerializeField] public int _health = 10;
     [SerializeField] private TextMeshProUGUI _moneyText = null;
     public static RessourcesManager instance;
 
@@ -73,25 +74,39 @@ public class RessourcesManager : MonoBehaviour
     //Remove Money if there is enough money and if used money's value is over 0 
     public float UseMoney(float moneyUsed)
     {
-        if (moneyUsed > 0)
-        {
-            if(_money - moneyUsed >= 0)
-            {
-                _money = _money - moneyUsed;
-                // Debug.Log("Removed " + moneyUsed + " from Money.");
-                // Debug.Log("Current Money =  " + _money);
-            }
-            else
-            {
-                OnNotEnoughMoneyEv();
-                // Debug.Log("Can't use " + moneyUsed + " because there is not enough Money.");
-            }
-        }
-        else
-        {
-            // Debug.Log("Can't remove " + moneyUsed + " to Money because its value is positive or null.");
-        }
+        _money = _money - moneyUsed;
+        // if (moneyUsed > 0)
+        // {
+        //     if(_money - moneyUsed >= 0)
+        //     {
+        //         _money = _money - moneyUsed;
+        //         // Debug.Log("Removed " + moneyUsed + " from Money.");
+        //         // Debug.Log("Current Money =  " + _money);
+        //     }
+        //     else
+        //     {
+        //         OnNotEnoughMoneyEv();
+        //         // Debug.Log("Can't use " + moneyUsed + " because there is not enough Money.");
+        //     }
+        // }
+        // else
+        // {
+        //     // Debug.Log("Can't remove " + moneyUsed + " to Money because its value is positive or null.");
+        // }
         return _money;
+    }
+
+    public void applyDamage(float damage) {
+        _health -= (int)Math.Floor(damage);
+        Debug.Log("Current health : " + _health);
+    }
+
+    public void repairBoat(int health) {
+        _health += health;
+        if (_health > 10) {
+            _health = 10;
+        }
+        Debug.Log("Current health : " + _health);
     }
 
     //Event called when ther is not enough Money to pay Something

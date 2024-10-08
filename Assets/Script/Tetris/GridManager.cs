@@ -62,6 +62,16 @@ public class GridManager : MonoBehaviour
         }
     }
 
+    public void applyInventoryDamage() {
+        float damage = 0;
+        foreach (Slot slot in slots) {
+            if (slot.isOccupied) {
+                damage += 0.1f;
+            }
+        }
+        RessourcesManager.instance.applyDamage(damage);
+    }
+
     public Slot GetCell(float posX, float posY) {
         // posX += slotSize/2;
         // posY += slotSize/2;
