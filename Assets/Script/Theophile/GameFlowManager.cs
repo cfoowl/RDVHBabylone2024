@@ -87,6 +87,7 @@ public class GameFlowManager : MonoBehaviour
 
     public void MoveToNextPort()
     {
+        GridManager.instance.applyInventoryDamage();
         if (_currentEvent + 1 < _events.Length)
         {
             _currentEvent++;

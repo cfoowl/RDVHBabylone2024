@@ -9,6 +9,7 @@ public class RessourcesManager : MonoBehaviour
     #region Fields
 
     [SerializeField] private float _money = 200;
+    [SerializeField] private int _health = 10;
     [SerializeField] private TextMeshProUGUI _moneyText = null;
     public static RessourcesManager instance;
 
@@ -93,6 +94,18 @@ public class RessourcesManager : MonoBehaviour
         //     // Debug.Log("Can't remove " + moneyUsed + " to Money because its value is positive or null.");
         // }
         return _money;
+    }
+
+    public void applyDamage(float damage) {
+        _health -= (int)Math.Floor(damage);
+        Debug.Log("Current health : " + _health);
+    }
+
+    public void repairBoat(int health) {
+        _health += health;
+        if (_health > 10) {
+            _health = 10;
+        }
     }
 
     //Event called when ther is not enough Money to pay Something
