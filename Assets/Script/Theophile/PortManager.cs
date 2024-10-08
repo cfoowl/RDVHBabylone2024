@@ -20,7 +20,6 @@ public class PortManager : MonoBehaviour
     [SerializeField] private GameObject _specialChoiceButtons = null;
     [SerializeField] private TextMeshProUGUI _specialButton1Text = null;
     [SerializeField] private TextMeshProUGUI _specialButton2Text = null;
-    [SerializeField, TextArea(10, 9999)] private string _specialTextBlois = "";
     [SerializeField, TextArea(10, 9999)] private string _specialTextTours = "";
     [SerializeField, TextArea(10, 9999)] private string _specialTextAngers = "";
     [SerializeField] private GameObject _victoryScreen = null;
@@ -74,7 +73,7 @@ public class PortManager : MonoBehaviour
             // _eventImageImage.sprite = _portEvent.EventImage;
             _eventNameText.text = _portEvent.EventName;
             StartCoroutine(DisplayText(_portEvent.EventText));
-            if (_portEvent.CityName == ECityNames.BLOIS || _portEvent.CityName == ECityNames.ANGERS)
+            if (_portEvent.CityName == ECityNames.ANGERS)
             {
                 _specialChoiceButtons.SetActive(true);
                 _specialButton1Text.text = _portEvent.Button1Text;
@@ -142,18 +141,9 @@ public class PortManager : MonoBehaviour
             SpawnMarchandises();
             VenteMarchandises();
             StopAllCoroutines();
-            if (_portEvent.CityName == ECityNames.TOURS && _gameFlowManager.BloisSkip == true)
-            {
-                StartCoroutine(DisplayText(_specialTextTours));
-                _gameFlowManager.BloisSkip = false;
-            }
-
-            else
-            {
-                StartCoroutine(DisplayText(_portEvent.EventTextPart2));
-                _continueButton.SetActive(false);
-                _nextPortButton.SetActive(true);
-            }
+            StartCoroutine(DisplayText(_portEvent.EventTextPart2));
+            _continueButton.SetActive(false);
+            _nextPortButton.SetActive(true);
         }
         else if (_portEvent.CityName == ECityNames.NANTES)
         {
@@ -186,10 +176,10 @@ public class PortManager : MonoBehaviour
     {
         switch (portName)
         {
-            case ECityNames.BLOIS:
-                EventBlois();
-                // Debug.Log("Special Event Blois Triggered");
-                break;
+            // case ECityNames.BLOIS:
+            //     EventBlois();
+            //     // Debug.Log("Special Event Blois Triggered");
+            //     break;
 
             case ECityNames.TOURS:
                 EventTours();
@@ -250,13 +240,6 @@ public class PortManager : MonoBehaviour
         }
     }
 
-    //Event that triggers when arriving at Blois' Port
-    private void EventBlois()
-    {
-        _gameFlowManager.CurrentEvent++;
-        _gameFlowManager.BloisSkip = true;
-    }
-
     //Event that triggers when arriving at Tours' Port
     private void EventTours()
     {
@@ -282,12 +265,7 @@ public class PortManager : MonoBehaviour
     public void SpecialButton1()
     {
         ScreenManager.instance.SetQuaiScreen(_portEvent.bigPort);
-        if (_portEvent.CityName == ECityNames.BLOIS)
-        {
-            StopAllCoroutines();
-            StartCoroutine(DisplayText(_portEvent.EventTextPart2));
-        }
-        else
+        if (_portEvent.CityName == ECityNames.ANGERS)
         {
             _ressourcesManager.UseMoney(40);
             StopAllCoroutines();
@@ -300,13 +278,7 @@ public class PortManager : MonoBehaviour
     public void SpecialButton2()
     {
         ScreenManager.instance.SetQuaiScreen(_portEvent.bigPort);
-        if (_portEvent.CityName == ECityNames.BLOIS)
-        {
-            TriggerSpecialEvent(ECityNames.BLOIS);
-            StopAllCoroutines();
-            StartCoroutine(DisplayText(_specialTextBlois));
-        }
-        else
+        if (_portEvent.CityName == ECityNames.ANGERS)
         {
             _ressourcesManager.AddMoney(80);
             TriggerSpecialEvent(ECityNames.ANGERS);
