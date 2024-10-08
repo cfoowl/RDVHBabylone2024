@@ -14,17 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cityName: 10
   _eventName: NANTES
-  _eventText: "Plus votre chaland se rapproche de la capitale des ducs de Bretagne,
+  _eventText: "Plus notre chaland se rapproche de la capitale des ducs de Bretagne,
     plus le paysage est \xE9trange. La nature semble dispara\xEEtre sous les immondices
     laiss\xE9es par les nombreux passages de bateaux. Ici et l\xE0, des embarcations
-    abandonn\xE9es et des branches d\u2019arbres jonchent les bordures du fleuve.
-    Certaines flottent comme des \xE2mes perdues, g\xEAnant le passage incessant
-    des bateaux. Nous devons prendre beaucoup de pr\xE9cautions pour \xE9viter un
-    nouvel accident ! \n\nNantes est une ville prosp\xE8re de longue date, mais encore
-    davantage depuis que son commerce est tourn\xE9 vers les colonies, au-del\xE0
-    de l\u2019oc\xE9an : esclaves et denr\xE9es venues de pays lointains\u2026\n\n\r\n"
-  _eventTextPart2: "Vous \xEAtes arriv\xE9s ! Vous pouvez vendre vos derni\xE8res
-    marchandises."
+    abandonn\xE9es, des branches d\u2019arbres jonchent les bordures du fleuve. Certaines
+    flottent comme des \xE2mes perdues, g\xEAnant le passage incessant des bateaux.
+    Nous devons prendre beaucoup de pr\xE9cautions pour \xE9viter un nouvel accident
+    ! Nantes est une ville prosp\xE8re de longue date, mais encore davantage depuis
+    que son commerce est tourn\xE9 vers les colonies, au-del\xE0 de l\u2019oc\xE9an
+    : esclaves et denr\xE9es venues de pays lointains\u2026\r\n"
+  _eventTextPart2:
+  - victoire (wip)
   _button1Text: 
   _button2Text: 
   _bigPort: 1
