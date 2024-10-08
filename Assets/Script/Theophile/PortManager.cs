@@ -10,7 +10,7 @@ public class PortManager : MonoBehaviour
 
 
     public static PortManager instance;
-    [SerializeField] private EventDatas _portEvent = null;
+    [SerializeField] public EventDatas _portEvent = null;
     [SerializeField] private TextMeshProUGUI _eventNameText = null;
     [SerializeField] private TextMeshProUGUI _eventTextText = null;
     // [SerializeField] private Image _eventImageImage = null;

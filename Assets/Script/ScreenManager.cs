@@ -9,6 +9,8 @@ public class ScreenManager : MonoBehaviour
     public GameObject screenQuai;
     public GameObject screenQuaiBig;
     public GameObject screenQuaiSmol;
+    public GameObject screenPortBig;
+    public GameObject screenPortSmol;
     public Camera mainCamera;
     public Canvas mainCanvas;
     public Camera loadingCamera;
@@ -62,10 +64,21 @@ public class ScreenManager : MonoBehaviour
             screenQuaiSmol.SetActive(true);
         }
     }
-    public void SetPortScreen()
+    public void SetPortScreen(bool isBig)
     {
         PortManager.instance.LoadData();
         SetActiveScreen(1);
+
+        if (isBig)
+        {
+            screenPortSmol.SetActive(false);
+            screenPortBig.SetActive(true);
+        }
+        else
+        {
+            screenPortBig.SetActive(false);
+            screenPortSmol.SetActive(true);
+        }
     }
     public void EnterLoadingScreen()
     {
@@ -83,7 +96,7 @@ public class ScreenManager : MonoBehaviour
         loadingCanvas.gameObject.SetActive(false);
         mainCamera.gameObject.SetActive(true);
         mainCanvas.gameObject.SetActive(true);
-        SetPortScreen();
+        SetPortScreen(PortManager.instance._portEvent.bigPort);
     }
 
     private void SetActiveScreen(int index)
