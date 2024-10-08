@@ -90,7 +90,7 @@ public class GameFlowManager : MonoBehaviour
         if (_currentEvent + 1 < _events.Length)
         {
             _currentEvent++;
-            if (Contreband)
+            if (MerchandiseManager.instance.isInInventory(EMarchandiseTypes.SEL))
             {
                 _port.PortEvent = _contrebandEvents[_currentEvent];
             }

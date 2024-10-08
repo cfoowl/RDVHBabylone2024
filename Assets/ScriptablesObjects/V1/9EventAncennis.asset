@@ -14,11 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cityName: 9
   _eventName: ANCENIS
-  _eventText: "Nous arrivons \xE0 Ancenis, un petit port assez sommaire et une courte
-    escale\u2026 Cependant, Nantes est proche !\r\n\r\n\r"
-  _eventTextPart2: "Vous devez r\xE9cup\xE9rer 2 chargements de chaux, 2 chargements
-    de vins et 1 chargement de caf\xE9 pour Nantes. Vous pouvez vendre 1 chargement
-    de c\xE9r\xE9ales en provenance d\u2019Amboise."
+  _eventText: "Nous arrivons \xE0 Ancenis, un petit port assez sommaire\u2026 Cependant,
+    Nantes est proche ! Les Gabelous, les hommes de la brigade fluviale, veillent
+    sur les bateaux. Baste ! Je crois que nous avons bien fait de ne pas nous m\xEAler
+    de la contrebande de \"faux sel\" du cousin Jacques... Nous passons sans \xEAtre
+    ennuy\xE9s."
+  _eventTextPart2:
+  - "Nous devons r\xE9cup\xE9rer 2 chargements de chaux, 2 chargements de vins et
+    1 chargement de caf\xE9 pour Nantes.\r\nLe chargement de rations de nourriture
+    pour l'\xE9quipage co\xFBte 20 livres.\r\n"
   _button1Text: 
   _button2Text: 
   _bigPort: 0

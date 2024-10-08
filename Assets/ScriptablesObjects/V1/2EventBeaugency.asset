@@ -18,10 +18,11 @@ MonoBehaviour:
     sombre \xE0 l\u2019\xE9poque d\u2019autrefois, quand ces diables de r\xE9form\xE9s
     molestaient les humbles chr\xE9tiens. Ici, il n\u2019y a m\xEAme pas de quai
     pour accueillir les chalands de passage. Nous devons aller jusqu\u2019au bord
-    de la gr\xE8ve pour r\xE9cup\xE9rer les marchandises apport\xE9es en charrette.\r\n\r\n\r"
-  _eventTextPart2: "Vous devez r\xE9cup\xE9rer 2 chargements de vin pour Blois, un
-    chargement de caf\xE9 pour Saumur et un chargement de c\xE9r\xE9ales pour Chalonnes.
-    \n"
+    de la gr\xE8ve pour r\xE9cup\xE9rer les marchandises apport\xE9es en charrette.\r\n"
+  _eventTextPart2:
+  - "Nous devons r\xE9cup\xE9rer 2 chargements de vin pour Blois, 1 chargement de
+    caf\xE9 pour Saumur et 1 chargement de c\xE9r\xE9ales pour Chalonnes. \r\nLe
+    chargement de rations de nourriture pour l'\xE9quipage co\xFBte 20 livres.\r\n"
   _button1Text: 
   _button2Text: 
   _bigPort: 0

@@ -45,12 +45,13 @@ public class ScreenManager : MonoBehaviour
 
     public void SetQuaiScreen(bool isBig)
     {
-        Debug.Log(isBig);
         SetActiveScreen(2);
 
         MerchandiseManager.instance.wipeMerchandise();
         MerchandiseManager.instance.ConsumeFood();
         MerchandiseManager.instance.spawnRation();
+        PortManager.instance.SpawnMarchandises();
+        PortManager.instance.VenteMarchandises();
 
 
         if (isBig)

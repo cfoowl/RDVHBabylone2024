@@ -17,20 +17,15 @@ MonoBehaviour:
   _eventText: "Blois \xE9tait connue pour ses ma\xEEtres artisans et ses orf\xE8vres
     confirm\xE9s. Aujourd\u2019hui, ils ne sont plus tr\xE8s nombreux, mais le port
     est engorg\xE9 par les nombreux chalands de passage, tout comme le nostre. Diantre
-    ! Il va falloir attendre pour acc\xE9der aux quais. Aussi, un choix s\u2019offre
-    \xE0 nous :\r\n \r\nSoit patienter un peu aupr\xE8s de Blois pour r\xE9cup\xE9rer
-    les marchandises \xE0 quai pour le port de Tours et vendre les marchandises originaires
-    d\u2019Orl\xE9ans et de Beaugency\u2026\n\r\nSoit partir directement \xE0 Tours,
-    sans escale, o\xF9 un n\xE9gociant nous promet une belle somme si nous arrivons
-    prestement !\r\n"
-  _eventTextPart2: "Nous avons choisi d'attendre \xE0 Blois, mais finalement nous
-    n'avons point tant esp\xE9r\xE9 ! Nous acc\xE9dons aux quais sans encombre. Ici,
-    nous pouvons vendre nos marchandises et r\xE9cup\xE9rer les chargements destin\xE9s
-    au port de Tours. \r\n\r\nVous devez r\xE9cup\xE9rer 2 chargements d\u2019ardoises
-    pour Tours.\r\nVous pouvez vendre vos 2 chargements de planches provenant d\u2019Orl\xE9ans
-    et 2 de vins provenant de Beaugency. \r\n"
-  _button1Text: "Patienter \xE0 Blois"
-  _button2Text: Partir pour Tours
+    ! Il va falloir attendre pour acc\xE9der aux quais.\r\n"
+  _eventTextPart2:
+  - "Nous n\u2019avons finalement point tant esp\xE9r\xE9 ! Nous acc\xE9dons aux
+    quais sans encombre. Ici, nous pouvons vendre nos marchandises et r\xE9cup\xE9rer
+    les chargements destin\xE9s au port de Tours. \r\n\r\nNous devons r\xE9cup\xE9rer
+    2 chargements d\u2019ardoises pour Tours.\r\nLe chargement de rations de nourriture
+    pour l'\xE9quipage co\xFBte 50 livres."
+  _button1Text: 
+  _button2Text: 
   _bigPort: 1
   _eventMarchandisesGained: 0400000004000000
   _eventMarchandisesRemoved: 05000000050000000300000003000000

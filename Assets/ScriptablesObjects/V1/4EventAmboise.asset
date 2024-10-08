@@ -15,12 +15,12 @@ MonoBehaviour:
   _cityName: 4
   _eventName: AMBOISE
   _eventText: "On dit que c\u2019est dans le coin qu\u2019est mort un grand homme,
-    nomm\xE9 L\xE9onard de Vinci ! Sinon, depuis la rive, on peut voir le majestueux
-    ch\xE2teau des rois de jadis. Ici, je peux vendre le chargement provenant d\u2019Orl\xE9ans
-    et r\xE9cup\xE9rer ceux destin\xE9s \xE0 Angers et Ancenis.\r\n\r\n\r"
-  _eventTextPart2: "Vous devez r\xE9cup\xE9rer 1 chargement de vin pour Angers et
-    1 chargement de c\xE9r\xE9ales pour Ancenis. Vous pouvez vendre 1 chargement
-    de chaux provenant d\u2019Orl\xE9ans."
+    nomm\xE9 L\xE9onard de Vinci. Sinon, depuis la rive, on peut voir le majestueux
+    ch\xE2teau des rois de jadis. Quel faste !\r\n"
+  _eventTextPart2:
+  - "Nous devons r\xE9cup\xE9rer 1 chargement de vin pour Angers et 1 chargement
+    de c\xE9r\xE9ales pour Ancenis.\r\nLe chargement de rations de nourriture pour
+    l'\xE9quipage co\xFBte 20 livres."
   _button1Text: 
   _button2Text: 
   _bigPort: 0

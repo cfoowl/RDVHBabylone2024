@@ -16,13 +16,29 @@ MonoBehaviour:
   _eventName: SAUMUR
   _eventText: "Saumur est bien vide depuis que notre bon roi a r\xE9voqu\xE9 l\u2019\xE9dit
     de Nantes, mais les chalands de passage sont nombreux et le commerce fluvial
-    suit son cours. Nous devons vendre nos marchandises et r\xE9cup\xE9rer le chargement
-    pour Nantes !\r\n\r\n\r"
-  _eventTextPart2: "Vous devez r\xE9cup\xE9rer 1 chargement d\u2019ardoises pour
-    Nantes. Vous pouvez vendre 1 chargement de caf\xE9 en provenance de Beaugency
-    et 1 chargement de planches en provenance de Tours. "
-  _button1Text: 
-  _button2Text: 
+    suit son cours. \r\n\r\nC'est l\xE0 que nous croisons notre bon vieux cousin
+    Jacques, un faux-saunier qui trempe dans la contrebande du sel... En chiquant
+    du tabac d'un air hautain, ce maraud nous propose un march\xE9 : ramener du \"faux
+    sel\" (sel ill\xE9gal) \xE0 Nantes. Il nous dit que \xE7a ira, parce que les
+    brigades fluviales, qui surveillent la contrebande de sel, contr\xF4lent surtout
+    les chalands qui vont dans l'autre sens, de Nantes vers les terres.\r\n\r\nLe
+    sel est un monopole royal tr\xE8s contr\xF4l\xE9 qui donne lieu \xE0 un imp\xF4t,
+    la gabelle. Toutefois, sa contrebande rapporte bien, car personne ne peut s\u2019en
+    passer pour donner de la saveur et conserver la nourriture ! Et personne n'aime
+    les imp\xF4ts... Cette affaire est tr\xE8s p\xE9rilleuse, car si nous sommes
+    pris, nous risquons les gal\xE8res ou la mort ! Mais... Si nous parvenons \xE0
+    bon port, cela peut rapporter son pesant d'argent !\r\nHa ! Que d\xE9cider ?"
+  _eventTextPart2:
+  - "Ah, ce cousin Jacques... Il va finir condamn\xE9 aux fers ou bien pendu. Mais
+    ce n'est plus notre affaire ! Nous, nous reprenons votre honneste commerce.\r\n\r\nNous
+    devons r\xE9cup\xE9rer 1 chargement d\u2019ardoises pour Nantes.\r\nLe chargement
+    de rations de nourriture pour l'\xE9quipage co\xFBte 20 livres."
+  - "Ce cousin Jacques, il a toujours de bonnes id\xE9es pour attirer l'argent !
+    Nous allons enfin faire fortune !\r\n\r\nNous devons discr\xE8tement r\xE9cup\xE9rer
+    le faux-sel.\r\nLe chargement de rations de nourriture pour l'\xE9quipage co\xFBte
+    20 livres."
+  _button1Text: "- Rester honn\xEAte."
+  _button2Text: '- Cacher le sel dans le chaland.'
   _bigPort: 0
   _eventMarchandisesGained: 04000000
   _eventMarchandisesRemoved: 0500000006000000

@@ -45,17 +45,22 @@ public class MerchandiseManager : MonoBehaviour
         }
     }
 
-    public void sellMerchandise(EMarchandiseTypes type)
+    public void sellMerchandise(EMarchandiseTypes type){
+        if(deleteMerchandise(type)) {
+            RessourcesManager.instance.AddMoney(60);
+        }
+    }
+    public bool deleteMerchandise(EMarchandiseTypes type)
     {
         foreach (Item item in GridManager.instance.storedMerchandise)
         {
             if (item.type == type)
             {
                 item.Delete();
-                RessourcesManager.instance.AddMoney(60);
-                return;
+                return true;
             }
         }
+        return false;
     }
 
     public void ConsumeFood()

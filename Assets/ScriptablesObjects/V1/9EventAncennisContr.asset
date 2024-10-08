@@ -14,15 +14,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cityName: 9
   _eventName: ANCENIS
-  _eventText: "Nous arrivons \xE0 Ancenis, un petit port assez sommaire\u2026 Et
-    nous avons r\xE9ussi \xE0 transporter le sel de contrebande sans \xEAtre emb\xEAt\xE9s
-    par les autorit\xE9s ! Nous avons eu beaucoup de chance !\r\n\r\n"
-  _eventTextPart2: "Vous devez livrer les 4 chargements de sel de contrebande. Cela
-    vous rapportera 320 livres.\r\nVous devez r\xE9cup\xE9rer 2 chargements de chaux,
-    2 chargements de vins et 1 chargement de caf\xE9 pour Nantes. "
-  _button1Text: 
-  _button2Text: 
+  _eventText: "Nous arrivons \xE0 Ancenis, un petit port assez sommaire. Les Gabelous,
+    les hommes de la brigade fluviale, veillent sur les bateaux depuis leur patache,
+    leur embarcation... Cela ne dit rien qui vaille...\r\nPeste soit le cousin Jacques
+    ! L'un d'eux s'approche de notre embarcation d'un air suspicieux..."
+  _eventTextPart2:
+  - "Nous devons r\xE9cup\xE9rer 2 chargements de chaux, 2 chargements de vins et
+    1 chargement de caf\xE9 pour Nantes.\r\nLe chargement de rations de nourriture
+    pour l'\xE9quipage co\xFBte 20 livres.\r\n"
+  - "- Bon jour, Monsieur. Que venez-vous par ici ?\r\n- Bon jour, cher Monsieur.
+    Dites... N'avez-vous point de sel \xE0 bord de votre chaland ?"
+  - "\"-H\xE9 bien ! Voleur, vous n'allez pas vous en tirer comme \xE7a ! Glapit
+    le Gabelou autoritaire.\r\n- J'essaie de l'amadouer, les yeux larmoyants, en
+    lui contant que j'ai une \xE9pouse mourante et quatre enfants malades \xE0 nourrir,
+    mais le brigadier ne semble pas s'\xE9mouvoir. Peut-\xEAtre pouvons-nous nous
+    entendre ? Lui dis-je alors, en pointant du regard la cassette o\xF9 je range
+    mes comptes.\r\n- Hum ! S'exclame-t-il. Le Gabelou para\xEEt davantage flatt\xE9
+    par l'argent... Nous avons peut-\xEAtre une chance de nous en sortir... Vivants
+    !\r\n\r\nLe Gabelou confisque le \"faux sel\", et 300 livres..."
+  - "\"- Je vois, je vois... On dirait que tout est en r\xE8gle.\" Informe le Gabelou
+    d'un ton lass\xE9 avant de faire demi-tour.\r\n- Je vous f\xE9licite pour votre
+    prudence, Monsieur. Adieu ! \r\nTandis que je le quitte avec des mots flatteurs,
+    je me r\xE9jouis que ce garde f\xFBt si paresseux. Si tout se passe bien, nous
+    allons pouvoir vendre le faux sel \xE0 bon prix !\r\n"
+  _button1Text: '"Oui, j''ai du sel ! Je suis un faux-saunier."'
+  _button2Text: '"Non, je n''ai point de sel !"'
   _bigPort: 0
   _eventMarchandisesGained: 0200000002000000030000000300000006000000
-  _eventMarchandisesRemoved: 09000000090000000900000009000000
+  _eventMarchandisesRemoved: 09000000
   _eventAudioSource: {fileID: 0}

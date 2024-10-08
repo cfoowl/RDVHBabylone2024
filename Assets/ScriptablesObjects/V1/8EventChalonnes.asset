@@ -15,11 +15,14 @@ MonoBehaviour:
   _cityName: 8
   _eventName: CHALONNES
   _eventText: "Depuis l\u2019ouverture du canal de Layon, les quais de Chalonnes
-    sont plus abordables, malgr\xE9 les centaines de bateaux qui vont et viennent
-    charg\xE9s de vin, de chaux et de charbon. \r\n\r"
-  _eventTextPart2: "Vous devez r\xE9cup\xE9rer 2 chargements de planches pour Nantes.
-    Vous pouvez vendre 1 chargement de c\xE9r\xE9ales en provenance de Beaugency
-    et 1 chargement de chaux en provenance de Tours."
+    sont plus abordables, malgr\xE9 les centaines de bateaux qui vont et viennent,
+    charg\xE9s de vin, de chaux et de charbon. \r\nEn voulant \xE9viter un bateau
+    qui man\u0153uvrait \xE0 b\xE2bord, paf ! Sacrebleu, une \xE9norme barque nous
+    a emboutis ! Voil\xE0 ce qui arrive lorsque des p\xEAcheurs s\u2019improvisent
+    mariniers ! Que la peste soit avec ces faquins ! \r\n"
+  _eventTextPart2:
+  - "Nous devons r\xE9cup\xE9rer 2 chargements de planches pour Nantes.\r\nLe chargement
+    de rations de nourriture pour l'\xE9quipage co\xFBte 20 livres.\r\n"
   _button1Text: 
   _button2Text: 
   _bigPort: 0

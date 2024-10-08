@@ -20,6 +20,8 @@ public class PortManager : MonoBehaviour
     [SerializeField] private GameObject _specialChoiceButtons = null;
     [SerializeField] private TextMeshProUGUI _specialButton1Text = null;
     [SerializeField] private TextMeshProUGUI _specialButton2Text = null;
+    [SerializeField] private GameObject ancenisButton = null;
+    [SerializeField] private GameObject repairButton = null;
     [SerializeField, TextArea(10, 9999)] private string _specialTextTours = "";
     [SerializeField, TextArea(10, 9999)] private string _specialTextAngers = "";
     [SerializeField] private GameObject _victoryScreen = null;
@@ -63,6 +65,7 @@ public class PortManager : MonoBehaviour
     private void Start()
     {
         instance = this;
+        repairButton.SetActive(false);
     }
 
     //Load Datas from the EventDatas to the UI
@@ -70,39 +73,12 @@ public class PortManager : MonoBehaviour
     {
         if (_portEvent != null)
         {
-            // _eventImageImage.sprite = _portEvent.EventImage;
+            changeBGMusic(_portEvent.CityName);
             _eventNameText.text = _portEvent.EventName;
             StartCoroutine(DisplayText(_portEvent.EventText));
-            if (_portEvent.CityName == ECityNames.ANGERS)
-            {
-                _specialChoiceButtons.SetActive(true);
-                _specialButton1Text.text = _portEvent.Button1Text;
-                _specialButton2Text.text = _portEvent.Button2Text;
-            }
-            else if (_portEvent.CityName == ECityNames.TOURS)
-            {
-                TriggerSpecialEvent(ECityNames.TOURS);
-                _continueButton.SetActive(true);
-            }
-            else if (_portEvent.CityName == ECityNames.NANTES)
-            {
-                TriggerSpecialEvent(ECityNames.NANTES);
-            }
-            else
-            {
-                if (_portEvent.EventTextPart2 != "")
-                {
-                    _continueButton.SetActive(true);
-                }
-                else
-                {
-                    _nextPortButton.SetActive(true);
-                }
-            }
+            _continueButton.SetActive(true);
 
-            changeBGMusic(_portEvent.CityName);
-
-            Debug.Log("Data Loaded from " + _portEvent.name);
+            TriggerSpecialEvent(_portEvent.CityName);
         }
     }
 
@@ -118,14 +94,14 @@ public class PortManager : MonoBehaviour
         yield return null;
     }
 
-    private void SpawnMarchandises()
+    public void SpawnMarchandises()
     {
         foreach (EMarchandiseTypes type in _portEvent.EventMarchandisesGained)
         {
             MerchandiseManager.instance.spawnMerchandise(type);
         }
     }
-    private void VenteMarchandises()
+    public void VenteMarchandises()
     {
         foreach (EMarchandiseTypes type in _portEvent.EventMarchandisesRemoved)
         {
@@ -135,13 +111,11 @@ public class PortManager : MonoBehaviour
 
     public void ContinueButton()
     {
-        if (_portEvent.EventTextPart2 != "")
+        if (_portEvent.EventTextPart2[0] != "")
         {
-            ScreenManager.instance.SetQuaiScreen(_portEvent.bigPort);
-            SpawnMarchandises();
-            VenteMarchandises();
             StopAllCoroutines();
-            StartCoroutine(DisplayText(_portEvent.EventTextPart2));
+            ScreenManager.instance.SetQuaiScreen(_portEvent.bigPort);
+            StartCoroutine(DisplayText(_portEvent.EventTextPart2[0]));
             _continueButton.SetActive(false);
             _nextPortButton.SetActive(true);
         }
@@ -176,30 +150,35 @@ public class PortManager : MonoBehaviour
     {
         switch (portName)
         {
-            // case ECityNames.BLOIS:
-            //     EventBlois();
-            //     // Debug.Log("Special Event Blois Triggered");
-            //     break;
+            case ECityNames.AMBOISE:
+                EventAmboise();
+                break;
+            case ECityNames.SAUMUR:
+                _continueButton.SetActive(false);
+                _specialChoiceButtons.SetActive(true);
+                _specialButton1Text.text = _portEvent.Button1Text;
+                _specialButton2Text.text = _portEvent.Button2Text;
 
-            case ECityNames.TOURS:
-                EventTours();
-                // Debug.Log("Special Event Tours Triggered");
                 break;
 
             case ECityNames.ANGERS:
                 EventAngers();
-                // Debug.Log("Special Event Angers Triggered");
+                break;
+            case ECityNames.CHALONNES:
+                EventChalonnes();
+                break;
+            case ECityNames.ANCENIS:
+                if (MerchandiseManager.instance.isInInventory(EMarchandiseTypes.SEL)) {
+                    _continueButton.SetActive(false);
+                    ancenisButton.SetActive(true);
+                }
                 break;
 
             case ECityNames.NANTES:
                 EventNantes();
-                // Debug.Log("Special Event Nantes Triggered");
                 break;
 
-
             default:
-                // Debug.Log("No Special Event in this Port");
-                SpawnMarchandises();
                 break;
         }
     }
@@ -240,54 +219,81 @@ public class PortManager : MonoBehaviour
         }
     }
 
-    //Event that triggers when arriving at Tours' Port
-    private void EventTours()
-    {
-        _ressourcesManager.UseMoney(220);
-        if (_gameFlowManager.BloisSkip == true)
-        {
-            _ressourcesManager.AddMoney(50);
-        }
+    private void EventAmboise() {
+        repairButton.SetActive(true);
     }
-
-    //Event that triggers when arriving at Angers' Port
-    private void EventAngers()
-    {
-        _gameFlowManager.Contreband = true;
-        MerchandiseManager.instance.spawnMerchandise(EMarchandiseTypes.SEL);
+    private void EventAngers() {
+        RessourcesManager.instance.UseMoney(40);
     }
+    private void EventChalonnes() {
 
+    }
+    public void ancenisButtonAction() {
+        ancenisButton.SetActive(false);
+        _specialChoiceButtons.SetActive(true);
+        _specialButton1Text.text = _portEvent.Button1Text;
+        _specialButton2Text.text = _portEvent.Button2Text;
+        StopAllCoroutines();
+        StartCoroutine(DisplayText(_portEvent.EventTextPart2[1]));
+    }
     private void EventNantes()
     {
         _continueButton.SetActive(true);
     }
 
+    private void SpecialButton(int choice) {
+        int nextTextIndex = 0;
+        switch (_portEvent.CityName) {
+            case ECityNames.SAUMUR:
+                if (choice == 1) {
+                    nextTextIndex = 0;
+                } else {
+                    nextTextIndex = 1;
+                    MerchandiseManager.instance.spawnMerchandise(EMarchandiseTypes.SEL);
+                }
+                _nextPortButton.SetActive(true);
+                ScreenManager.instance.SetQuaiScreen(_portEvent.bigPort);
+                break;
+
+            case ECityNames.ANCENIS:
+                if (choice == 1) {
+                    nextTextIndex = 2;
+                    MerchandiseManager.instance.deleteMerchandise(EMarchandiseTypes.SEL);
+                    RessourcesManager.instance.UseMoney(300);
+                } else {
+                    nextTextIndex = 3;
+                }
+                _continueButton.SetActive(true);
+                break;
+        }
+
+        _specialChoiceButtons.SetActive(false);
+        StopAllCoroutines();
+        StartCoroutine(DisplayText(_portEvent.EventTextPart2[nextTextIndex]));
+    }
     public void SpecialButton1()
     {
-        ScreenManager.instance.SetQuaiScreen(_portEvent.bigPort);
-        if (_portEvent.CityName == ECityNames.ANGERS)
-        {
-            _ressourcesManager.UseMoney(40);
-            StopAllCoroutines();
-            StartCoroutine(DisplayText(_portEvent.EventTextPart2));
-        }
-        _specialChoiceButtons.SetActive(false);
-        _nextPortButton.SetActive(true);
+        SpecialButton(1);
+        // if (_portEvent.CityName == ECityNames.ANGERS)
+        // {
+        //     _ressourcesManager.UseMoney(40);
+        //     StopAllCoroutines();
+        //     StartCoroutine(DisplayText(_portEvent.EventTextPart2));
+        // }
     }
 
     public void SpecialButton2()
     {
-        ScreenManager.instance.SetQuaiScreen(_portEvent.bigPort);
-        if (_portEvent.CityName == ECityNames.ANGERS)
-        {
-            _ressourcesManager.AddMoney(80);
-            TriggerSpecialEvent(ECityNames.ANGERS);
-            StopAllCoroutines();
-            StartCoroutine(DisplayText(_specialTextAngers));
-        }
-        _specialChoiceButtons.SetActive(false);
-        _nextPortButton.SetActive(true);
+        SpecialButton(2);
+        // if (_portEvent.CityName == ECityNames.ANGERS)
+        // {
+        //     _ressourcesManager.AddMoney(80);
+        //     TriggerSpecialEvent(ECityNames.ANGERS);
+        //     StopAllCoroutines();
+        //     StartCoroutine(DisplayText(_specialTextAngers));
+        // }
     }
+
 
     #endregion SpecialEvent
 
