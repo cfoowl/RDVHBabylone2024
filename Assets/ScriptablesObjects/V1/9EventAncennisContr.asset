@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 9EventAncennisContr
   m_EditorClassIdentifier: 
   _cityName: 9
-  _eventName: Port d'Ancenis
+  _eventName: ANCENIS
   _eventText: "Nous arrivons \xE0 Ancenis, un petit port assez sommaire\u2026 Et
     nous avons r\xE9ussi \xE0 transporter le sel de contrebande sans \xEAtre emb\xEAt\xE9s
     par les autorit\xE9s ! Nous avons eu beaucoup de chance !\r\n\r\n"
@@ -22,7 +22,7 @@ MonoBehaviour:
     2 chargements de vins et 1 chargement de caf\xE9 pour Nantes. "
   _button1Text: 
   _button2Text: 
-  _eventImage: {fileID: 21300000, guid: 77f3f0cdd2ad2b147be73d6c23d51042, type: 3}
+  _bigPort: 0
   _eventMarchandisesGained: 0200000002000000030000000300000006000000
   _eventMarchandisesRemoved: 09000000090000000900000009000000
   _eventAudioSource: {fileID: 0}

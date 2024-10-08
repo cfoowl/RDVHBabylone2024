@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 7EventAngers
   m_EditorClassIdentifier: 
   _cityName: 7
-  _eventName: "Pont-de-C\xE9 (Angers)"
+  _eventName: "PONT-DE-C\xC9 (ANGERS)"
   _eventText: "Pour acheminer les marchandises \xE0 Angers, nous passons par les
     Ponts-de-C\xE9. Il est dit que ce sont des gaulois qui auraient emp\xEAch\xE9
     C\xE9sar lui-m\xEAme d\u2019y inscrire l\u2019int\xE9gralit\xE9 de son nom !

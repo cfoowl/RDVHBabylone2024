@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 8EventChalonnesContr
   m_EditorClassIdentifier: 
   _cityName: 8
-  _eventName: Port de Chalonnes
+  _eventName: CHALONNES
   _eventText: "Depuis l\u2019ouverture du canal de Layon, les quais de Chalonnes
     sont plus abordables, malgr\xE9 les centaines de bateaux qui vont et viennent
     charg\xE9s de vin, de chaux et de charbon. \r\n\r"
@@ -24,7 +24,7 @@ MonoBehaviour:
     ! Restons concentr\xE9s..."
   _button1Text: 
   _button2Text: 
-  _eventImage: {fileID: 21300000, guid: 77f3f0cdd2ad2b147be73d6c23d51042, type: 3}
+  _bigPort: 0
   _eventMarchandisesGained: 
   _eventMarchandisesRemoved: 
   _eventAudioSource: {fileID: 0}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 10EventNantes
   m_EditorClassIdentifier: 
   _cityName: 10
-  _eventName: "Arriv\xE9e \xE0 Nantes"
+  _eventName: NANTES
   _eventText: "Plus votre chaland se rapproche de la capitale des ducs de Bretagne,
     plus le paysage est \xE9trange. La nature semble dispara\xEEtre sous les immondices
     laiss\xE9es par les nombreux passages de bateaux. Ici et l\xE0, des embarcations

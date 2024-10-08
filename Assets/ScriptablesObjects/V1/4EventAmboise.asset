@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 4EventAmboise
   m_EditorClassIdentifier: 
   _cityName: 4
-  _eventName: Port d'Amboise
+  _eventName: AMBOISE
   _eventText: "On dit que c\u2019est dans le coin qu\u2019est mort un grand homme,
     nomm\xE9 L\xE9onard de Vinci ! Sinon, depuis la rive, on peut voir le majestueux
     ch\xE2teau des rois de jadis. Ici, je peux vendre le chargement provenant d\u2019Orl\xE9ans
@@ -23,7 +23,7 @@ MonoBehaviour:
     de chaux provenant d\u2019Orl\xE9ans."
   _button1Text: 
   _button2Text: 
-  _eventImage: {fileID: 21300000, guid: 77f3f0cdd2ad2b147be73d6c23d51042, type: 3}
+  _bigPort: 0
   _eventMarchandisesGained: 0300000001000000
   _eventMarchandisesRemoved: 02000000
   _eventAudioSource: {fileID: 0}

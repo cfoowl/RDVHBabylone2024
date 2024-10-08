@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 6EventSaumur
   m_EditorClassIdentifier: 
   _cityName: 6
-  _eventName: Port de Saumur
+  _eventName: SAUMUR
   _eventText: "Saumur est bien vide depuis que notre bon roi a r\xE9voqu\xE9 l\u2019\xE9dit
     de Nantes, mais les chalands de passage sont nombreux et le commerce fluvial
     suit son cours. Nous devons vendre nos marchandises et r\xE9cup\xE9rer le chargement
@@ -23,7 +23,7 @@ MonoBehaviour:
     et 1 chargement de planches en provenance de Tours. "
   _button1Text: 
   _button2Text: 
-  _eventImage: {fileID: 21300000, guid: 77f3f0cdd2ad2b147be73d6c23d51042, type: 3}
+  _bigPort: 0
   _eventMarchandisesGained: 04000000
   _eventMarchandisesRemoved: 0500000006000000
   _eventAudioSource: {fileID: 0}
