@@ -15,33 +15,44 @@ public class ScreenManager : MonoBehaviour
     public Canvas loadingCanvas;
     public GameObject loadingBoat;
 
-    private int currentScreen;
+    private int currentScreen = 1;
     public static ScreenManager instance;
     private GameObject[] screens;
-    void Start()
+    void Awake()
     {
         instance = this;
-        screens = new GameObject[] { screenLoading, screenPort, screenQuai};
+        screens = new GameObject[] { screenLoading, screenPort, screenQuai };
+
+    }
+    void Start()
+    {
     }
 
-    void Initialize() {
+    void Initialize()
+    {
         currentScreen = 1;
         SetActiveScreen(currentScreen);
     }
 
-    public void SetQuaiScreen(bool isBig) {
+    public void SetQuaiScreen(bool isBig)
+    {
         SetActiveScreen(2);
-        if (isBig) {
+        if (isBig)
+        {
             screenQuaiBig.SetActive(true);
-        } else {
+        }
+        else
+        {
             screenQuaiSmol.SetActive(true);
         }
     }
-    public void SetPortScreen() {
+    public void SetPortScreen()
+    {
         PortManager.instance.LoadData();
         SetActiveScreen(1);
     }
-    public void EnterLoadingScreen() {
+    public void EnterLoadingScreen()
+    {
         loadingCamera.gameObject.SetActive(true);
         loadingCanvas.gameObject.SetActive(true);
         mainCamera.gameObject.SetActive(false);
@@ -50,7 +61,8 @@ public class ScreenManager : MonoBehaviour
         loadingCamera.GetComponent<CameraFollow>().ContinueMoving();
         loadingBoat.GetComponent<LoadingBoat>().ContinueMoving();
     }
-    public void ExitLoadingScreen() {
+    public void ExitLoadingScreen()
+    {
         loadingCamera.gameObject.SetActive(false);
         loadingCanvas.gameObject.SetActive(false);
         mainCamera.gameObject.SetActive(true);
@@ -60,8 +72,10 @@ public class ScreenManager : MonoBehaviour
 
     private void SetActiveScreen(int index)
     {
+        Debug.Log(screens);
         screens[currentScreen].SetActive(false);
-        if (currentScreen == 2) {
+        if (currentScreen == 2)
+        {
             screenQuaiSmol.SetActive(false);
             screenQuaiBig.SetActive(false);
         }

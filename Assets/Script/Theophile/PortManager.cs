@@ -25,7 +25,7 @@ public class PortManager : MonoBehaviour
     [SerializeField, TextArea(10, 9999)] private string _specialTextAngers = "";
     [SerializeField] private GameObject _victoryScreen = null;
     private GameFlowManager _gameFlowManager = null;
-    
+
 
     #endregion Fields
 
@@ -33,9 +33,9 @@ public class PortManager : MonoBehaviour
 
     public EventDatas PortEvent
     {
-        get 
-        { 
-            return _portEvent; 
+        get
+        {
+            return _portEvent;
         }
 
         set
@@ -74,13 +74,13 @@ public class PortManager : MonoBehaviour
             // _eventImageImage.sprite = _portEvent.EventImage;
             _eventNameText.text = _portEvent.EventName;
             StartCoroutine(DisplayText(_portEvent.EventText));
-            if(_portEvent.CityName == ECityNames.BLOIS || _portEvent.CityName == ECityNames.ANGERS)
+            if (_portEvent.CityName == ECityNames.BLOIS || _portEvent.CityName == ECityNames.ANGERS)
             {
                 _specialChoiceButtons.SetActive(true);
                 _specialButton1Text.text = _portEvent.Button1Text;
                 _specialButton2Text.text = _portEvent.Button2Text;
             }
-            else if(_portEvent.CityName == ECityNames.TOURS)
+            else if (_portEvent.CityName == ECityNames.TOURS)
             {
                 TriggerSpecialEvent(ECityNames.TOURS);
                 _continueButton.SetActive(true);
@@ -121,12 +121,15 @@ public class PortManager : MonoBehaviour
 
     private void SpawnMarchandises()
     {
-        foreach(EMarchandiseTypes type in _portEvent.EventMarchandisesGained) {
+        foreach (EMarchandiseTypes type in _portEvent.EventMarchandisesGained)
+        {
             MerchandiseManager.instance.spawnMerchandise(type);
-        } 
+        }
     }
-    private void VenteMarchandises() {
-        foreach(EMarchandiseTypes type in _portEvent.EventMarchandisesRemoved) {
+    private void VenteMarchandises()
+    {
+        foreach (EMarchandiseTypes type in _portEvent.EventMarchandisesRemoved)
+        {
             MerchandiseManager.instance.sellMerchandise(type);
         }
     }
@@ -165,7 +168,8 @@ public class PortManager : MonoBehaviour
 
     public void GoToNextPortButton()
     {
-        if (MerchandiseManager.instance.isInInventory(EMarchandiseTypes.RATION)) {
+        if (MerchandiseManager.instance.isInInventory(EMarchandiseTypes.RATION))
+        {
             StopAllCoroutines();
             MerchandiseManager.instance.wipeMerchandise();
             _gameFlowManager.MoveToNextPort();
@@ -208,8 +212,10 @@ public class PortManager : MonoBehaviour
                 break;
         }
     }
-    public void changeBGMusic(ECityNames portName) {
-        switch (portName) {
+    public void changeBGMusic(ECityNames portName)
+    {
+        switch (portName)
+        {
             case ECityNames.ORLEANS:
                 AudioManager.instance.ChangBGM(5);
                 break;
@@ -255,7 +261,7 @@ public class PortManager : MonoBehaviour
     private void EventTours()
     {
         _ressourcesManager.UseMoney(220);
-        if(_gameFlowManager.BloisSkip == true)
+        if (_gameFlowManager.BloisSkip == true)
         {
             _ressourcesManager.AddMoney(50);
         }
