@@ -9,7 +9,7 @@ public class RessourcesManager : MonoBehaviour
     #region Fields
 
     [SerializeField] private float _money = 200;
-    [SerializeField] private int _health = 10;
+    [SerializeField] public int _health = 10;
     [SerializeField] private TextMeshProUGUI _moneyText = null;
     public static RessourcesManager instance;
 
@@ -106,6 +106,7 @@ public class RessourcesManager : MonoBehaviour
         if (_health > 10) {
             _health = 10;
         }
+        Debug.Log("Current health : " + _health);
     }
 
     //Event called when ther is not enough Money to pay Something

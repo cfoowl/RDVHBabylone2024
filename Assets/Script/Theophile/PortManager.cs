@@ -274,24 +274,24 @@ public class PortManager : MonoBehaviour
     public void SpecialButton1()
     {
         SpecialButton(1);
-        // if (_portEvent.CityName == ECityNames.ANGERS)
-        // {
-        //     _ressourcesManager.UseMoney(40);
-        //     StopAllCoroutines();
-        //     StartCoroutine(DisplayText(_portEvent.EventTextPart2));
-        // }
     }
 
     public void SpecialButton2()
     {
         SpecialButton(2);
-        // if (_portEvent.CityName == ECityNames.ANGERS)
-        // {
-        //     _ressourcesManager.AddMoney(80);
-        //     TriggerSpecialEvent(ECityNames.ANGERS);
-        //     StopAllCoroutines();
-        //     StartCoroutine(DisplayText(_specialTextAngers));
-        // }
+    }
+
+    public void RepairButton() {
+        if (RessourcesManager.instance._health < 10) {
+            if (_portEvent.bigPort) {
+                RessourcesManager.instance.UseMoney(150);
+                RessourcesManager.instance.repairBoat(10);
+            } else {
+                RessourcesManager.instance.UseMoney(75);
+                RessourcesManager.instance.repairBoat(2);
+            }
+
+        }
     }
 
 

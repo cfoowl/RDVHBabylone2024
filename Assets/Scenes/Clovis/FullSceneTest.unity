@@ -6819,9 +6819,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1545195078}
-        m_TargetAssemblyTypeName: GameFlowManager, Assembly-CSharp
-        m_MethodName: QuitGameButton
+      - m_Target: {fileID: 1144519749}
+        m_TargetAssemblyTypeName: PortManager, Assembly-CSharp
+        m_MethodName: RepairButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8760,6 +8760,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _money: 200
+  _health: 10
   _moneyText: {fileID: 1256516510}
 --- !u!4 &1744348995
 Transform:
