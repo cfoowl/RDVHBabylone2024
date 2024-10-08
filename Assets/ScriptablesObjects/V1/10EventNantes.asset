@@ -27,7 +27,7 @@ MonoBehaviour:
     marchandises."
   _button1Text: 
   _button2Text: 
-  _bigPort: 0
+  _bigPort: 1
   _eventMarchandisesGained: 
   _eventMarchandisesRemoved: 040000000400000005000000050000000200000002000000030000000300000006000000
   _eventAudioSource: {fileID: 0}

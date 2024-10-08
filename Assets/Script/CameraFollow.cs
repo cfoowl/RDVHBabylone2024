@@ -38,27 +38,32 @@ public class CameraFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!isWaiting) {
+        if (!isWaiting)
+        {
             MoveTowardsWaypoint();
         }
     }
 
-    private void MoveTowardsWaypoint() {
+    private void MoveTowardsWaypoint()
+    {
         if (currentWaypointIndex >= waypoints.Length) return;
-        Vector3 targetWaypoint =  new Vector3(waypoints[currentWaypointIndex].x, waypoints[currentWaypointIndex].y, z_offset);
+        Vector3 targetWaypoint = new Vector3(waypoints[currentWaypointIndex].x, waypoints[currentWaypointIndex].y, z_offset);
 
-        if (speed < 50) {
+        if (speed < 50)
+        {
             speed += 0.5f;
         }
-        
+
         Vector3 direction = targetWaypoint - transform.position;
         float distance = direction.magnitude;
         Vector3 moveDirection = direction.normalized;
 
-        if (distance < 5f) {
+        if (distance < 5f)
+        {
             StartWaitingAtWaypoint();
         }
-        else {
+        else
+        {
             transform.position += moveDirection * speed * Time.deltaTime;
             accosterButton.GetComponent<RectTransform>().position += moveDirection * speed * Time.deltaTime;
         }
@@ -67,7 +72,10 @@ public class CameraFollow : MonoBehaviour
     private void StartWaitingAtWaypoint()
     {
         isWaiting = true;
-
+        if (currentWaypointIndex < GameFlowManager.instance.CurrentEvent)
+        {
+            ContinueMoving();
+        }
     }
 
     public void ContinueMoving()

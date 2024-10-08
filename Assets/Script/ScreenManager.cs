@@ -22,6 +22,13 @@ public class ScreenManager : MonoBehaviour
     {
         instance = this;
         screens = new GameObject[] { screenLoading, screenPort, screenQuai };
+        screenLoading.SetActive(false);
+        screenPort.SetActive(false);
+        screenQuai.SetActive(false);
+        screenQuaiBig.SetActive(false);
+        screenQuaiSmol.SetActive(false);
+        mainCamera.gameObject.SetActive(false);
+        mainCanvas.gameObject.SetActive(false);
 
     }
     void Start()
@@ -36,13 +43,22 @@ public class ScreenManager : MonoBehaviour
 
     public void SetQuaiScreen(bool isBig)
     {
+        Debug.Log(isBig);
         SetActiveScreen(2);
+
+        MerchandiseManager.instance.wipeMerchandise();
+        MerchandiseManager.instance.ConsumeFood();
+        MerchandiseManager.instance.spawnRation();
+
+
         if (isBig)
         {
+            screenQuaiSmol.SetActive(false);
             screenQuaiBig.SetActive(true);
         }
         else
         {
+            screenQuaiBig.SetActive(false);
             screenQuaiSmol.SetActive(true);
         }
     }
@@ -72,7 +88,6 @@ public class ScreenManager : MonoBehaviour
 
     private void SetActiveScreen(int index)
     {
-        Debug.Log(screens);
         screens[currentScreen].SetActive(false);
         if (currentScreen == 2)
         {

@@ -37,7 +37,7 @@ MonoBehaviour:
     \xE0 bon port ! \r"
   _button1Text: 
   _button2Text: 
-  _bigPort: 0
+  _bigPort: 1
   _eventMarchandisesGained: 0500000005000000020000000700000007000000
   _eventMarchandisesRemoved: 
   _eventAudioSource: {fileID: 0}

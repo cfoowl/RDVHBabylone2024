@@ -32,7 +32,7 @@ MonoBehaviour:
     Vous pouvez vendre 2 chargements d\u2019ardoises en provenance de Blois. \r\n\r\n"
   _button1Text: 
   _button2Text: 
-  _bigPort: 0
+  _bigPort: 1
   _eventMarchandisesGained: 0500000002000000
   _eventMarchandisesRemoved: 050000000500000003000000030000000400000004000000
   _eventAudioSource: {fileID: 0}

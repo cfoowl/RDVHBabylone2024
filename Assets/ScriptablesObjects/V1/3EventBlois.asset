@@ -31,7 +31,7 @@ MonoBehaviour:
     et 2 de vins provenant de Beaugency. \r\n"
   _button1Text: "Patienter \xE0 Blois"
   _button2Text: Partir pour Tours
-  _bigPort: 0
+  _bigPort: 1
   _eventMarchandisesGained: 0400000004000000
   _eventMarchandisesRemoved: 05000000050000000300000003000000
   _eventAudioSource: {fileID: 0}

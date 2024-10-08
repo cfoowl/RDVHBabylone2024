@@ -140,9 +140,7 @@ public class PortManager : MonoBehaviour
         {
             ScreenManager.instance.SetQuaiScreen(_portEvent.bigPort);
             SpawnMarchandises();
-            MerchandiseManager.instance.spawnRation();
             VenteMarchandises();
-            MerchandiseManager.instance.ConsumeFood();
             StopAllCoroutines();
             if (_portEvent.CityName == ECityNames.TOURS && _gameFlowManager.BloisSkip == true)
             {
@@ -171,9 +169,12 @@ public class PortManager : MonoBehaviour
         if (MerchandiseManager.instance.isInInventory(EMarchandiseTypes.RATION))
         {
             StopAllCoroutines();
-            MerchandiseManager.instance.wipeMerchandise();
             _gameFlowManager.MoveToNextPort();
             _nextPortButton.SetActive(false);
+        }
+        else
+        {
+            Debug.Log("Not enough food !");
         }
     }
 
@@ -254,7 +255,6 @@ public class PortManager : MonoBehaviour
     {
         _gameFlowManager.CurrentEvent++;
         _gameFlowManager.BloisSkip = true;
-        MerchandiseManager.instance.wipeMerchandise();
     }
 
     //Event that triggers when arriving at Tours' Port
@@ -271,7 +271,6 @@ public class PortManager : MonoBehaviour
     private void EventAngers()
     {
         _gameFlowManager.Contreband = true;
-        MerchandiseManager.instance.wipeMerchandise();
         MerchandiseManager.instance.spawnMerchandise(EMarchandiseTypes.SEL);
     }
 
@@ -282,6 +281,7 @@ public class PortManager : MonoBehaviour
 
     public void SpecialButton1()
     {
+        ScreenManager.instance.SetQuaiScreen(_portEvent.bigPort);
         if (_portEvent.CityName == ECityNames.BLOIS)
         {
             StopAllCoroutines();
@@ -299,6 +299,7 @@ public class PortManager : MonoBehaviour
 
     public void SpecialButton2()
     {
+        ScreenManager.instance.SetQuaiScreen(_portEvent.bigPort);
         if (_portEvent.CityName == ECityNames.BLOIS)
         {
             TriggerSpecialEvent(ECityNames.BLOIS);
