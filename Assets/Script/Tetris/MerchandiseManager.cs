@@ -16,7 +16,9 @@ public class MerchandiseManager : MonoBehaviour
         if (merchandiseSpawned < 5)
         {
             GameObject newMerchandise = Instantiate(merchandisePrefabs[(int)type], transform.parent);
-            newMerchandise.GetComponent<RectTransform>().anchoredPosition = spawningPos[merchandiseSpawned++];
+            newMerchandise.GetComponent<RectTransform>().anchoredPosition = spawningPos[merchandiseSpawned];
+            newMerchandise.GetComponent<Item>().setInitialPos(spawningPos[merchandiseSpawned]);
+            merchandiseSpawned++;
         }
         return;
     }
@@ -31,8 +33,10 @@ public class MerchandiseManager : MonoBehaviour
         GameObject newRation;
         newRation = Instantiate(merchandisePrefabs[index], transform.parent);
         newRation.GetComponent<RectTransform>().anchoredPosition = rationSpawningPos[0];
+        newRation.GetComponent<Item>().setInitialPos(rationSpawningPos[0]);
         newRation = Instantiate(merchandisePrefabs[index], transform.parent);
         newRation.GetComponent<RectTransform>().anchoredPosition = rationSpawningPos[1];
+        newRation.GetComponent<Item>().setInitialPos(rationSpawningPos[1]);
     }
 
     public void wipeMerchandise()

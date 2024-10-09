@@ -121,6 +121,12 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
             int rand = Random.Range(0, SoundManager.instance.DragDrop.Length);
             SoundManager.instance.audioSource.clip = SoundManager.instance.DragDrop[rand];
             SoundManager.instance.audioSource.Play();
+        } else {
+            Vector2 delta = originalParent.GetComponent<Item>().goToInitialPos();
+            GetComponent<RectTransform>().anchoredPosition += delta;
+            foreach(DragDrop dragDrop in neighbours) {
+                dragDrop.GetComponent<RectTransform>().anchoredPosition += delta;
+            }
         }
 
    }
