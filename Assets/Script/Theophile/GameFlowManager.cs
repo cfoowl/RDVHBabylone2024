@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameFlowManager : MonoBehaviour
 {
@@ -116,6 +117,9 @@ public class GameFlowManager : MonoBehaviour
     public void QuitGameButton()
     {
         Application.Quit();
+    }
+    public void ReloadGameButton() {
+        SceneManager.LoadScene("FullSceneTest");
     }
     #endregion Methods
 

@@ -41,5 +41,5 @@ MonoBehaviour:
   _button2Text: '"Non, je n''ai point de sel !"'
   _bigPort: 0
   _eventMarchandisesGained: 0200000002000000030000000300000006000000
-  _eventMarchandisesRemoved: 09000000
+  _eventMarchandisesRemoved: 0900000001000000
   _eventAudioSource: {fileID: 0}

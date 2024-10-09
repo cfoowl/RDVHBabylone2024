@@ -1,0 +1,5 @@
+Si possible faire en sorte que quand on appuie sur "Crédits" ca fasse disparaitre les boutons "Jouer", "Crédits" et "Quitter" et que ca affiche les crédits
+
+Les polices utilisés :
+	-pour tout sauf les crédits : "RobotoSerif_28pt_ExtraExpanded-SemiBold"
+	-pour les crédits : "RobotoSerif_28pt_Condensed-Medium"
