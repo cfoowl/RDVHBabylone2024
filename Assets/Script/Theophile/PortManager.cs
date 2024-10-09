@@ -23,7 +23,7 @@ public class PortManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _specialButton1Text = null;
     [SerializeField] private TextMeshProUGUI _specialButton2Text = null;
     [SerializeField] private GameObject ancenisButton = null;
-    [SerializeField] private GameObject repairButton = null;
+    public bool isRepairEnable;
     [SerializeField, TextArea(10, 9999)] private string _specialTextTours = "";
     [SerializeField, TextArea(10, 9999)] private string _specialTextAngers = "";
     [SerializeField] private GameObject _victoryScreen = null;
@@ -67,7 +67,7 @@ public class PortManager : MonoBehaviour
     private void Start()
     {
         instance = this;
-        repairButton.SetActive(false);
+        isRepairEnable = false;
     }
 
     //Load Datas from the EventDatas to the UI
@@ -222,7 +222,7 @@ public class PortManager : MonoBehaviour
     }
 
     private void EventAmboise() {
-        repairButton.SetActive(true);
+        isRepairEnable = true;
     }
     private void EventAngers() {
         RessourcesManager.instance.UseMoney(40);

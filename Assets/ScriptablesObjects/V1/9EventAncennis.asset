@@ -26,6 +26,6 @@ MonoBehaviour:
   _button1Text: 
   _button2Text: 
   _bigPort: 0
-  _eventMarchandisesGained: 0200000002000000030000000300000006000000
-  _eventMarchandisesRemoved: 01000000
+  _eventMarchandisesGained: 020000000200000006000000
+  _eventMarchandisesRemoved: 0100000007000000
   _eventAudioSource: {fileID: 0}

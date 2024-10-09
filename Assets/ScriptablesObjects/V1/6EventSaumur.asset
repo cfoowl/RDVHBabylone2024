@@ -40,6 +40,6 @@ MonoBehaviour:
   _button1Text: "- Rester honn\xEAte."
   _button2Text: '- Cacher le sel dans le chaland.'
   _bigPort: 0
-  _eventMarchandisesGained: 04000000
-  _eventMarchandisesRemoved: 0500000006000000
+  _eventMarchandisesGained: 0400000007000000
+  _eventMarchandisesRemoved: 06000000
   _eventAudioSource: {fileID: 0}

@@ -11,7 +11,9 @@ public enum EMarchandiseTypes
     DENREE,
     TUFFEAU,
     RATION,
-    SEL
+    SEL,
+    ANCRE,
+    BIGRATION
 }
 
 public enum ECityNames

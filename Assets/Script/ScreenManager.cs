@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class ScreenManager : MonoBehaviour
 {
@@ -11,6 +12,14 @@ public class ScreenManager : MonoBehaviour
     public GameObject screenQuaiSmol;
     public GameObject screenPortBig;
     public GameObject screenPortSmol;
+    public GameObject VictoryScreen;
+    [SerializeField] private TextMeshProUGUI victoryMoneyText;
+    [SerializeField] private TextMeshProUGUI defeatMoneyText;
+    [SerializeField] private GameObject repairButton = null;
+    [SerializeField] private GameObject livreCounter = null;
+    [SerializeField] private GameObject lifeBar = null;
+    public GameObject DefeatBreakScreen;
+    public GameObject DefeatMoneyScreen;
     public Camera mainCamera;
     public Canvas mainCanvas;
     public Camera loadingCamera;
@@ -32,6 +41,10 @@ public class ScreenManager : MonoBehaviour
         mainCamera.gameObject.SetActive(false);
         mainCanvas.gameObject.SetActive(false);
 
+        VictoryScreen.SetActive(false);
+        DefeatMoneyScreen.SetActive(false);
+        DefeatBreakScreen.SetActive(false);
+
     }
     void Start()
     {
@@ -46,6 +59,10 @@ public class ScreenManager : MonoBehaviour
     public void SetQuaiScreen(bool isBig)
     {
         SetActiveScreen(2);
+
+        repairButton.SetActive(PortManager.instance.isRepairEnable);
+        livreCounter.SetActive(true);
+        lifeBar.SetActive(true);
 
         MerchandiseManager.instance.wipeMerchandise();
         MerchandiseManager.instance.ConsumeFood();
@@ -64,11 +81,27 @@ public class ScreenManager : MonoBehaviour
             screenQuaiBig.SetActive(false);
             screenQuaiSmol.SetActive(true);
         }
+
+
+        // Fin du jeu
+        if(PortManager.instance._portEvent.CityName == ECityNames.NANTES) {
+            if (RessourcesManager.instance._money > 0) {
+                VictoryScreen.SetActive(true);
+                victoryMoneyText.text = RessourcesManager.instance._money.ToString();
+            } else {
+
+                DefeatMoneyScreen.SetActive(true);
+                defeatMoneyText.text = RessourcesManager.instance._money.ToString();
+            }
+        }
     }
     public void SetPortScreen(bool isBig)
     {
         PortManager.instance.LoadData();
         SetActiveScreen(1);
+        repairButton.SetActive(false);
+        livreCounter.SetActive(false);
+        lifeBar.SetActive(false);
 
         if (isBig)
         {
@@ -100,6 +133,10 @@ public class ScreenManager : MonoBehaviour
         SetPortScreen(PortManager.instance._portEvent.bigPort);
     }
 
+
+    public void SetDefeatBreakScreen() {
+        DefeatBreakScreen.SetActive(true);
+    }
     private void SetActiveScreen(int index)
     {
         screens[currentScreen].SetActive(false);

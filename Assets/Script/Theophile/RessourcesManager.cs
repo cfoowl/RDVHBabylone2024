@@ -8,7 +8,7 @@ public class RessourcesManager : MonoBehaviour
 {
     #region Fields
 
-    [SerializeField] private float _money = 200;
+    [SerializeField] public float _money = 200;
     [SerializeField] public int _health = 10;
     [SerializeField] private TextMeshProUGUI _moneyText = null;
     public static RessourcesManager instance;
@@ -61,7 +61,6 @@ public class RessourcesManager : MonoBehaviour
         if (moneyAdded > 0)
         {
             _money = _money + moneyAdded;
-            // Debug.Log("Added " + moneyAdded + " to Money.");
             // Debug.Log("Current Money =  " + _money);
         }
         else
@@ -98,7 +97,9 @@ public class RessourcesManager : MonoBehaviour
 
     public void applyDamage(float damage) {
         _health -= (int)Math.Floor(damage);
-        Debug.Log("Current health : " + _health);
+        if (_health <= 0) {
+            ScreenManager.instance.SetDefeatBreakScreen();
+        }
     }
 
     public void repairBoat(int health) {
@@ -106,7 +107,6 @@ public class RessourcesManager : MonoBehaviour
         if (_health > 10) {
             _health = 10;
         }
-        Debug.Log("Current health : " + _health);
     }
 
     //Event called when ther is not enough Money to pay Something

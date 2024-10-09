@@ -7,6 +7,7 @@ public class MerchandiseManager : MonoBehaviour
     public static MerchandiseManager instance;
     // int a = 0;
     public GameObject[] merchandisePrefabs;
+    private Dictionary<EMarchandiseTypes, int> merchandisePrice;
     Vector2[] spawningPos = { new Vector2(160, 150), new Vector2(260, 150), new Vector2(160, 10), new Vector2(260, 10), new Vector2(195, -65) };
     Vector2[] rationSpawningPos = { new Vector2(170, -165), new Vector2(220, -165) };
     int merchandiseSpawned = 0;
@@ -15,17 +16,27 @@ public class MerchandiseManager : MonoBehaviour
         if (merchandiseSpawned < 5)
         {
             GameObject newMerchandise = Instantiate(merchandisePrefabs[(int)type], transform.parent);
-            newMerchandise.GetComponent<RectTransform>().anchoredPosition = spawningPos[merchandiseSpawned++];
+            newMerchandise.GetComponent<RectTransform>().anchoredPosition = spawningPos[merchandiseSpawned];
+            newMerchandise.GetComponent<Item>().setInitialPos(spawningPos[merchandiseSpawned]);
+            merchandiseSpawned++;
         }
         return;
     }
     public void spawnRation()
     {
+        int index;
+        if(PortManager.instance._portEvent.bigPort) {
+            index = (int)EMarchandiseTypes.BIGRATION;
+        } else {
+            index = (int)EMarchandiseTypes.RATION;
+        }
         GameObject newRation;
-        newRation = Instantiate(merchandisePrefabs[(int)EMarchandiseTypes.RATION], transform.parent);
+        newRation = Instantiate(merchandisePrefabs[index], transform.parent);
         newRation.GetComponent<RectTransform>().anchoredPosition = rationSpawningPos[0];
-        newRation = Instantiate(merchandisePrefabs[(int)EMarchandiseTypes.RATION], transform.parent);
+        newRation.GetComponent<Item>().setInitialPos(rationSpawningPos[0]);
+        newRation = Instantiate(merchandisePrefabs[index], transform.parent);
         newRation.GetComponent<RectTransform>().anchoredPosition = rationSpawningPos[1];
+        newRation.GetComponent<Item>().setInitialPos(rationSpawningPos[1]);
     }
 
     public void wipeMerchandise()
@@ -47,7 +58,7 @@ public class MerchandiseManager : MonoBehaviour
 
     public void sellMerchandise(EMarchandiseTypes type){
         if(deleteMerchandise(type)) {
-            RessourcesManager.instance.AddMoney(60);
+            RessourcesManager.instance.AddMoney(merchandisePrice[type]);
         }
     }
     public bool deleteMerchandise(EMarchandiseTypes type)
@@ -87,9 +98,25 @@ public class MerchandiseManager : MonoBehaviour
         return false;
     }
 
+    private void createPriceDict() {
+        merchandisePrice = new Dictionary<EMarchandiseTypes, int>();
+        merchandisePrice.Add(EMarchandiseTypes.CEREALE,60);
+        merchandisePrice.Add(EMarchandiseTypes.CHAU, 80);
+        merchandisePrice.Add(EMarchandiseTypes.VIN, 70);
+        merchandisePrice.Add(EMarchandiseTypes.ARDOISE, 110);
+        merchandisePrice.Add(EMarchandiseTypes.BOIS, 90);
+        merchandisePrice.Add(EMarchandiseTypes.DENREE, 50);
+        merchandisePrice.Add(EMarchandiseTypes.TUFFEAU, 100);
+        merchandisePrice.Add(EMarchandiseTypes.SEL, 150);
+        merchandisePrice.Add(EMarchandiseTypes.ANCRE, 250);
+
+
+    }
+
 
     void Awake()
     {
         instance = this;
+        createPriceDict();
     }
 }
