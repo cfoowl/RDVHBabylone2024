@@ -12,7 +12,8 @@ public enum EMarchandiseTypes
     TUFFEAU,
     RATION,
     SEL,
-    ANCRE
+    ANCRE,
+    BIGRATION
 }
 
 public enum ECityNames

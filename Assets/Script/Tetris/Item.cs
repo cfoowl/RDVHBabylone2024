@@ -5,6 +5,7 @@ using UnityEngine;
 public class Item : MonoBehaviour
 {
     public EMarchandiseTypes type;
+    public int buyingPrice = 20;
     List<GameObject> itemUnits = new List<GameObject>();
     void Start()  {
         foreach (Transform child in transform) {

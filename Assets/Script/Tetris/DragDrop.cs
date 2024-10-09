@@ -49,7 +49,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         Slot slotParent = transform.parent.GetComponent<Slot>();
             if (slotParent != null) {
                 GridManager.instance.storedMerchandise.Remove(originalParent.GetComponent<Item>());
-                RessourcesManager.instance.AddMoney(20);
+                RessourcesManager.instance.AddMoney(originalParent.GetComponent<Item>().buyingPrice);
             }
         beginDrag(eventData);
         int rand = Random.Range(0, SoundManager.instance.clic.Length);
@@ -117,7 +117,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
                 overedSlots[index++].Place(dragDrop);
                 dragDrop.GetComponent<Image>().color = Color.green;
             }
-            RessourcesManager.instance.UseMoney(20);
+            RessourcesManager.instance.UseMoney(originalParent.GetComponent<Item>().buyingPrice);
             int rand = Random.Range(0, SoundManager.instance.DragDrop.Length);
             SoundManager.instance.audioSource.clip = SoundManager.instance.DragDrop[rand];
             SoundManager.instance.audioSource.Play();

@@ -61,7 +61,7 @@ public class RessourcesManager : MonoBehaviour
         if (moneyAdded > 0)
         {
             _money = _money + moneyAdded;
-            // Debug.Log("Added " + moneyAdded + " to Money.");
+            Debug.Log("Added " + moneyAdded + " to Money.");
             // Debug.Log("Current Money =  " + _money);
         }
         else
