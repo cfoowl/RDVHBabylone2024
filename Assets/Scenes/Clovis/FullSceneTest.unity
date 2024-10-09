@@ -7063,7 +7063,7 @@ MonoBehaviour:
   _specialButton1Text: {fileID: 725871243}
   _specialButton2Text: {fileID: 722753109}
   ancenisButton: {fileID: 155432660}
-  repairButton: {fileID: 1269752269}
+  isRepairEnable: 0
   _specialTextTours: "Le n\xE9gociant de Tours est un brave qui nous a bien r\xE9compens\xE9s
     pour notre transport ! Malgr\xE9 les d\xE9convenues, nous avions finalement bien
     fait de ne point attendre \xE0 Blois !\r\nVous gagnez une prime de 50 livres."
@@ -7544,6 +7544,10 @@ PrefabInstance:
       value: ScreenManager
       objectReference: {fileID: 0}
     - target: {fileID: 8815093021643013657, guid: 4745b9d469e42d84aa91027bdabec035, type: 3}
+      propertyPath: lifeBar
+      value: 
+      objectReference: {fileID: 1952401237}
+    - target: {fileID: 8815093021643013657, guid: 4745b9d469e42d84aa91027bdabec035, type: 3}
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 505818780}
@@ -7563,6 +7567,14 @@ PrefabInstance:
       propertyPath: loadingBoat
       value: 
       objectReference: {fileID: 534452979}
+    - target: {fileID: 8815093021643013657, guid: 4745b9d469e42d84aa91027bdabec035, type: 3}
+      propertyPath: livreCounter
+      value: 
+      objectReference: {fileID: 1256516509}
+    - target: {fileID: 8815093021643013657, guid: 4745b9d469e42d84aa91027bdabec035, type: 3}
+      propertyPath: repairButton
+      value: 
+      objectReference: {fileID: 1269752269}
     - target: {fileID: 8815093021643013657, guid: 4745b9d469e42d84aa91027bdabec035, type: 3}
       propertyPath: VictoryScreen
       value: 
@@ -12345,7 +12357,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2041277463
 RectTransform:
   m_ObjectHideFlags: 0

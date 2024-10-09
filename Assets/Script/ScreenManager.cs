@@ -15,6 +15,9 @@ public class ScreenManager : MonoBehaviour
     public GameObject VictoryScreen;
     [SerializeField] private TextMeshProUGUI victoryMoneyText;
     [SerializeField] private TextMeshProUGUI defeatMoneyText;
+    [SerializeField] private GameObject repairButton = null;
+    [SerializeField] private GameObject livreCounter = null;
+    [SerializeField] private GameObject lifeBar = null;
     public GameObject DefeatBreakScreen;
     public GameObject DefeatMoneyScreen;
     public Camera mainCamera;
@@ -57,6 +60,10 @@ public class ScreenManager : MonoBehaviour
     {
         SetActiveScreen(2);
 
+        repairButton.SetActive(PortManager.instance.isRepairEnable);
+        livreCounter.SetActive(true);
+        lifeBar.SetActive(true);
+
         MerchandiseManager.instance.wipeMerchandise();
         MerchandiseManager.instance.ConsumeFood();
         MerchandiseManager.instance.spawnRation();
@@ -92,6 +99,9 @@ public class ScreenManager : MonoBehaviour
     {
         PortManager.instance.LoadData();
         SetActiveScreen(1);
+        repairButton.SetActive(false);
+        livreCounter.SetActive(false);
+        lifeBar.SetActive(false);
 
         if (isBig)
         {
