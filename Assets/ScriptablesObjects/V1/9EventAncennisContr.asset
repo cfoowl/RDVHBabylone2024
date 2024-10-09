@@ -40,6 +40,6 @@ MonoBehaviour:
   _button1Text: '"Oui, j''ai du sel ! Je suis un faux-saunier."'
   _button2Text: '"Non, je n''ai point de sel !"'
   _bigPort: 0
-  _eventMarchandisesGained: 0200000002000000030000000300000006000000
-  _eventMarchandisesRemoved: 0900000001000000
+  _eventMarchandisesGained: 020000000200000006000000
+  _eventMarchandisesRemoved: 090000000100000007000000
   _eventAudioSource: {fileID: 0}
