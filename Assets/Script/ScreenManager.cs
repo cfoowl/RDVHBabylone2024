@@ -14,6 +14,7 @@ public class ScreenManager : MonoBehaviour
     public GameObject screenPortSmol;
     public GameObject VictoryScreen;
     [SerializeField] private TextMeshProUGUI victoryMoneyText;
+    [SerializeField] private TextMeshProUGUI defeatMoneyText;
     public GameObject DefeatBreakScreen;
     public GameObject DefeatMoneyScreen;
     public Camera mainCamera;
@@ -38,6 +39,8 @@ public class ScreenManager : MonoBehaviour
         mainCanvas.gameObject.SetActive(false);
 
         VictoryScreen.SetActive(false);
+        DefeatMoneyScreen.SetActive(false);
+        DefeatBreakScreen.SetActive(false);
 
     }
     void Start()
@@ -78,6 +81,10 @@ public class ScreenManager : MonoBehaviour
             if (RessourcesManager.instance._money > 0) {
                 VictoryScreen.SetActive(true);
                 victoryMoneyText.text = RessourcesManager.instance._money.ToString();
+            } else {
+
+                DefeatMoneyScreen.SetActive(true);
+                defeatMoneyText.text = RessourcesManager.instance._money.ToString();
             }
         }
     }
@@ -116,6 +123,10 @@ public class ScreenManager : MonoBehaviour
         SetPortScreen(PortManager.instance._portEvent.bigPort);
     }
 
+
+    public void SetDefeatBreakScreen() {
+        DefeatBreakScreen.SetActive(true);
+    }
     private void SetActiveScreen(int index)
     {
         screens[currentScreen].SetActive(false);

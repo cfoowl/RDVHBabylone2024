@@ -99,6 +99,9 @@ public class RessourcesManager : MonoBehaviour
     public void applyDamage(float damage) {
         _health -= (int)Math.Floor(damage);
         Debug.Log("Current health : " + _health);
+        if (_health <= 0) {
+            ScreenManager.instance.SetDefeatBreakScreen();
+        }
     }
 
     public void repairBoat(int health) {
