@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class ScreenManager : MonoBehaviour
 {
@@ -11,6 +12,10 @@ public class ScreenManager : MonoBehaviour
     public GameObject screenQuaiSmol;
     public GameObject screenPortBig;
     public GameObject screenPortSmol;
+    public GameObject VictoryScreen;
+    [SerializeField] private TextMeshProUGUI victoryMoneyText;
+    public GameObject DefeatBreakScreen;
+    public GameObject DefeatMoneyScreen;
     public Camera mainCamera;
     public Canvas mainCanvas;
     public Camera loadingCamera;
@@ -31,6 +36,8 @@ public class ScreenManager : MonoBehaviour
         screenQuaiSmol.SetActive(false);
         mainCamera.gameObject.SetActive(false);
         mainCanvas.gameObject.SetActive(false);
+
+        VictoryScreen.SetActive(false);
 
     }
     void Start()
@@ -63,6 +70,15 @@ public class ScreenManager : MonoBehaviour
         {
             screenQuaiBig.SetActive(false);
             screenQuaiSmol.SetActive(true);
+        }
+
+
+        // Fin du jeu
+        if(PortManager.instance._portEvent.CityName == ECityNames.NANTES) {
+            if (RessourcesManager.instance._money > 0) {
+                VictoryScreen.SetActive(true);
+                victoryMoneyText.text = RessourcesManager.instance._money.ToString();
+            }
         }
     }
     public void SetPortScreen(bool isBig)

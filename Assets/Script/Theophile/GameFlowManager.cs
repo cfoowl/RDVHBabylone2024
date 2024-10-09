@@ -121,6 +121,10 @@ public class GameFlowManager : MonoBehaviour
     public void ReloadGameButton() {
         SceneManager.LoadScene("FullSceneTest");
     }
+
+    public void MenuButton() {
+        SceneManager.LoadScene("UI_Menu_start");
+    }
     #endregion Methods
 
 

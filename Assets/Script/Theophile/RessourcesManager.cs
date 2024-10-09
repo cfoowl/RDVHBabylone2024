@@ -8,7 +8,7 @@ public class RessourcesManager : MonoBehaviour
 {
     #region Fields
 
-    [SerializeField] private float _money = 200;
+    [SerializeField] public float _money = 200;
     [SerializeField] public int _health = 10;
     [SerializeField] private TextMeshProUGUI _moneyText = null;
     public static RessourcesManager instance;
