@@ -9,8 +9,6 @@ public class SoundManager : MonoBehaviour
     public AudioClip choice;
     public AudioClip[] clic; 
     public AudioClip[] DragDrop;
-    public AudioClip victory;
-    public AudioClip defeat;
     public AudioClip coins;
 
 

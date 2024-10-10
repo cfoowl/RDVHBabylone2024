@@ -15,6 +15,8 @@ public class AudioManager : MonoBehaviour
     AudioSource PontDeLoop;
     AudioSource SaumurLoop;
     AudioSource ToursLoop;
+    AudioSource VictorySound;
+    AudioSource DefeatSound;
     public bool mute;
     public float masterVolume;
     List<AudioSource> musicSources = new List<AudioSource>();
@@ -31,6 +33,8 @@ public class AudioManager : MonoBehaviour
         musicSources.Add(PontDeLoop);
         musicSources.Add(SaumurLoop);
         musicSources.Add(ToursLoop);
+        musicSources.Add(VictorySound);
+        musicSources.Add(DefeatSound);
         instance = this;
         for(int i = 0; i < musicSources.Count; i++) {
             musicSources[i] = transform.GetChild(i).GetComponent<AudioSource>();

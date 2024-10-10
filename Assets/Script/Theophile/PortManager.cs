@@ -121,21 +121,11 @@ public class PortManager : MonoBehaviour
 
     public void ContinueButton()
     {
-        if (_portEvent.EventTextPart2[0] != "")
-        {
-            StopAllCoroutines();
-            ScreenManager.instance.SetQuaiScreen(_portEvent.bigPort);
-            StartCoroutine(DisplayText(_portEvent.EventTextPart2[0]));
-            _continueButton.SetActive(false);
-            _nextPortButton.SetActive(true);
-        }
-        else if (_portEvent.CityName == ECityNames.NANTES)
-        {
-            _victoryScreen.SetActive(true);
-            AudioManager.instance.stopMusic();
-            SoundManager.instance.audioSource.clip = SoundManager.instance.victory;
-            SoundManager.instance.audioSource.Play();
-        }
+        StopAllCoroutines();
+        ScreenManager.instance.SetQuaiScreen(_portEvent.bigPort);
+        StartCoroutine(DisplayText(_portEvent.EventTextPart2[0]));
+        _continueButton.SetActive(false);
+        _nextPortButton.SetActive(true);
     }
 
     public void GoToNextPortButton()

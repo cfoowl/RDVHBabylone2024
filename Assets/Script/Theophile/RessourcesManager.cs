@@ -99,6 +99,7 @@ public class RessourcesManager : MonoBehaviour
         _health -= (int)Math.Floor(damage);
         if (_health <= 0) {
             ScreenManager.instance.SetDefeatBreakScreen();
+            AudioManager.instance.ChangBGM(10);
         }
     }
 

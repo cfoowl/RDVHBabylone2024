@@ -25,8 +25,6 @@ public class GridManager : MonoBehaviour
 
     void Awake() {
         instance = this;
-    }
-    void Start () {
         rectTransform = GetComponent<RectTransform>();
 
         width = GetComponent<RectTransform>().rect.width;
