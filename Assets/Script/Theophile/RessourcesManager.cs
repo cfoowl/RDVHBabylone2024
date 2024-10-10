@@ -101,9 +101,9 @@ public class RessourcesManager : MonoBehaviour
         _health -= (int)Math.Floor(damage);
         if (_health <= 0) {
             ScreenManager.instance.SetDefeatBreakScreen();
-            AudioManager.instance.ChangBGM(10);
+            AudioManager.instance.ChangBGM(12);
         }
-        if (_health < 2) {
+        if (_health <= 3) {
             LifeBar.color = Color.red;
         } else {
             LifeBar.color = Color.white;
@@ -115,7 +115,7 @@ public class RessourcesManager : MonoBehaviour
         if (_health > 10) {
             _health = 10;
         }
-        if (_health < 2) {
+        if (_health <= 3) {
             LifeBar.color = Color.red;
         } else {
             LifeBar.color = Color.white;

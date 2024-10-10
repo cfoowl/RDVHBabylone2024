@@ -84,6 +84,7 @@ public class GameFlowManager : MonoBehaviour
         _ressources.ReinitializeMoney();
         _port.PortEvent = _events[_currentEvent];
         ScreenManager.instance.EnterLoadingScreen();
+        AudioManager.instance.SetBGM(0);
     }
 
     public void MoveToNextPort()

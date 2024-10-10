@@ -6,12 +6,14 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
 
-    AudioSource TitleScreenLoop;
+    AudioSource TitleLoop;
     AudioSource AmboiseLoop;
     AudioSource AncenisLoop;
     AudioSource BeaugencyLoop;
+    AudioSource BloisLoop;
+    AudioSource ChalonnesLoop;
     AudioSource NantesLoop;
-    AudioSource OrleansBloisChalonnesLoop;
+    AudioSource OrleansLoop;
     AudioSource PontDeLoop;
     AudioSource SaumurLoop;
     AudioSource ToursLoop;
@@ -26,12 +28,14 @@ public class AudioManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        musicSources.Add(TitleScreenLoop);
+        musicSources.Add(TitleLoop);
         musicSources.Add(AmboiseLoop);
         musicSources.Add(AncenisLoop);
         musicSources.Add(BeaugencyLoop);
+        musicSources.Add(BloisLoop);
+        musicSources.Add(ChalonnesLoop);
         musicSources.Add(NantesLoop);
-        musicSources.Add(OrleansBloisChalonnesLoop);
+        musicSources.Add(OrleansLoop);
         musicSources.Add(PontDeLoop);
         musicSources.Add(SaumurLoop);
         musicSources.Add(ToursLoop);
@@ -47,6 +51,10 @@ public class AudioManager : MonoBehaviour
 
     }
 
+    public void SetBGM(int index) {
+        stopMusic();
+        musicSources[index].volume = masterVolume;
+    }
     public void ChangBGM(int index) {
         StartCoroutine(FadeMusic(currentMusicIndex, index));
     }

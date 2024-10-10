@@ -33,6 +33,6 @@ MonoBehaviour:
   _button1Text: 
   _button2Text: 
   _bigPort: 1
-  _eventMarchandisesGained: 050000000a000000
+  _eventMarchandisesGained: 0a00000005000000
   _eventMarchandisesRemoved: 040000000400000002000000
   _eventAudioSource: {fileID: 0}

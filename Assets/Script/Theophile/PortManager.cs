@@ -187,25 +187,25 @@ public class PortManager : MonoBehaviour
         switch (portName)
         {
             case ECityNames.ORLEANS:
-                AudioManager.instance.ChangBGM(5);
+                AudioManager.instance.ChangBGM(7);
                 break;
             case ECityNames.BEAUGENCY:
                 AudioManager.instance.ChangBGM(3);
                 break;
             case ECityNames.BLOIS:
-                AudioManager.instance.ChangBGM(5);
+                AudioManager.instance.ChangBGM(4);
                 break;
             case ECityNames.AMBOISE:
                 AudioManager.instance.ChangBGM(1);
                 break;
             case ECityNames.TOURS:
-                AudioManager.instance.ChangBGM(8);
+                AudioManager.instance.ChangBGM(10);
                 break;
             case ECityNames.SAUMUR:
-                AudioManager.instance.ChangBGM(7);
+                AudioManager.instance.ChangBGM(9);
                 break;
             case ECityNames.ANGERS:
-                AudioManager.instance.ChangBGM(6);
+                AudioManager.instance.ChangBGM(8);
                 break;
             case ECityNames.CHALONNES:
                 AudioManager.instance.ChangBGM(5);
@@ -214,7 +214,7 @@ public class PortManager : MonoBehaviour
                 AudioManager.instance.ChangBGM(2);
                 break;
             case ECityNames.NANTES:
-                AudioManager.instance.ChangBGM(4);
+                AudioManager.instance.ChangBGM(6);
                 break;
         }
     }

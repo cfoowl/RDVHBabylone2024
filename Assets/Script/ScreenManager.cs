@@ -88,11 +88,11 @@ public class ScreenManager : MonoBehaviour
             if (RessourcesManager.instance._money > 0) {
                 VictoryScreen.SetActive(true);
                 victoryMoneyText.text = RessourcesManager.instance._money.ToString();
-                AudioManager.instance.ChangBGM(9);
+                AudioManager.instance.ChangBGM(11);
             } else {
 
                 DefeatMoneyScreen.SetActive(true);
-                AudioManager.instance.ChangBGM(10);
+                AudioManager.instance.ChangBGM(12);
                 defeatMoneyText.text = RessourcesManager.instance._money.ToString();
             }
         }

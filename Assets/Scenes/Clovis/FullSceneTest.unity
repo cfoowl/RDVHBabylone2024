@@ -10785,6 +10785,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _money: 200
   _health: 10
+  LifeBar: {fileID: 1685115183}
   _moneyText: {fileID: 1256516510}
 --- !u!4 &1744348995
 Transform:
