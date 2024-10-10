@@ -139,7 +139,10 @@ public class PortManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("Not enough food !");
+            Popup.instance.changeTitle("Vous n'avez pas de ration !");
+            Popup.instance.clearText();
+            Popup.instance.catToText(Popup.instance.FoodText);
+            Popup.instance.openPopup();
         }
     }
 

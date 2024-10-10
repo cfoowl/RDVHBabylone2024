@@ -1059,6 +1059,9 @@ MonoBehaviour:
     \xE9quipage ! Les chargements de rations de nourriture sont repr\xE9sent\xE9s
     par une icone de panier garni.\r\n\r\nVotre solde de d\xE9part est de 200 livres.
     \xC0 vous de jouer !"
+  RepairText: 
+  FoodText: "Votre \xE9quipage a besoin de ration pour ce voyage. Pensez \xE0 en
+    acheter avant de partir !"
   titleText: {fileID: 1869401135}
   coreText: {fileID: 485830193}
 --- !u!1 &153531788
@@ -3076,8 +3079,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 9.5
-  m_fontSizeBase: 9.5
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

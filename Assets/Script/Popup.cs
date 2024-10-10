@@ -11,6 +11,8 @@ public class Popup : MonoBehaviour
     private string title = "";
     private string core = "";
     [SerializeField,TextArea(10, 9999)] public string TutorialText = "";
+    [SerializeField,TextArea(10, 9999)] public string RepairText = "";
+    [SerializeField,TextArea(10, 9999)] public string FoodText = "";
 
 
     [SerializeField] private TextMeshProUGUI titleText = null;
