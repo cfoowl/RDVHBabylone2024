@@ -83,6 +83,10 @@ public class ScreenManager : MonoBehaviour
             screenQuaiSmol.SetActive(true);
         }
 
+        if(PortManager.instance._portEvent.CityName == ECityNames.ORLEANS) {
+            PortManager.instance.EventOrleans();
+        }
+
 
         // Fin du jeu
         if(PortManager.instance._portEvent.CityName == ECityNames.NANTES) {

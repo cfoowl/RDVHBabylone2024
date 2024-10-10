@@ -130,6 +130,14 @@ public class RessourcesManager : MonoBehaviour
         // _onNotEnoughMoney();
         return;
     }
+
+    // public int computeDebt(int initialValue) {
+    //     if (_money < 0) {
+    //         return Math.Floor(initialValue * (1f+(-_money/100f)));
+    //     } else {
+    //         return initialValue;
+    //     }
+    // }
     #endregion Money
 
     #endregion Methods

@@ -260,6 +260,11 @@ public class PortManager : MonoBehaviour
         }
     }
 
+    public void EventOrleans() {
+        Popup.instance.changeTitle("Tutoriel");
+        Popup.instance.catToText(Popup.instance.TutorialText);
+        Popup.instance.openPopup();
+    }
     private void EventAmboise() {
         isRepairEnable = true;
     }
