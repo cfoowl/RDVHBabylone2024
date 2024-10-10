@@ -19,6 +19,8 @@ public class AudioManager : MonoBehaviour
     AudioSource DefeatSound;
     public bool mute;
     public float masterVolume;
+    public float fadeDuration = 2f;
+    private int currentMusicIndex = 0;
     List<AudioSource> musicSources = new List<AudioSource>();
 
     // Start is called before the first frame update
@@ -46,8 +48,7 @@ public class AudioManager : MonoBehaviour
     }
 
     public void ChangBGM(int index) {
-        stopMusic();
-        musicSources[index].volume = masterVolume;
+        StartCoroutine(FadeMusic(currentMusicIndex, index));
     }
     public void stopMusic() {
         for(int i = 0; i < musicSources.Count; i++) {
@@ -55,9 +56,25 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    private IEnumerator FadeMusic(int oldSource, int newSource)
     {
-        
+        musicSources[newSource].volume = 0f;
+
+        float timer = 0f;
+
+        while (timer < fadeDuration)
+        {
+            timer += Time.deltaTime;
+            float progress = timer / fadeDuration;
+
+            musicSources[oldSource].volume = Mathf.Lerp(masterVolume, 0f, progress);
+            musicSources[newSource].volume = Mathf.Lerp(0f, masterVolume, progress);
+
+            yield return null;
+        }
+        musicSources[oldSource].volume = 0;
+        currentMusicIndex = newSource;
     }
+
+
 }
