@@ -105,9 +105,17 @@ public class PortManager : MonoBehaviour
     }
     public void VenteMarchandises()
     {
+        bool flag = false;
         foreach (EMarchandiseTypes type in _portEvent.EventMarchandisesRemoved)
         {
-            MerchandiseManager.instance.sellMerchandise(type);
+            if (MerchandiseManager.instance.sellMerchandise(type))
+            {
+                flag = true;
+            }
+        }
+        if (flag) {
+            SoundManager.instance.audioSource.clip = SoundManager.instance.coins;
+            SoundManager.instance.audioSource.Play();
         }
     }
 

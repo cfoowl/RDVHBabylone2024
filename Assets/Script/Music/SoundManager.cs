@@ -11,6 +11,7 @@ public class SoundManager : MonoBehaviour
     public AudioClip[] DragDrop;
     public AudioClip victory;
     public AudioClip defeat;
+    public AudioClip coins;
 
 
     void Start() {

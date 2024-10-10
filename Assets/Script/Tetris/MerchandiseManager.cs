@@ -56,10 +56,12 @@ public class MerchandiseManager : MonoBehaviour
         }
     }
 
-    public void sellMerchandise(EMarchandiseTypes type){
+    public bool sellMerchandise(EMarchandiseTypes type){
         if(deleteMerchandise(type)) {
             RessourcesManager.instance.AddMoney(merchandisePrice[type]);
+            return true;
         }
+        return false;
     }
     public bool deleteMerchandise(EMarchandiseTypes type)
     {
