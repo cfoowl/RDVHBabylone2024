@@ -8,6 +8,7 @@ public class MerchandiseManager : MonoBehaviour
     // int a = 0;
     public GameObject[] merchandisePrefabs;
     private Dictionary<EMarchandiseTypes, int> merchandisePrice;
+    private Dictionary<EMarchandiseTypes, string> merchandiseName;
     Vector2[] spawningPos = { new Vector2(160, 150), new Vector2(260, 150), new Vector2(160, 10), new Vector2(260, 10), new Vector2(195, -65) };
     Vector2[] rationSpawningPos = { new Vector2(170, -165), new Vector2(220, -165) };
     int merchandiseSpawned = 0;
@@ -59,6 +60,7 @@ public class MerchandiseManager : MonoBehaviour
     public bool sellMerchandise(EMarchandiseTypes type){
         if(deleteMerchandise(type)) {
             RessourcesManager.instance.AddMoney(merchandisePrice[type]);
+            Popup.instance.catToText("- " + merchandiseName[type] + " : +" + merchandisePrice[type].ToString() + "livres \n");
             return true;
         }
         return false;
@@ -100,7 +102,7 @@ public class MerchandiseManager : MonoBehaviour
         return false;
     }
 
-    private void createPriceDict() {
+    private void createDict() {
         merchandisePrice = new Dictionary<EMarchandiseTypes, int>();
         merchandisePrice.Add(EMarchandiseTypes.CEREALE,60);
         merchandisePrice.Add(EMarchandiseTypes.CHAU, 80);
@@ -112,6 +114,16 @@ public class MerchandiseManager : MonoBehaviour
         merchandisePrice.Add(EMarchandiseTypes.SEL, 150);
         merchandisePrice.Add(EMarchandiseTypes.ANCRE, 250);
 
+        merchandiseName = new Dictionary<EMarchandiseTypes, string>();
+        merchandiseName.Add(EMarchandiseTypes.CEREALE,"céréales");
+        merchandiseName.Add(EMarchandiseTypes.CHAU, "chau");
+        merchandiseName.Add(EMarchandiseTypes.VIN, "futs de vin");
+        merchandiseName.Add(EMarchandiseTypes.ARDOISE, "ardoises");
+        merchandiseName.Add(EMarchandiseTypes.BOIS, "planches de bois");
+        merchandiseName.Add(EMarchandiseTypes.DENREE, "grains de café");
+        merchandiseName.Add(EMarchandiseTypes.TUFFEAU, "tuffeau");
+        merchandiseName.Add(EMarchandiseTypes.SEL, "sel");
+        merchandiseName.Add(EMarchandiseTypes.ANCRE, "ancre");
 
     }
 
@@ -119,6 +131,6 @@ public class MerchandiseManager : MonoBehaviour
     void Awake()
     {
         instance = this;
-        createPriceDict();
+        createDict();
     }
 }

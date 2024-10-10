@@ -107,6 +107,8 @@ public class PortManager : MonoBehaviour
     public void VenteMarchandises()
     {
         bool flag = false;
+        Popup.instance.clearText();
+        Popup.instance.changeTitle("Résumé des ventes");
         foreach (EMarchandiseTypes type in _portEvent.EventMarchandisesRemoved)
         {
             if (MerchandiseManager.instance.sellMerchandise(type))
@@ -117,6 +119,7 @@ public class PortManager : MonoBehaviour
         if (flag) {
             SoundManager.instance.audioSource.clip = SoundManager.instance.coins;
             SoundManager.instance.audioSource.Play();
+            Popup.instance.openPopup(0);
         }
     }
 
