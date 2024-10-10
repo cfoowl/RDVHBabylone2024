@@ -26,7 +26,7 @@ public class AudioManager : MonoBehaviour
     List<AudioSource> musicSources = new List<AudioSource>();
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         musicSources.Add(TitleLoop);
         musicSources.Add(AmboiseLoop);

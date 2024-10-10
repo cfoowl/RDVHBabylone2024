@@ -13,7 +13,7 @@ public class SoundManager : MonoBehaviour
     public AudioClip repair;
 
 
-    void Start() {
+    void Awake() {
         instance = this;
     }
 

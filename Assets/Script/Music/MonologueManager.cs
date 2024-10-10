@@ -22,7 +22,7 @@ public class MonologueManager : MonoBehaviour
     public float masterVolume;
     private int currentMonologueIndex = 0;
     List<AudioSource> monologueSources = new List<AudioSource>();
-    void Start()
+    void Awake()
     {
         monologueSources.Add(Orleans);
         monologueSources.Add(Beaugency);
