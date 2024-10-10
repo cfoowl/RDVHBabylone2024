@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RessourcesManager : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class RessourcesManager : MonoBehaviour
 
     [SerializeField] public float _money = 200;
     [SerializeField] public int _health = 10;
+    [SerializeField] public Image LifeBar;
     [SerializeField] private TextMeshProUGUI _moneyText = null;
     public static RessourcesManager instance;
 
@@ -101,12 +103,22 @@ public class RessourcesManager : MonoBehaviour
             ScreenManager.instance.SetDefeatBreakScreen();
             AudioManager.instance.ChangBGM(10);
         }
+        if (_health < 2) {
+            LifeBar.color = Color.red;
+        } else {
+            LifeBar.color = Color.white;
+        }
     }
 
     public void repairBoat(int health) {
         _health += health;
         if (_health > 10) {
             _health = 10;
+        }
+        if (_health < 2) {
+            LifeBar.color = Color.red;
+        } else {
+            LifeBar.color = Color.white;
         }
     }
 
