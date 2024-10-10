@@ -142,7 +142,7 @@ public class PortManager : MonoBehaviour
             Popup.instance.changeTitle("Vous n'avez pas de ration !");
             Popup.instance.clearText();
             Popup.instance.catToText(Popup.instance.FoodText);
-            Popup.instance.openPopup();
+            Popup.instance.openPopup(0);
         }
     }
 
@@ -266,7 +266,7 @@ public class PortManager : MonoBehaviour
     public void EventOrleans() {
         Popup.instance.changeTitle("Tutoriel");
         Popup.instance.catToText(Popup.instance.TutorialText);
-        Popup.instance.openPopup();
+        Popup.instance.openPopup(0);
     }
     private void EventAmboise() {
         isRepairEnable = true;
@@ -348,14 +348,8 @@ public class PortManager : MonoBehaviour
 
     public void RepairButton() {
         if (RessourcesManager.instance._health < 10) {
-            if (_portEvent.bigPort) {
-                RessourcesManager.instance.UseMoney(150);
-                RessourcesManager.instance.repairBoat(10);
-            } else {
-                RessourcesManager.instance.UseMoney(75);
-                RessourcesManager.instance.repairBoat(2);
-            }
-
+            Popup.instance.setRepairText();
+            Popup.instance.openPopup(1);
         }
     }
 
