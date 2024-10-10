@@ -1594,7 +1594,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mute: 0
-  masterVolume: 0.5
+  masterVolume: 1
   fadeDuration: 2
 --- !u!1 &8981999551828840660
 GameObject:

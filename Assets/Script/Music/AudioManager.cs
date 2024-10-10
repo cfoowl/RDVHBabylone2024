@@ -63,6 +63,9 @@ public class AudioManager : MonoBehaviour
             musicSources[i].volume = 0;
         }
     }
+    public void changeVolume() {
+        musicSources[currentMusicIndex].volume = masterVolume;
+    }
 
     private IEnumerator FadeMusic(int oldSource, int newSource)
     {

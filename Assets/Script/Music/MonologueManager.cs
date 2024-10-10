@@ -49,17 +49,15 @@ public class MonologueManager : MonoBehaviour
 
     public void playMonologue(int index) {
         monologueSources[currentMonologueIndex].Stop();
+        monologueSources[index].volume = masterVolume;
         monologueSources[index].Play();
         currentMonologueIndex = index;
     }
     public void stopMonologue() {
         monologueSources[currentMonologueIndex].Stop();
     }
-
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void changeVolume() {
+        monologueSources[currentMonologueIndex].volume = masterVolume;
     }
+
 }
