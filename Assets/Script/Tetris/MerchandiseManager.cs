@@ -60,7 +60,7 @@ public class MerchandiseManager : MonoBehaviour
     public bool sellMerchandise(EMarchandiseTypes type){
         if(deleteMerchandise(type)) {
             RessourcesManager.instance.AddMoney(merchandisePrice[type]);
-            Popup.instance.catToText("- " + merchandiseName[type] + " : +" + merchandisePrice[type].ToString() + "livres \n");
+            Popup.instance.catToText("- " + merchandiseName[type] + " : + " + merchandisePrice[type].ToString() + " livres \n");
             return true;
         }
         return false;

@@ -26,20 +26,6 @@ public class RessourcesManager : MonoBehaviour
 
     #region Events
 
-    private event Action _onNotEnoughMoney;
-    public event Action OnNotEnoughMoney
-    {
-        add
-        {
-            _onNotEnoughMoney -= value;
-            _onNotEnoughMoney += value;
-        }
-
-        remove
-        {
-            _onNotEnoughMoney -= value;
-        }
-    }
 
     #endregion Events
 

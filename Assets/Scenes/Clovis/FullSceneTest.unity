@@ -2539,7 +2539,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 20, y: -17}
+  m_SizeDelta: {x: 6, y: -17}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &368149787
 MonoBehaviour:
@@ -4558,7 +4558,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 20, y: -17}
+  m_SizeDelta: {x: 6, y: -17}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &611977168
 MonoBehaviour:
@@ -9573,7 +9573,6 @@ MonoBehaviour:
   _portEvent: {fileID: 11400000, guid: cfe9b587fc1942a49a2f7d230d7049e6, type: 2}
   _eventNameText: {fileID: 1092587083}
   _eventTextText: {fileID: 1765116820}
-  _ressourcesManager: {fileID: 1744348994}
   _continueButton: {fileID: 1259723014}
   _nextPortButton: {fileID: 114171745}
   _specialChoiceButtons: {fileID: 1705666742}
@@ -9581,15 +9580,6 @@ MonoBehaviour:
   _specialButton2Text: {fileID: 722753109}
   ancenisButton: {fileID: 155432660}
   isRepairEnable: 0
-  _specialTextTours: "Le n\xE9gociant de Tours est un brave qui nous a bien r\xE9compens\xE9s
-    pour notre transport ! Malgr\xE9 les d\xE9convenues, nous avions finalement bien
-    fait de ne point attendre \xE0 Blois !\r\nVous gagnez une prime de 50 livres."
-  _specialTextAngers: "Vous avez d\xE9cid\xE9 de vous consacrer \xE0 la contrebande
-    de sel. Un march\xE9 rentable, mais risqu\xE9 !\r\n\r\nLe p\xE9age des Ponts-de-C\xE9
-    vous co\xFBte 40 livres.\r\n\r\nVous devez discr\xE8tement r\xE9cup\xE9rer 4
-    chargements de sel pour Ancenis. Pour ce faire, vous devez vendre tout votre
-    chargement \xE0 perte. Cela vous rapportera 120 livres."
-  _victoryScreen: {fileID: 0}
 --- !u!1 &1161100899
 GameObject:
   m_ObjectHideFlags: 0
@@ -13387,8 +13377,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fb18b1306e8c7b649a5b868110de20e3, type: 2}
   - {fileID: 11400000, guid: 56a84e3487cefeb438ce0ce43842bc77, type: 2}
   - {fileID: 11400000, guid: 3de72cfad87f4094b957862abe771a2d, type: 2}
-  _transitionScreen: {fileID: 41694821}
-  _transitionAnim: {fileID: 41694823}
 --- !u!4 &1545195079
 Transform:
   m_ObjectHideFlags: 0

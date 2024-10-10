@@ -16,7 +16,6 @@ public class PortManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _eventNameText = null;
     [SerializeField] private TextMeshProUGUI _eventTextText = null;
     // [SerializeField] private Image _eventImageImage = null;
-    [SerializeField] private RessourcesManager _ressourcesManager = null;
     [SerializeField] private GameObject _continueButton = null;
     [SerializeField] private GameObject _nextPortButton = null;
     [SerializeField] private GameObject _specialChoiceButtons = null;
@@ -24,9 +23,6 @@ public class PortManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _specialButton2Text = null;
     [SerializeField] private GameObject ancenisButton = null;
     public bool isRepairEnable;
-    [SerializeField, TextArea(10, 9999)] private string _specialTextTours = "";
-    [SerializeField, TextArea(10, 9999)] private string _specialTextAngers = "";
-    [SerializeField] private GameObject _victoryScreen = null;
     private GameFlowManager _gameFlowManager = null;
 
 
