@@ -76,6 +76,7 @@ public class PortManager : MonoBehaviour
         if (_portEvent != null)
         {
             changeBGMusic(_portEvent.CityName);
+            changeMonologue(_portEvent.CityName);
             _eventNameText.text = _portEvent.EventName;
             StartCoroutine(DisplayText(_portEvent.EventText));
             _continueButton.SetActive(true);
@@ -218,6 +219,46 @@ public class PortManager : MonoBehaviour
                 break;
         }
     }
+    public void changeMonologue(ECityNames portName)
+    {
+        switch (portName)
+        {
+            case ECityNames.ORLEANS:
+                MonologueManager.instance.playMonologue(0);
+                break;
+            case ECityNames.BEAUGENCY:
+                MonologueManager.instance.playMonologue(1);
+                break;
+            case ECityNames.BLOIS:
+                MonologueManager.instance.playMonologue(2);
+                break;
+            case ECityNames.AMBOISE:
+                MonologueManager.instance.playMonologue(3);
+                break;
+            case ECityNames.TOURS:
+                MonologueManager.instance.playMonologue(4);
+                break;
+            case ECityNames.SAUMUR:
+                MonologueManager.instance.playMonologue(5);
+                break;
+            case ECityNames.ANGERS:
+                MonologueManager.instance.playMonologue(6);
+                break;
+            case ECityNames.CHALONNES:
+                MonologueManager.instance.playMonologue(7);
+                break;
+            case ECityNames.ANCENIS:
+                if(MerchandiseManager.instance.isInInventory(EMarchandiseTypes.SEL)) {
+                    MonologueManager.instance.playMonologue(9);
+                } else {
+                    MonologueManager.instance.playMonologue(8);
+                }
+                break;
+            case ECityNames.NANTES:
+                MonologueManager.instance.playMonologue(13);
+                break;
+        }
+    }
 
     private void EventAmboise() {
         isRepairEnable = true;
@@ -248,6 +289,7 @@ public class PortManager : MonoBehaviour
         _specialButton2Text.text = _portEvent.Button2Text;
         StopAllCoroutines();
         StartCoroutine(DisplayText(_portEvent.EventTextPart2[1]));
+        MonologueManager.instance.playMonologue(10);
     }
     private void EventNantes()
     {
@@ -273,8 +315,10 @@ public class PortManager : MonoBehaviour
                     nextTextIndex = 2;
                     MerchandiseManager.instance.deleteMerchandise(EMarchandiseTypes.SEL);
                     RessourcesManager.instance.UseMoney(300);
+                    MonologueManager.instance.playMonologue(11);
                 } else {
                     nextTextIndex = 3;
+                    MonologueManager.instance.playMonologue(12);
                 }
                 _continueButton.SetActive(true);
                 break;

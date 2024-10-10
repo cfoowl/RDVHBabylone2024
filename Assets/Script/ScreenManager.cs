@@ -59,6 +59,7 @@ public class ScreenManager : MonoBehaviour
     public void SetQuaiScreen(bool isBig)
     {
         SetActiveScreen(2);
+        MonologueManager.instance.stopMonologue();
 
         repairButton.SetActive(PortManager.instance.isRepairEnable);
         livreCounter.SetActive(true);
