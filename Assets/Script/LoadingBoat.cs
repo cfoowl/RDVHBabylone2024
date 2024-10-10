@@ -40,7 +40,7 @@ public class LoadingBoat : MonoBehaviour
         Vector3 direction = trajectory[currentTrajectoryNodeIndex] - transform.position;
         float distance = direction.magnitude;
         Vector3 moveDirection = direction.normalized;
-        float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
+        float angle = Mathf.Atan2(-moveDirection.y, -moveDirection.x) * Mathf.Rad2Deg;
         GetComponent<RectTransform>().rotation = Quaternion.Euler(0,0,angle);
         if (distance < 2f)
         {
