@@ -16,7 +16,6 @@ public class PortManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _eventNameText = null;
     [SerializeField] private TextMeshProUGUI _eventTextText = null;
     // [SerializeField] private Image _eventImageImage = null;
-    [SerializeField] private RessourcesManager _ressourcesManager = null;
     [SerializeField] private GameObject _continueButton = null;
     [SerializeField] private GameObject _nextPortButton = null;
     [SerializeField] private GameObject _specialChoiceButtons = null;
@@ -24,9 +23,6 @@ public class PortManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _specialButton2Text = null;
     [SerializeField] private GameObject ancenisButton = null;
     public bool isRepairEnable;
-    [SerializeField, TextArea(10, 9999)] private string _specialTextTours = "";
-    [SerializeField, TextArea(10, 9999)] private string _specialTextAngers = "";
-    [SerializeField] private GameObject _victoryScreen = null;
     private GameFlowManager _gameFlowManager = null;
 
 
@@ -76,6 +72,7 @@ public class PortManager : MonoBehaviour
         if (_portEvent != null)
         {
             changeBGMusic(_portEvent.CityName);
+            changeMonologue(_portEvent.CityName);
             _eventNameText.text = _portEvent.EventName;
             StartCoroutine(DisplayText(_portEvent.EventText));
             _continueButton.SetActive(true);
@@ -105,29 +102,30 @@ public class PortManager : MonoBehaviour
     }
     public void VenteMarchandises()
     {
+        bool flag = false;
+        Popup.instance.clearText();
+        Popup.instance.changeTitle("Résumé des ventes");
         foreach (EMarchandiseTypes type in _portEvent.EventMarchandisesRemoved)
         {
-            MerchandiseManager.instance.sellMerchandise(type);
+            if (MerchandiseManager.instance.sellMerchandise(type))
+            {
+                flag = true;
+            }
+        }
+        if (flag) {
+            SoundManager.instance.audioSource.clip = SoundManager.instance.coins;
+            SoundManager.instance.audioSource.Play();
+            Popup.instance.openPopup(0);
         }
     }
 
     public void ContinueButton()
     {
-        if (_portEvent.EventTextPart2[0] != "")
-        {
-            StopAllCoroutines();
-            ScreenManager.instance.SetQuaiScreen(_portEvent.bigPort);
-            StartCoroutine(DisplayText(_portEvent.EventTextPart2[0]));
-            _continueButton.SetActive(false);
-            _nextPortButton.SetActive(true);
-        }
-        else if (_portEvent.CityName == ECityNames.NANTES)
-        {
-            _victoryScreen.SetActive(true);
-            AudioManager.instance.stopMusic();
-            SoundManager.instance.audioSource.clip = SoundManager.instance.victory;
-            SoundManager.instance.audioSource.Play();
-        }
+        StopAllCoroutines();
+        ScreenManager.instance.SetQuaiScreen(_portEvent.bigPort);
+        StartCoroutine(DisplayText(_portEvent.EventTextPart2[0]));
+        _continueButton.SetActive(false);
+        _nextPortButton.SetActive(true);
     }
 
     public void GoToNextPortButton()
@@ -140,7 +138,10 @@ public class PortManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("Not enough food !");
+            Popup.instance.changeTitle("Vous n'avez pas de ration !");
+            Popup.instance.clearText();
+            Popup.instance.catToText(Popup.instance.FoodText);
+            Popup.instance.openPopup(0);
         }
     }
 
@@ -189,25 +190,25 @@ public class PortManager : MonoBehaviour
         switch (portName)
         {
             case ECityNames.ORLEANS:
-                AudioManager.instance.ChangBGM(5);
+                AudioManager.instance.ChangBGM(7);
                 break;
             case ECityNames.BEAUGENCY:
                 AudioManager.instance.ChangBGM(3);
                 break;
             case ECityNames.BLOIS:
-                AudioManager.instance.ChangBGM(5);
+                AudioManager.instance.ChangBGM(4);
                 break;
             case ECityNames.AMBOISE:
                 AudioManager.instance.ChangBGM(1);
                 break;
             case ECityNames.TOURS:
-                AudioManager.instance.ChangBGM(8);
+                AudioManager.instance.ChangBGM(10);
                 break;
             case ECityNames.SAUMUR:
-                AudioManager.instance.ChangBGM(7);
+                AudioManager.instance.ChangBGM(9);
                 break;
             case ECityNames.ANGERS:
-                AudioManager.instance.ChangBGM(6);
+                AudioManager.instance.ChangBGM(8);
                 break;
             case ECityNames.CHALONNES:
                 AudioManager.instance.ChangBGM(5);
@@ -216,11 +217,56 @@ public class PortManager : MonoBehaviour
                 AudioManager.instance.ChangBGM(2);
                 break;
             case ECityNames.NANTES:
-                AudioManager.instance.ChangBGM(4);
+                AudioManager.instance.ChangBGM(6);
+                break;
+        }
+    }
+    public void changeMonologue(ECityNames portName)
+    {
+        switch (portName)
+        {
+            case ECityNames.ORLEANS:
+                MonologueManager.instance.playMonologue(0);
+                break;
+            case ECityNames.BEAUGENCY:
+                MonologueManager.instance.playMonologue(1);
+                break;
+            case ECityNames.BLOIS:
+                MonologueManager.instance.playMonologue(2);
+                break;
+            case ECityNames.AMBOISE:
+                MonologueManager.instance.playMonologue(3);
+                break;
+            case ECityNames.TOURS:
+                MonologueManager.instance.playMonologue(4);
+                break;
+            case ECityNames.SAUMUR:
+                MonologueManager.instance.playMonologue(5);
+                break;
+            case ECityNames.ANGERS:
+                MonologueManager.instance.playMonologue(6);
+                break;
+            case ECityNames.CHALONNES:
+                MonologueManager.instance.playMonologue(7);
+                break;
+            case ECityNames.ANCENIS:
+                if(MerchandiseManager.instance.isInInventory(EMarchandiseTypes.SEL)) {
+                    MonologueManager.instance.playMonologue(9);
+                } else {
+                    MonologueManager.instance.playMonologue(8);
+                }
+                break;
+            case ECityNames.NANTES:
+                MonologueManager.instance.playMonologue(13);
                 break;
         }
     }
 
+    public void EventOrleans() {
+        Popup.instance.changeTitle("Tutoriel");
+        Popup.instance.catToText(Popup.instance.TutorialText);
+        Popup.instance.openPopup(0);
+    }
     private void EventAmboise() {
         isRepairEnable = true;
     }
@@ -250,6 +296,7 @@ public class PortManager : MonoBehaviour
         _specialButton2Text.text = _portEvent.Button2Text;
         StopAllCoroutines();
         StartCoroutine(DisplayText(_portEvent.EventTextPart2[1]));
+        MonologueManager.instance.playMonologue(10);
     }
     private void EventNantes()
     {
@@ -275,8 +322,10 @@ public class PortManager : MonoBehaviour
                     nextTextIndex = 2;
                     MerchandiseManager.instance.deleteMerchandise(EMarchandiseTypes.SEL);
                     RessourcesManager.instance.UseMoney(300);
+                    MonologueManager.instance.playMonologue(11);
                 } else {
                     nextTextIndex = 3;
+                    MonologueManager.instance.playMonologue(12);
                 }
                 _continueButton.SetActive(true);
                 break;
@@ -298,14 +347,8 @@ public class PortManager : MonoBehaviour
 
     public void RepairButton() {
         if (RessourcesManager.instance._health < 10) {
-            if (_portEvent.bigPort) {
-                RessourcesManager.instance.UseMoney(150);
-                RessourcesManager.instance.repairBoat(10);
-            } else {
-                RessourcesManager.instance.UseMoney(75);
-                RessourcesManager.instance.repairBoat(2);
-            }
-
+            Popup.instance.setRepairText();
+            Popup.instance.openPopup(1);
         }
     }
 

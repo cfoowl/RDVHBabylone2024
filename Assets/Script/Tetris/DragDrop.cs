@@ -6,7 +6,7 @@ using UnityEngine.Animations;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
+public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler, IPointerEnterHandler, IPointerExitHandler
 {
     private Canvas canvas;
     private RectTransform rectTransform;
@@ -136,5 +136,15 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         }
         Destroy(originalParent.gameObject);
         Destroy(gameObject);
+    }
+    public void OnPointerEnter(PointerEventData eventData) {
+        DescriptionWindow.instance.setTitleText(MerchandiseManager.instance.merchandiseName[originalParent.GetComponent<Item>().type].ToString());
+        DescriptionWindow.instance.setBuyPrice(originalParent.GetComponent<Item>().buyingPrice.ToString());
+        DescriptionWindow.instance.setSellPrice(MerchandiseManager.instance.merchandisePrice[originalParent.GetComponent<Item>().type].ToString());
+        DescriptionWindow.instance.openWindow();
+    }
+
+    public void OnPointerExit(PointerEventData eventData) {
+        DescriptionWindow.instance.closeWindow();
     }
 }

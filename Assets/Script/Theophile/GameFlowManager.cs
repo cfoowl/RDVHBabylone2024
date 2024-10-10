@@ -13,8 +13,6 @@ public class GameFlowManager : MonoBehaviour
     [SerializeField] private RessourcesManager _ressources = null;
     [SerializeField] private EventDatas[] _events = new EventDatas[0];
     [SerializeField] private EventDatas[] _contrebandEvents = new EventDatas[0];
-    [SerializeField] private GameObject _transitionScreen = null;
-    [SerializeField] private Animator _transitionAnim = null;
     //[SerializeField] private GameObject _rationPopUp = null;
     //[SerializeField] private GameObject _lostMarchandisePopUp = null;
     private bool _contreband = false;
@@ -84,11 +82,11 @@ public class GameFlowManager : MonoBehaviour
         _ressources.ReinitializeMoney();
         _port.PortEvent = _events[_currentEvent];
         ScreenManager.instance.EnterLoadingScreen();
+        AudioManager.instance.SetBGM(0);
     }
 
     public void MoveToNextPort()
     {
-        GridManager.instance.applyInventoryDamage();
         if (_currentEvent + 1 < _events.Length)
         {
             _currentEvent++;

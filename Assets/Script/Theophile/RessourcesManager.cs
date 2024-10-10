@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RessourcesManager : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class RessourcesManager : MonoBehaviour
 
     [SerializeField] public float _money = 200;
     [SerializeField] public int _health = 10;
+    [SerializeField] public Image LifeBar;
     [SerializeField] private TextMeshProUGUI _moneyText = null;
     public static RessourcesManager instance;
 
@@ -24,20 +26,6 @@ public class RessourcesManager : MonoBehaviour
 
     #region Events
 
-    private event Action _onNotEnoughMoney;
-    public event Action OnNotEnoughMoney
-    {
-        add
-        {
-            _onNotEnoughMoney -= value;
-            _onNotEnoughMoney += value;
-        }
-
-        remove
-        {
-            _onNotEnoughMoney -= value;
-        }
-    }
 
     #endregion Events
 
@@ -99,13 +87,26 @@ public class RessourcesManager : MonoBehaviour
         _health -= (int)Math.Floor(damage);
         if (_health <= 0) {
             ScreenManager.instance.SetDefeatBreakScreen();
+            AudioManager.instance.ChangBGM(12);
+        }
+        if (_health <= 3) {
+            LifeBar.color = Color.red;
+        } else {
+            LifeBar.color = Color.white;
         }
     }
 
     public void repairBoat(int health) {
         _health += health;
+        SoundManager.instance.audioSource.clip = SoundManager.instance.repair;
+        SoundManager.instance.audioSource.Play();
         if (_health > 10) {
             _health = 10;
+        }
+        if (_health <= 3) {
+            LifeBar.color = Color.red;
+        } else {
+            LifeBar.color = Color.white;
         }
     }
 
@@ -115,6 +116,14 @@ public class RessourcesManager : MonoBehaviour
         // _onNotEnoughMoney();
         return;
     }
+
+    // public int computeDebt(int initialValue) {
+    //     if (_money < 0) {
+    //         return Math.Floor(initialValue * (1f+(-_money/100f)));
+    //     } else {
+    //         return initialValue;
+    //     }
+    // }
     #endregion Money
 
     #endregion Methods

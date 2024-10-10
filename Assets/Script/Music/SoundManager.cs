@@ -9,11 +9,11 @@ public class SoundManager : MonoBehaviour
     public AudioClip choice;
     public AudioClip[] clic; 
     public AudioClip[] DragDrop;
-    public AudioClip victory;
-    public AudioClip defeat;
+    public AudioClip coins;
+    public AudioClip repair;
 
 
-    void Start() {
+    void Awake() {
         instance = this;
     }
 

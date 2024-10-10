@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GridManager : MonoBehaviour
 {
-    public static GridManager instance { get; private set;}
+    public static GridManager instance;
     public List<Item> storedMerchandise = new List<Item>();
     private RectTransform rectTransform;
     public int columns;
@@ -25,8 +25,6 @@ public class GridManager : MonoBehaviour
 
     void Awake() {
         instance = this;
-    }
-    void Start () {
         rectTransform = GetComponent<RectTransform>();
 
         width = GetComponent<RectTransform>().rect.width;

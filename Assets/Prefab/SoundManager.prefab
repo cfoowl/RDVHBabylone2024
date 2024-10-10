@@ -55,8 +55,8 @@ MonoBehaviour:
   DragDrop:
   - {fileID: 8300000, guid: 613b9da9c5df5794eb8d8c46e0d6c737, type: 3}
   - {fileID: 8300000, guid: 2eb7c88a8366dcb48986bef7a4a8cba7, type: 3}
-  victory: {fileID: 8300000, guid: f2edce1c89f3d834ebd6ef031cfd9e84, type: 3}
-  defeat: {fileID: 8300000, guid: d1fdc058b7b45b84299ea76d79cc4c76, type: 3}
+  coins: {fileID: 8300000, guid: 66242360df4364044bc7c176c398db83, type: 3}
+  repair: {fileID: 8300000, guid: cc0fbfc02abcf834e8834a697947fccc, type: 3}
 --- !u!82 &6264361340693281160
 AudioSource:
   m_ObjectHideFlags: 0

@@ -59,6 +59,7 @@ public class ScreenManager : MonoBehaviour
     public void SetQuaiScreen(bool isBig)
     {
         SetActiveScreen(2);
+        MonologueManager.instance.stopMonologue();
 
         repairButton.SetActive(PortManager.instance.isRepairEnable);
         livreCounter.SetActive(true);
@@ -82,15 +83,21 @@ public class ScreenManager : MonoBehaviour
             screenQuaiSmol.SetActive(true);
         }
 
+        if(PortManager.instance._portEvent.CityName == ECityNames.ORLEANS) {
+            PortManager.instance.EventOrleans();
+        }
+
 
         // Fin du jeu
         if(PortManager.instance._portEvent.CityName == ECityNames.NANTES) {
             if (RessourcesManager.instance._money > 0) {
                 VictoryScreen.SetActive(true);
                 victoryMoneyText.text = RessourcesManager.instance._money.ToString();
+                AudioManager.instance.ChangBGM(11);
             } else {
 
                 DefeatMoneyScreen.SetActive(true);
+                AudioManager.instance.ChangBGM(12);
                 defeatMoneyText.text = RessourcesManager.instance._money.ToString();
             }
         }
@@ -126,6 +133,7 @@ public class ScreenManager : MonoBehaviour
     }
     public void ExitLoadingScreen()
     {
+        GridManager.instance.applyInventoryDamage();
         loadingCamera.gameObject.SetActive(false);
         loadingCanvas.gameObject.SetActive(false);
         mainCamera.gameObject.SetActive(true);
