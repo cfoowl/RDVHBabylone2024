@@ -112,6 +112,8 @@ public class RessourcesManager : MonoBehaviour
 
     public void repairBoat(int health) {
         _health += health;
+        SoundManager.instance.audioSource.clip = SoundManager.instance.repair;
+        SoundManager.instance.audioSource.Play();
         if (_health > 10) {
             _health = 10;
         }

@@ -10,6 +10,7 @@ public class SoundManager : MonoBehaviour
     public AudioClip[] clic; 
     public AudioClip[] DragDrop;
     public AudioClip coins;
+    public AudioClip repair;
 
 
     void Start() {
